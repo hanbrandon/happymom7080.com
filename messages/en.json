@@ -1,0 +1,331 @@
+{
+  "Navbar": {
+    "about": "About",
+    "services": "Services",
+    "guide": "Guide",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "Hero": {
+    "title1": "Supporting Every Mom,",
+    "title2": "Cherishing Every Start",
+    "subtitle": "Providing professional postpartum care and personalized support for your journey into motherhood.",
+    "cta1": "Explore Services",
+    "cta2": "Our Story"
+  },
+  "Mission": {
+    "title": "Join our mission to empower mothers through professional care and community support.",
+    "button": "Learn More"
+  },
+  "Story": {
+    "label": "Our Story",
+    "title": "HappyMom's mission is to improve postpartum care worldwide, focusing on emotional and physical support.",
+    "description": "As a leading organization for postpartum wellness, HappyMom has successfully supported over 5,000 mothers in 30 cities. Our organization provides essential nursing care, education, and training for new moms, focusing on holistic recovery through unique community initiatives."
+  },
+  "Services": {
+    "title": "HappyMom Care Services",
+    "subtitle": "We provide professional personalized care for a healthy start for both mother and baby.",
+    "newborn": "Newborn Specialized Care",
+    "newbornDesc": "We prioritize the baby's proper growth and stability.",
+    "maternal": "Maternal Personalized Care",
+    "maternalDesc": "We help the mother's physical recovery and emotional stability.",
+    "family": "Family & Environment Management",
+    "familyDesc": "We provide a pleasant indoor environment and family support services.",
+    "babysitting": "Babysitting Service",
+    "babysittingDesc": "Professionally trained caregivers safely look after your child.",
+    "learnMore": "Learn More"
+  },
+  "ServicesDetail": {
+    "heroTitle": "Perfect Recovery and Pure Beginnings",
+    "heroSubtitle": "We propose premium care standards for both mother and baby.",
+    "postpartumTitle": "Premium Postpartum Care Service",
+    "postpartumDesc": "HappyMom's postpartum care specialists go beyond simple help, taking responsibility for the mother's health recovery and the stable development of the newborn.",
+    "newbornTitle": "Newborn Specialized Care",
+    "newbornGrowth": "Growth Management: Recording and managing newborn logs, temperature measurement, and health checks.",
+    "newbornDev": "Developmental Support: Newborn massage (promoting growth, emotional stability, and brain development).",
+    "newbornHygiene": "Hygiene Management: Bathing, umbilical cord care, bottle sterilization, and pump management.",
+    "newbornClothing": "Clothing Management: Washing newborn clothing and bedding.",
+    "maternalTitle": "Maternal Personalized Care",
+    "maternalBody": "Physical Recovery: Support for postpartum edema management and foot baths for blood circulation.",
+    "maternalBreast": "Breastfeeding Specialization: Breast massage (preventing engorgement and pain relief) and breastfeeding posture guidance.",
+    "maternalHealing": "Healing Support: Sitz bath management for perineal pain relief and wound healing.",
+    "maternalNutrition": "Nutrition Management: Specialized postpartum meal and nutrition management for mother's recovery.",
+    "familyTitle": "Family & Environment Management",
+    "familyHygiene": "Hygiene Environment: Cleaning the baby's room, maintaining a pleasant indoor environment, and kitchen cleanliness.",
+    "familySupport": "Family Support: Preparing meals and snacks for the husband and older children, and simple laundry management.",
+    "familyOrg": "Organization: Daily organization of children's toys and living spaces.",
+    "warningTitle": "Please Note!",
+    "warningDesc": "HappyMom postpartum care specialists are experts responsible for the health of both mother and newborn. They are not general housekeepers and focus on recovery and stability.",
+    "babysitTitle": "Babysitting Service",
+    "babysitSub": "Infant Specialized Care",
+    "babysitDesc": "So parents can focus on their daily lives with peace of mind, experienced caregivers warmly look after their children.",
+    "babysitExpert": "Expertise: Placement of experienced specialists who understand infant development stages.",
+    "babysitSafety": "Safety First: Indoor care you can trust even when parents are away.",
+    "babysitBond": "Emotional Bond: A warm parenting service that goes beyond simple care to connect with the child."
+  },
+  "Pricing": {
+    "title": "Pricing",
+    "postpartumCare": "Postpartum Care Service",
+    "babyCare": "Babysitting Service",
+    "liveIn": "Live-in",
+    "commuting": "Commuting",
+    "serviceFee": "Service Fee",
+    "deposit": "Deposit",
+    "total": "Total",
+    "learnMore": "Learn More"
+  },
+  "About": {
+    "title": "HappyMom: Sincere Premium K-Postpartum Care",
+    "subtitle": "The most reliable family touch in your immigrant life.",
+    "description1": "Healing the mother's body and mind with high-quality care that reflects modern trends.",
+    "description2": "Selected experts practice service that touches the heart with great love for the newborn, promising the best care that satisfies the mind beyond physical recovery.",
+    "whyTitle": "Why HappyMom?",
+    "whySubtitle": "Firm expertise, unchanging trust.",
+    "pillar1Title": "Global Experts",
+    "pillar1Desc": "Experts with qualifications from internationally recognized institutions (CI, IAP) provide systematic and optimized personalized care.",
+    "pillar2Title": "Carrot Partner",
+    "pillar2Desc": "As an officially certified partner of 'Carrot Fertility', a leading employee benefit in the US, we guarantee transparent operation and quality.",
+    "pillar3Title": "Essence of K-Postpartum Care",
+    "pillar3Desc": "We showcase premium care that perfectly integrates the advantages of Korean-style postpartum care into the US environment.",
+    "kCare1": "Breast Massage: Preventing engorgement and supporting breastfeeding",
+    "kCare2": "Edema Management: Fast recovery with careful body care",
+    "kCare3": "Premium Meals: High-quality Korean food for strength recovery",
+    "closing": "When Mom is happy, the baby is happy. We will be with you for a brilliant start."
+  },
+  "Guide": {
+    "heroTag": "User Guide",
+    "heroTitle": "A Happy Start with HappyMom, Service Application Process",
+    "heroSubtitle": "From consultation to the start of service, HappyMom systematically helps mothers' comfortable recovery.",
+    "step01Title": "Step 01. Contact and Consultation Request",
+    "step01Desc": "Please call the number at the bottom of the HappyMom website or request a consultation through the Contact page. We will check the due date and region for the initial consultation.",
+    "step02Title": "Step 02. Detailed Service Explanation and Decision",
+    "step02Desc": "Through a 1:1 consultation with the director, you can hear detailed explanations of the services and decide on the service you want.",
+    "step03Title": "Step 03. Contract Preparation and Submission",
+    "step03Desc": "We will send you a contract based on the consultation. After reviewing it carefully, please submit the completed contract via email (<a href='mailto:happymom7080@gmail.com' class='underline decoration-gray-300 hover:text-gray-900 transition-colors'>happymom7080@gmail.com</a>).",
+    "step04Title": "Step 04. Deposit Payment",
+    "step04Desc": "Pay the deposit to confirm the reservation. Payments can be conveniently made through the HappyMom bank account or Venmo (account info provided separately).",
+    "step05Title": "Step 05. Care Specialist Selection and Matching",
+    "step05Desc": "Reflecting the mother's preferences and requests, HappyMom matches a carefully selected expert. We arrange a phone call or meeting with the selected caregiver.",
+    "step06Title": "Step 06. Service Begins",
+    "step06Desc": "On the promised date and time, a skilled postpartum care specialist is dispatched to the mother's home to begin high-quality care.",
+    "additionalTitle": "Additional Information",
+    "outOfStateTitle": "Out-of-State Service",
+    "outOfStateDesc": "Procedures and costs for services outside California may vary by region. We provide optimized personalized info through a separate consultation.",
+    "insuranceTitle": "Insurance Support",
+    "insuranceDesc": "For mothers using workplace benefits like Carrot Fertility, we perfectly support necessary documents and receipt issuance.",
+    "scheduleTitle": "Schedule Change Guide",
+    "scheduleDesc": "If there is a change in the due date, please contact HappyMom as soon as you are hospitalized so we can adjust the caregiver assignment."
+  },
+  "PricingDetail": {
+    "heroTag": "Pricing",
+    "heroTitle": "Transparent and reasonable costs, promising beyond that",
+    "heroSubtitle": "Please check the minimum service period and refund policy.",
+    "minPeriod": "The minimum service period is 2 weeks.",
+    "basicConditions": "※ Basic service conditions are based on 3 people including mother, spouse, and newborn. Additional costs may apply if other family members reside together.",
+    "postpartumTitle": "Postpartum Care Service Fees",
+    "liveInTitle": "Live-in",
+    "liveInPrice": "$1,600 / week",
+    "liveInDeposit": "Deposit $300 + Balance $1,300",
+    "liveInHours": "9 AM ~ 6 PM",
+    "commutingTitle": "Commuting",
+    "commutingPrice": "$1,350 / week",
+    "commutingDeposit": "Deposit $300 + Balance $1,050",
+    "commutingHours": "Mon 9 AM ~ Fri 6 PM",
+    "longDistanceNote": "Long Distance Guide: Long distance work is continuous without days off regardless of holidays. A 6-week contract is calculated as 30 continuous days, including weekends and holidays.",
+    "babysitTitle": "Babysitting Service Fees",
+    "babysitPrice": "$1,200 / week",
+    "babysitDeposit": "Deposit $200 + Balance $1,000",
+    "babysitHours": "9 AM ~ 9 AM Next Day (Commuting: 9 AM ~ 6 PM)",
+    "carrotTitle": "Are you a Carrot Fertility member?",
+    "carrotDesc": "We are an officially certified provider for Carrot Fertility benefits. Our experts are certified by Childbirth International and IAP Career College.",
+    "additionalFeesTitle": "Additional Fees",
+    "additionalFeesDesc": "Additional fees are paid in full to the care specialist. If applicable, please check the corresponding items when filling out the contract.",
+    "localCriteria": "※ Based on Local (LA, OC) regions.",
+    "commutingAreaNote": "※ Commuting services are provided only within close proximity to the care specialist's location.",
+    "breakTimes": "※ For Live-in services, 3 hours of break time per day are provided. This time can be used for rest, sleep, walking, jogging, or personal recovery. For Commuting services, 1 hour of break time per day is provided.",
+    "transportation": "※ For long-distance services, airfare and local transportation costs for the care specialist must be covered by the client.",
+    "serviceChange": "※ Service hours and scope may vary partially depending on region, schedule, and caregiver assignment.",
+    "extension": "※ To extend the service period, please contact HappyMom before 50% of the initial period has elapsed.",
+    "twins": "※ For twin care, please consult separately with HappyMom for details.",
+    "viewContract": "View Contract",
+    "viewRefund": "View Refund Policy",
+    "weeklyRates": "Weekly Rates",
+    "premiumWeekly": "Premium Weekly",
+    "officialContract": "Official Contract Info",
+    "pricingPolicy": "Pricing Policy",
+    "pricingPolicySummary": "Refund Policy Summary",
+    "feeTable": {
+      "category": "Category",
+      "liveIn": "Live-in (Day/Week)",
+      "commuting": "Commuting (Day/Week)",
+      "preschool": "Preschool (Toddler)",
+      "school": "School (Elementary-High)",
+      "extraAdult": "Extra Adult (per person)",
+      "rates": {
+        "preschool": "$20 / $100",
+        "school": "$10 / $50",
+        "extraAdult": "$20 / $100"
+      }
+    },
+    "refundTitle": "Refund Policy",
+    "noRefund": "※ Cancellations due to personal reasons (e.g., change of mind, finding a cheaper alternative, moving, or assistance from family/friends) are non-refundable once the contract is signed.",
+    "fullRefund": "※ In the event of preterm birth or miscarriage, a full refund of the payment will be issued upon verification of supporting documents.",
+    "depositRefund": "※ If the specialist is unable to proceed with the reservation due to health issues or personal reasons, we will provide guidance on receiving a deposit refund or assigning an alternative specialist.",
+    "getQuote": "Get Quote"
+  },
+  "TestimonialsPage": {
+    "tag": "Testimonials",
+    "title": "Stories from <br />our HappyMom community",
+    "subtitle": "The sincere voices of our mothers are HappyMom's most valuable asset.",
+    "formTitle": "Share Your Story",
+    "formDesc": "Your precious reviews will be posted on our website after administrator review. Your content will be sent to the HappyMom operator via email and managed with care.",
+    "formName": "Full Name",
+    "formLocation": "Location",
+    "formService": "Service Used",
+    "formContent": "Your Review",
+    "formSubmit": "Submit Review",
+    "postpartum": "Postpartum Care",
+    "babysitting": "Babysitting Service",
+    "formSuccess": "Your review has been successfully sent. We will post it shortly after review!"
+  },
+  "FAQ": {
+    "tag": "FAQ",
+    "title": "We are here <br />to help.",
+    "subtitle": "We collected the most frequently asked questions. Feel free to contact us for any additional questions.",
+    "items": [
+      {
+        "question": "What is postpartum care service?",
+        "answer": "Postpartum care is a professional home-visit service during the 6-8 weeks after birth to help mothers recover comfortably at home, supporting nutrition, health management, and newborn care."
+      },
+      {
+        "question": "How do I apply for the service?",
+        "answer": "Please call the number at the bottom of our website or request a consultation through the Contact page."
+      },
+      {
+        "question": "How can I get detailed information?",
+        "answer": "You can receive detailed service explanations and decide on your plan through a consultation with our director."
+      },
+      {
+        "question": "How do I review and submit the contract?",
+        "answer": "After reviewing the contract, please submit the completed form via email."
+      },
+      {
+        "question": "How do I pay the deposit?",
+        "answer": "You can transfer the deposit through the HappyMom bank account or Venmo."
+      },
+      {
+        "question": "How is the caregiver selected?",
+        "answer": "After selecting a carefully screened caregiver, we arrange a phone consultation or meeting for you."
+      },
+      {
+        "question": "What is the reservation and cancellation policy?",
+        "answer": "Reservations are confirmed after consultation, and cancellations/refunds are possible under specific conditions."
+      },
+      {
+        "question": "How is long-distance service provided?",
+        "answer": "While a week is defined as 5 days in the contract, long-distance work involves continuous labor without days off. 15 days of work effectively equals 3 weeks of labor."
+      },
+      {
+        "question": "What are the caregiver's sleep and break hours?",
+        "answer": "Especially for live-in services with frequent night feedings, the caregiver takes about 3 hours of rest between lunch and dinner."
+      },
+      {
+        "question": "How do I pay the service fees?",
+        "answer": "Service fees should be paid directly to the caregiver on a weekly basis."
+      },
+      {
+        "question": "Are there extra costs for out-of-state service?",
+        "answer": "For out-of-state services, the client is responsible for the caregiver's round-trip airfare."
+      },
+      {
+        "question": "What is the cancellation and refund policy?",
+        "answer": "Cancellations without special reasons after signing are non-refundable. However, full refunds are issued for preterm birth or miscarriage. Please check your contract for details."
+      },
+      {
+        "question": "What if the reservation is cancelled due to the helper's health?",
+        "answer": "If a reservation is cancelled due to the helper's health or personal reasons, we will refund the deposit or assign a different helper."
+      },
+      {
+        "question": "How do I extend the service?",
+        "answer": "To extend, please apply at least one week in advance and pay an additional deposit."
+      },
+      {
+        "question": "What are the reasons for service termination?",
+        "answer": "Service may be terminated if it becomes difficult to continue due to insults, authoritative interference from family, demands for medical acts, or excessive housework."
+      },
+      {
+        "question": "What is the basic family composition for the service?",
+        "answer": "The basic composition includes the mother, newborn, and husband. Additional fees apply for extra family members."
+      },
+      {
+        "question": "How is the contract period determined?",
+        "answer": "It starts on the specified date and continues until terminated by either party with prior notice."
+      },
+      {
+        "question": "What if my child has allergies or health issues?",
+        "answer": "You must notify the service provider of any known allergies or health problems related to the child."
+      },
+      {
+        "question": "What are the duties and responsibilities of the caregiver?",
+        "answer": "Responsibilities include meal preparation, child care, night care, laundry/cleaning suited for the child's needs, and maternal care services."
+      },
+      {
+        "question": "Tell me about the postpartum care service types.",
+        "answer": "1. Live-in: 9 AM to 9 AM next day, includes 3 hours of break. Provided 5 days a week.\n2. Commuting: Mon-Fri, 9 AM to 6 PM, includes 1 hour of break.\n3. Long Distance: 7 continuous days without standard holidays.\nCaregivers do not drive during work hours. Night feedings require about 3 hours of daytime sleep for the caregiver."
+      },
+      {
+        "question": "What is the babysitting service?",
+        "answer": "Comprehensive 1:1 care for infants over 3 months old, covering feeding, sterilization, diapering, bathing, health, nutrition, and hygiene."
+      },
+      {
+        "question": "What are the types of babysitting services?",
+        "answer": "Commuting (Mon-Fri 9 AM-6 PM) and Live-in (resident at baby's home Mon-Fri) options are available."
+      }
+    ]
+  },
+  "Contact": {
+    "tag": "Contact",
+    "title": "Get in touch <br />with us.",
+    "subtitle": "We're here to help you start your journey with confidence. Reach out anytime.",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "message": "Message",
+    "placeholderFirstName": "Jane",
+    "placeholderLastName": "Doe",
+    "placeholderEmail": "jane@example.com",
+    "placeholderMessage": "How can we help you?",
+    "submit": "Send Message",
+    "successTitle": "Message Sent",
+    "successDesc": "Thank you for reaching out. We will get back to you shortly.",
+    "resend": "Send Another"
+  },
+  "Footer": {
+    "about": "About",
+    "menu": "Menu",
+    "services": "Services",
+    "more": "More",
+    "mission": "Our Mission",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "contact": "Contact Us",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "rights": "© 2026 HappyMom. All rights reserved.",
+    "siteBy": "Site by",
+    "intro": "HappyMom provides premium postpartum care and personalized support services for mothers and newborns.",
+    "guide": "User Guide",
+    "policies": "Policies",
+    "refund": "Refund Policy",
+    "contract": "Contract",
+    "callUs": "Call Us",
+    "emailUs": "Email Us"
+  }
+}
