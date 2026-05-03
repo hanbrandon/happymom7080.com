@@ -77,7 +77,7 @@ export default function FAQSearchList() {
                                     >
                                         <button
                                             onClick={() => toggleAccordion(index)}
-                                            className="w-full py-12 flex items-center justify-between text-left group relative overflow-hidden"
+                                            className="w-full py-12 flex items-center justify-between text-left group relative"
                                         >
                                             <div className="flex items-center space-x-8 z-10 transition-transform duration-500 group-hover:translate-x-2">
                                                 <span className="text-xs font-bold text-gray-200 group-hover:text-black transition-colors duration-500 tracking-tighter">
@@ -98,17 +98,19 @@ export default function FAQSearchList() {
                                                     stiffness: 300, 
                                                     damping: 15 
                                                 }}
-                                                className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-colors duration-500 ${isOpen ? 'bg-black border-black text-white' : 'border-gray-100 text-gray-300 group-hover:border-black group-hover:text-black'}`}
+                                                className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center z-10 transition-colors duration-500 ${isOpen ? 'bg-black border-black text-white' : 'border-gray-100 text-gray-300 group-hover:border-black group-hover:text-black'}`}
                                             >
                                                 <Plus className="w-5 h-5" />
                                             </motion.div>
                                             
-                                            {/* Subtle Hover Background */}
-                                            <motion.div 
-                                                className="absolute inset-0 bg-gray-50/50 -z-0 translate-x-[-101%]"
-                                                whileHover={{ translateX: "0%" }}
-                                                transition={{ duration: 0.4, ease: "circOut" }}
-                                            />
+                                            {/* Subtle Hover Background - Wrapped in overflow-hidden div */}
+                                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                                                <motion.div 
+                                                    className="absolute inset-0 bg-gray-50/50 -z-0 translate-x-[-101%]"
+                                                    whileHover={{ translateX: "0%" }}
+                                                    transition={{ duration: 0.4, ease: "circOut" }}
+                                                />
+                                            </div>
                                         </button>
 
                                         <AnimatePresence>
