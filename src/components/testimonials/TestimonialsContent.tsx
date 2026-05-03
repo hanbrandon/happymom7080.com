@@ -6,10 +6,11 @@ import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
-import { Star, Send, ArrowRight, X, SquarePen } from 'lucide-react';
+import { Send, ArrowRight, X, SquarePen } from 'lucide-react';
 import { useParams } from 'next/navigation';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
-// Individual Testimonial Item with InView tracking
+// Individual Testimonial Item with refined ScrollReveal feel
 function TestimonialItem({ item, index, onInView }: { item: any, index: number, onInView: (i: number) => void }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-45% 0px -45% 0px" });
@@ -25,24 +26,24 @@ function TestimonialItem({ item, index, onInView }: { item: any, index: number, 
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-150px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex flex-col min-h-[40vh] justify-center py-12"
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      className="flex flex-col min-h-[45vh] justify-center py-20 border-b border-black/[0.03] last:border-none"
     >
       <div className="relative mb-12">
-         <p className="text-3xl md:text-5xl text-gray-800 leading-[1.15] font-medium tracking-tight">
+         <p className="text-3xl md:text-5xl text-gray-900 leading-[1.1] font-medium tracking-tighter italic">
             "{item.content}"
          </p>
       </div>
       
-      <div className="flex items-center gap-6">
-        <div className="w-20 h-20 rounded-full overflow-hidden border border-gray-100 shadow-sm">
+      <div className="flex items-center gap-8">
+        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-rose-100 shadow-xl shadow-rose-50/50">
           <Image src={item.avatar} alt={item.name} width={80} height={80} className="object-cover" />
         </div>
         <div>
-          <h4 className="text-xl font-bold text-gray-900 mb-1">{item.name}</h4>
-          <p className="text-lg text-gray-500 font-medium">
-             {item.location} <span className="text-gray-300 mx-2">/</span> {item.service}
+          <h4 className="text-2xl font-bold text-gray-900 mb-1 tracking-tight">{item.name}</h4>
+          <p className="text-lg text-gray-400 font-light">
+             {item.location} <span className="text-rose-200 mx-3">/</span> {item.service}
           </p>
         </div>
       </div>
@@ -53,18 +54,16 @@ function TestimonialItem({ item, index, onInView }: { item: any, index: number, 
 export default function TestimonialsContent() {
   const t = useTranslations('TestimonialsPage');
   const params = useParams();
-  const locale = params.locale as string;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  // Form State
   const [formData, setFormData] = useState({
     name: '',
     location: '',
-    service: 'postpartum', // Default value
+    service: 'postpartum',
     content: ''
   });
 
@@ -166,40 +165,34 @@ export default function TestimonialsContent() {
       <Navbar />
       
       {/* Sticky Split Layout Section */}
-      <section className="pt-48 pb-32">
+      <section className="pt-64 pb-32">
         <div className="container mx-auto px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
             
             {/* Left Column: Sticky Title */}
-            <div className="lg:col-span-4 lg:sticky lg:top-48">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="text-sm font-bold text-gray-500 uppercase tracking-[0.3em] mb-6 block">{t('tag')}</span>
+            <div className="lg:col-span-4 lg:sticky lg:top-64">
+              <ScrollReveal>
+                <span className="text-xs font-black text-rose-400 uppercase tracking-[0.5em] mb-10 block">{t('tag')}</span>
                 <h1 
-                  className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tighter leading-[1.1] mb-8"
+                  className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-12"
                   dangerouslySetInnerHTML={{ __html: t('title') }}
                 />
-                <p className="text-xl text-gray-600 max-w-sm leading-relaxed mb-12">
+                <p className="text-2xl text-gray-400 max-w-sm leading-tight font-light mb-16">
                   "{t('subtitle')}"
                 </p>
                 
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="px-8 h-12 rounded-full bg-brand text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center gap-2 group mb-16 shadow-lg shadow-brand/20 cursor-pointer"
+                  className="px-10 h-16 rounded-full bg-black text-white font-black text-xs uppercase tracking-[0.3em] hover:bg-rose-400 transition-all flex items-center gap-4 group mb-16 shadow-2xl shadow-rose-100"
                 >
-                  <SquarePen className="w-4 h-4" />
+                  <SquarePen className="w-5 h-5" />
                   {t('formSubmit')}
                 </button>
-
-                <div className="hidden lg:block w-px h-24 bg-gray-100" />
-              </motion.div>
+              </ScrollReveal>
             </div>
 
             {/* Middle Column: Vertical List */}
-            <div className="lg:col-span-7 space-y-12 lg:pt-4">
+            <div className="lg:col-span-7 space-y-0 lg:pt-4">
               {testimonials.map((item, index) => (
                 <TestimonialItem 
                   key={index} 
@@ -211,22 +204,22 @@ export default function TestimonialsContent() {
             </div>
 
             {/* Right Column: Sticky Vertical Pagination */}
-            <div className="hidden lg:block lg:col-span-1 lg:sticky lg:top-48 lg:h-[400px] flex flex-col items-center justify-center">
-               <div className="flex flex-col items-center gap-8 h-full">
-                  <div className="w-px flex-grow bg-gray-100" />
-                  <div className="flex flex-col items-center gap-2 font-mono text-xl">
+            <div className="hidden lg:block lg:col-span-1 lg:sticky lg:top-64 lg:h-[400px]">
+               <div className="flex flex-col items-center gap-12 h-full">
+                  <div className="w-[1px] flex-grow bg-black/[0.05]" />
+                  <div className="flex flex-col items-center gap-4 font-black text-xs tracking-widest">
                      <motion.span 
                         key={activeIndex}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-gray-900 font-bold"
+                        className="text-black"
                      >
-                        0{activeIndex + 1}
+                        {(activeIndex + 1).toString().padStart(2, '0')}
                      </motion.span>
-                     <span className="text-gray-300">/</span>
-                     <span className="text-gray-400">0{testimonials.length}</span>
+                     <span className="text-gray-200">/</span>
+                     <span className="text-gray-300">{(testimonials.length).toString().padStart(2, '0')}</span>
                   </div>
-                  <div className="w-px flex-grow bg-gray-100" />
+                  <div className="w-[1px] flex-grow bg-black/[0.05]" />
                </div>
             </div>
           </div>
@@ -237,62 +230,59 @@ export default function TestimonialsContent() {
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-10">
-            {/* Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeAndReset}
-              className="absolute inset-0 bg-gray-900/40 backdrop-blur-md"
+              className="absolute inset-0 bg-gray-900/60 backdrop-blur-xl"
             />
 
-            {/* Modal Content */}
             <motion.div
-              initial={{ opacity: 0, scale: 1, y: 100 }}
+              initial={{ opacity: 0, scale: 0.9, y: 100 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 1, y: 100 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="relative w-full h-full md:h-auto md:max-w-4xl bg-white rounded-none shadow-2xl overflow-hidden"
+              exit={{ opacity: 0, scale: 0.9, y: 100 }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="relative w-full h-full md:h-auto md:max-w-4xl bg-white rounded-[3rem] shadow-2xl overflow-hidden"
             >
               <button 
                 onClick={closeAndReset}
-                className="absolute top-8 right-8 w-12 h-12 rounded-none bg-gray-50 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all z-10"
+                className="absolute top-10 right-10 w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-black hover:bg-gray-100 transition-all z-10"
               >
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="h-full md:max-h-[90vh] overflow-y-auto p-8 md:p-20">
+              <div className="h-full md:max-h-[90vh] overflow-y-auto p-10 md:p-24">
                 {submitted ? (
                   <div className="py-20 text-center">
-                    <div className="w-20 h-20 bg-brand/10 text-brand rounded-full flex items-center justify-center mx-auto mb-8">
+                    <div className="w-24 h-24 bg-rose-50 text-rose-400 rounded-full flex items-center justify-center mx-auto mb-10">
                       <Send className="w-10 h-10" />
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">감사합니다!</h3>
-                    <p className="text-lg text-gray-600 max-w-sm mx-auto">
+                    <h3 className="text-4xl font-bold text-gray-900 mb-6 tracking-tighter">감사합니다!</h3>
+                    <p className="text-xl text-gray-400 font-light max-w-sm mx-auto leading-relaxed">
                       {t('formSuccess')}
                     </p>
                     <button 
                       onClick={closeAndReset}
-                      className="mt-12 px-10 h-14 border border-gray-900 rounded-full font-bold text-gray-900 hover:bg-gray-900 hover:text-white transition-all"
+                      className="mt-16 px-12 h-16 bg-black text-white rounded-full font-black text-xs uppercase tracking-widest hover:bg-rose-400 transition-all"
                     >
                       닫기
                     </button>
                   </div>
                 ) : (
                   <>
-                    <div className="mb-16">
-                      <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block">Feedback</span>
-                      <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter mb-6">{t('formTitle')}</h2>
-                      <p className="text-xl text-gray-500 leading-relaxed max-w-2xl">
+                    <div className="mb-20">
+                      <span className="text-xs font-black text-rose-400 uppercase tracking-[0.4em] mb-6 block">Share Your Experience</span>
+                      <h2 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tighter mb-10">{t('formTitle')}</h2>
+                      <p className="text-xl text-gray-400 font-light leading-relaxed max-w-2xl">
                         {t('formDesc')}
                       </p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-12">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        {/* Name Input with Loading Bar Motion */}
-                        <div className="space-y-3 group">
-                          <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'name' ? 'text-gray-900' : 'text-gray-400'}`}>
+                    <form onSubmit={handleSubmit} className="space-y-16">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <div className="space-y-4 group">
+                          <label className="text-xs font-black text-black uppercase tracking-widest">
                             {t('formName')}
                           </label>
                           <div className="relative">
@@ -303,21 +293,14 @@ export default function TestimonialsContent() {
                               onFocus={() => setFocusedField('name')}
                               onBlur={() => setFocusedField(null)}
                               onChange={(e) => setFormData({...formData, name: e.target.value})}
-                              className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                              className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl placeholder:text-gray-100 outline-none"
                               placeholder="Jane Doe"
-                            />
-                            <motion.div 
-                              className="absolute bottom-0 left-0 h-0.5 bg-brand" 
-                              initial={{ width: 0 }}
-                              animate={{ width: focusedField === 'name' ? '100%' : 0 }}
-                              transition={{ duration: 0.4, ease: "easeInOut" }}
                             />
                           </div>
                         </div>
 
-                        {/* Location Input with Loading Bar Motion */}
-                        <div className="space-y-3 group">
-                          <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'location' ? 'text-gray-900' : 'text-gray-400'}`}>
+                        <div className="space-y-4 group">
+                          <label className="text-xs font-black text-black uppercase tracking-widest">
                             {t('formLocation')}
                           </label>
                           <div className="relative">
@@ -328,81 +311,53 @@ export default function TestimonialsContent() {
                               onFocus={() => setFocusedField('location')}
                               onBlur={() => setFocusedField(null)}
                               onChange={(e) => setFormData({...formData, location: e.target.value})}
-                              className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                              className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl placeholder:text-gray-100 outline-none"
                               placeholder="Los Angeles, CA"
-                            />
-                            <motion.div 
-                              className="absolute bottom-0 left-0 h-0.5 bg-brand" 
-                              initial={{ width: 0 }}
-                              animate={{ width: focusedField === 'location' ? '100%' : 0 }}
-                              transition={{ duration: 0.4, ease: "easeInOut" }}
                             />
                           </div>
                         </div>
                       </div>
 
-                      {/* Service Selection with Loading Bar Motion */}
-                      <div className="space-y-3 group">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'service' ? 'text-gray-900' : 'text-gray-400'}`}>
+                      <div className="space-y-4">
+                        <label className="text-xs font-black text-black uppercase tracking-widest">
                           {t('formService')}
                         </label>
-                        <div className="relative">
-                          <select 
-                            required
-                            value={formData.service}
-                            onFocus={() => setFocusedField('service')}
-                            onBlur={() => setFocusedField(null)}
-                            onChange={(e) => setFormData({...formData, service: e.target.value})}
-                            className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl appearance-none outline-none"
-                          >
-                            <option value="postpartum">{t('postpartum')}</option>
-                            <option value="babysitting">{t('babysitting')}</option>
-                          </select>
-                          <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
-                            initial={{ width: 0 }}
-                            animate={{ width: focusedField === 'service' ? '100%' : 0 }}
-                            transition={{ duration: 0.4, ease: "easeInOut" }}
-                          />
-                        </div>
+                        <select 
+                          required
+                          value={formData.service}
+                          onChange={(e) => setFormData({...formData, service: e.target.value})}
+                          className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl outline-none appearance-none"
+                        >
+                          <option value="postpartum">{t('postpartum')}</option>
+                          <option value="babysitting">{t('babysitting')}</option>
+                        </select>
                       </div>
 
-                      {/* Content Textarea with Loading Bar Motion */}
-                      <div className="space-y-3 group">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'content' ? 'text-gray-900' : 'text-gray-400'}`}>
+                      <div className="space-y-4">
+                        <label className="text-xs font-black text-black uppercase tracking-widest">
                           {t('formContent')}
                         </label>
-                        <div className="relative">
-                          <textarea 
-                            required
-                            rows={4}
-                            value={formData.content}
-                            onFocus={() => setFocusedField('content')}
-                            onBlur={() => setFocusedField(null)}
-                            onChange={(e) => setFormData({...formData, content: e.target.value})}
-                            className="w-full bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl resize-none placeholder:text-gray-300 outline-none"
-                            placeholder="해피맘 서비스에 대한 진솔한 후기를 남겨주세요..."
-                          />
-                          <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
-                            initial={{ width: 0 }}
-                            animate={{ width: focusedField === 'content' ? '100%' : 0 }}
-                            transition={{ duration: 0.4, ease: "easeInOut" }}
-                          />
-                        </div>
+                        <textarea 
+                          required
+                          rows={4}
+                          value={formData.content}
+                          onChange={(e) => setFormData({...formData, content: e.target.value})}
+                          className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl resize-none placeholder:text-gray-100 outline-none"
+                          placeholder="Please share your honest experience..."
+                        />
                       </div>
 
                       <button 
                         disabled={isSubmitting}
                         type="submit"
-                        className="w-full md:w-fit px-12 h-16 bg-brand text-white font-bold rounded-full hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-xl shadow-brand/20 cursor-pointer"
+                        className="w-full md:w-fit px-16 h-20 bg-black text-white font-black text-xs uppercase tracking-[0.4em] rounded-full hover:bg-rose-400 hover:-translate-y-2 transition-all flex items-center justify-center gap-6 disabled:opacity-50 disabled:cursor-not-allowed group shadow-2xl shadow-rose-100 cursor-pointer"
                       >
                         {isSubmitting ? (
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                         ) : (
                           <>
                             {t('formSubmit')}
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
                           </>
                         )}
                       </button>
