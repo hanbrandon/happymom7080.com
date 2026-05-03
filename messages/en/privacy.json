@@ -1,0 +1,67 @@
+{
+  "tag": "Legal & Privacy",
+  "title": "Privacy Policy",
+  "subtitle": "This Privacy Policy complies with California laws (CCPA/CPRA) and U.S. federal privacy guidelines, explaining how HappyMom collects, uses, and protects your information.",
+  "sections": {
+    "intro": {
+      "title": "1. Overview of Data Collection and Use",
+      "content": "HappyMom is a corporation registered in California, providing postpartum care and domestic support services to clients across the United States. We collect only the minimum information necessary for service delivery and prioritize your privacy above all."
+    },
+    "data": {
+      "title": "2. Categories of Information Collected",
+      "description": "We may have collected the following categories of information over the past 12 months:",
+      "items": [
+        "Identifiers: Full name, contact information (phone number), email address, service delivery address",
+        "Protected Characteristics: Pregnancy and childbirth-related information, expected due date, number of children (for optimal service provision)",
+        "Financial Information: Card or account information for service payments (processed securely through payment gateways)",
+        "Internet Activity: Website visit history, browser type, IP address (collected via cookies, etc.)"
+      ]
+    },
+    "purpose": {
+      "title": "3. Purpose of Information Collection",
+      "description": "Collected information is used for the following business purposes:",
+      "items": [
+        "Service booking management and client consultation",
+        "Optimal caregiver matching and on-site service execution",
+        "Documentation and proof for insurance claims (e.g., Carrot)",
+        "Payment processing and receipt issuance",
+        "Service quality improvement and user experience optimization"
+      ]
+    },
+    "rights": {
+      "title": "4. California Consumer Rights (CCPA/CPRA)",
+      "description": "California residents have the following legal rights:",
+      "know": {
+        "title": "Right to Know",
+        "content": "You have the right to request disclosure of how your personal information is collected, used, and shared."
+      },
+      "delete": {
+        "title": "Right to Delete",
+        "content": "You have the right to request the deletion of your personal information held by us, except for legal retention periods."
+      },
+      "optout": {
+        "title": "Right to Opt-Out of Sale/Sharing",
+        "content": "We do not sell your personal information to third parties. Nevertheless, you have the right to opt-out of the sale or sharing of your information at any time."
+      },
+      "nondiscrim": {
+        "title": "Right to Non-Discrimination",
+        "content": "You will not be discriminated against in service provision or pricing for exercising these rights."
+      }
+    },
+    "sharing": {
+      "title": "5. Third-Party Data Sharing",
+      "description": "In principle, HappyMom does not sell or share client information externally. Information may be shared only in the following cases:",
+      "items": [
+        "Service Execution: Providing the matched caregiver with the address and essential information required for care",
+        "Legal Obligations: Compliance with legal processes such as court orders or requests from law enforcement",
+        "Payment Processing: Payment authorization through financial institutions and payment gateways"
+      ]
+    },
+    "security": {
+      "title": "6. Data Security",
+      "content": "We use industry-standard security technologies to keep client information safe. Each caregiver is required to sign a security and confidentiality agreement, and documents containing personal information are handled under strict supervision."
+    }
+  },
+  "contact": "If you have questions about this policy or need to exercise your rights, please contact us at happymom7080@gmail.com.",
+  "updated": "Last updated: May 3, 2024"
+}

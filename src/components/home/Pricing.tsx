@@ -56,9 +56,9 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="py-40 bg-gray-50">
+    <section className="py-20 md:py-40 bg-gray-50">
       <div className="container mx-auto px-10">
-        <div className="flex flex-col lg:flex-row items-start justify-between mb-24 gap-12">
+        <div className="flex flex-col lg:flex-row items-start justify-between mb-12 md:mb-24 gap-8 md:gap-12">
           <div className="max-w-2xl">
             <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">
               {th('tag')}
@@ -88,12 +88,12 @@ export default function Pricing() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group ${plan.featured ? 'ring-2 ring-brand' : 'border border-gray-100'}`}
+              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group ${plan.featured ? 'ring-2 ring-black' : 'border border-gray-100'}`}
             >
               {plan.featured && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full">
                   {th('popular')}
                 </div>
               )}
@@ -112,7 +112,7 @@ export default function Pricing() {
               <div className="space-y-4 mb-12 flex-1">
                 {plan.features.map((feature, fIndex) => (
                   <div key={fIndex} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-brand group-hover:text-white transition-colors">
+                    <div className="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-black group-hover:text-white transition-colors">
                       <Check className="w-3 h-3" />
                     </div>
                     <span className="text-gray-600 font-medium">{feature}</span>

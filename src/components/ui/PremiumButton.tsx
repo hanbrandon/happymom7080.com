@@ -14,6 +14,7 @@ interface PremiumButtonProps {
   icon?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  ariaLabel?: string;
 }
 
 export default function PremiumButton({
@@ -25,14 +26,15 @@ export default function PremiumButton({
   icon,
   type = 'button',
   disabled = false,
+  ariaLabel,
 }: PremiumButtonProps) {
   
   const variantStyles = {
-    primary: 'bg-brand text-white border-none hover:bg-[#e67e45]',
+    primary: 'bg-black text-white border-none hover:bg-gray-900',
     secondary: 'border border-white text-white hover:bg-white/10',
     dark: 'bg-gray-900 text-white border-none hover:bg-black',
     outline: 'border border-gray-200 text-gray-900 hover:bg-gray-50',
-    ghost: 'text-gray-600 hover:text-brand bg-transparent',
+    ghost: 'text-gray-600 hover:text-black bg-transparent',
   };
 
   const buttonContent = (
@@ -58,7 +60,12 @@ export default function PremiumButton({
 
   if (href) {
     return (
-      <Link href={href as any} className={commonClasses} onClick={onClick}>
+      <Link 
+        href={href as any} 
+        className={commonClasses} 
+        onClick={onClick}
+        aria-label={ariaLabel}
+      >
         {buttonContent}
       </Link>
     );
@@ -66,10 +73,12 @@ export default function PremiumButton({
 
   return (
     <button
+      suppressHydrationWarning
       type={type}
       disabled={disabled}
       onClick={onClick}
       className={commonClasses}
+      aria-label={ariaLabel}
     >
       {buttonContent}
     </button>

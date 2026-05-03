@@ -1,0 +1,41 @@
+{
+  "tag": "Legal Compliance",
+  "title": "Refund Policy",
+  "subtitle": "This policy is drafted in accordance with the California Consumer Protection Act and Article 6 of the HappyMom Service Agreement.",
+  "sections": {
+    "basis": {
+      "title": "1. Legal Basis and Notice",
+      "content": "HappyMom complies with its obligation to transparently disclose its refund policy in accordance with the California Civil Code. Your booking of services and payment of a deposit are considered agreement to be legally bound by all provisions of this policy and the Service Agreement."
+    },
+    "cancellation": {
+      "title": "2. Cancellation and Deposit Policy",
+      "deposit": {
+        "title": "Non-Refundable Deposit",
+        "content": "In accordance with California commercial practices, deposits are non-refundable for cancellations due to simple change of mind or personal circumstances (moving, using another company, etc.) after the contract is signed. This serves as a legal penalty for securing professional labor for a specific period."
+      },
+      "deduction": {
+        "title": "Nominal Deduction for Unfair Cancellation",
+        "content": "In the event of sudden cancellation just before the start of service or contract termination deemed unfair, the company reserves the right to deduct an additional amount for administrative costs and caregiver loss compensation."
+      }
+    },
+    "full": {
+      "title": "3. Exceptions for Full Refund",
+      "description": "In accordance with California consumer protection principles, HappyMom guarantees a full refund in the event of medical reasons beyond the user's control:",
+      "items": [
+        "Preterm Delivery",
+        "Miscarriage",
+        "Other medical emergencies making service fulfillment impossible"
+      ]
+    },
+    "liability": {
+      "title": "4. Company and Caregiver Liability",
+      "content": "If the company is unable to provide the contracted service due to a caregiver's health issues, accident, or other unavoidable internal circumstances, the user may choose between a full refund or priority reassignment of a caregiver."
+    },
+    "jurisdiction": {
+      "title": "5. Governing Law and Dispute Resolution",
+      "content": "All interpretations and disputes related to this policy follow the laws of the State of California, USA. If an amicable agreement cannot be reached, the dispute will be resolved through the court having jurisdiction over the company's headquarters."
+    }
+  },
+  "contact": "For inquiries regarding this policy, please contact us at happymom7080@gmail.com.",
+  "updated": "Last updated: May 3, 2024"
+}

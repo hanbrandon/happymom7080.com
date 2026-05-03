@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import SplitText from '@/components/ui/SplitText';
 import ServiceCTA from '@/components/layout/ServiceCTA';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 
 export default function GuideContent() {
   const t = useTranslations('Guide');
@@ -23,7 +24,7 @@ export default function GuideContent() {
     <main className="min-h-screen bg-white">
       <Navbar />
       
-      {/* 1. Standardized Minimalist Hero */}
+      {/* 1. Hero Section */}
       <section className="pt-48 pb-20 bg-white">
         <div className="container mx-auto px-10">
           <motion.div
@@ -43,74 +44,71 @@ export default function GuideContent() {
       </section>
 
       {/* 2. Service Process Steps */}
-      <section className="py-32 bg-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
         <div className="container mx-auto px-10">
           <div className="space-y-32">
             {steps.map((step, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
-              >
-                {/* Step Number */}
-                <div className="lg:col-span-3">
-                   <span className="text-8xl md:text-9xl font-bold text-gray-100 block -mt-4">
-                      {step.number}
-                   </span>
-                </div>
+              <ScrollReveal key={index}>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                  {/* Step Number */}
+                  <div className="lg:col-span-3">
+                     <span className="text-8xl md:text-9xl font-bold text-gray-100 block -mt-4">
+                        {step.number}
+                     </span>
+                  </div>
 
-                {/* Step Content */}
-                <div id="contract-step" className="lg:col-span-9 space-y-8">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-                    {step.title}
-                  </h2>
-                  <p 
-                    className="text-xl md:text-2xl text-gray-500 leading-relaxed max-w-4xl"
-                    dangerouslySetInnerHTML={{ __html: step.description }}
-                  />
-                  
-                  {index !== steps.length - 1 && (
-                    <div className="pt-16 border-b border-gray-50" />
-                  )}
+                  {/* Step Content */}
+                  <div id="contract-step" className="lg:col-span-9 space-y-8">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+                      {step.title}
+                    </h2>
+                    <p 
+                      className="text-xl md:text-2xl text-gray-500 leading-relaxed max-w-4xl"
+                      dangerouslySetInnerHTML={{ __html: step.description }}
+                    />
+                    
+                    {index !== steps.length - 1 && (
+                      <div className="pt-16 border-b border-gray-50" />
+                    )}
+                  </div>
                 </div>
-              </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* 3. Additional Information Section */}
-      <section className="py-40 bg-gray-50 border-y border-gray-100">
+      <section className="py-20 md:py-32 bg-gray-50 border-y border-gray-100">
         <div className="container mx-auto px-10">
           <div className="mb-24">
-             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter mb-4">
-               {t('additionalTitle')}
-             </h2>
+             <ScrollReveal>
+                <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter mb-4">
+                  {t('additionalTitle')}
+                </h2>
+             </ScrollReveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div className="space-y-6">
-               <h4 className="text-2xl font-bold text-gray-900 tracking-tight">{t('outOfStateTitle')}</h4>
-               <p className="text-lg text-gray-500 leading-relaxed">{t('outOfStateDesc')}</p>
+          <StaggerContainer>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+              {[
+                  { title: t('outOfStateTitle'), desc: t('outOfStateDesc') },
+                  { title: t('insuranceTitle'), desc: t('insuranceDesc'), id: 'insurance' },
+                  { title: t('scheduleTitle'), desc: t('scheduleDesc') }
+              ].map((info, idx) => (
+                  <StaggerItem key={idx}>
+                      <div id={info.id} className="space-y-6">
+                         <h4 className="text-2xl font-bold text-gray-900 tracking-tight">{info.title}</h4>
+                         <p className="text-lg text-gray-500 leading-relaxed">{info.desc}</p>
+                      </div>
+                  </StaggerItem>
+              ))}
             </div>
-            <div id="insurance" className="space-y-6">
-               <h4 className="text-2xl font-bold text-gray-900 tracking-tight">{t('insuranceTitle')}</h4>
-               <p className="text-lg text-gray-500 leading-relaxed">{t('insuranceDesc')}</p>
-            </div>
-            <div className="space-y-6">
-               <h4 className="text-2xl font-bold text-gray-900 tracking-tight">{t('scheduleTitle')}</h4>
-               <p className="text-lg text-gray-500 leading-relaxed">{t('scheduleDesc')}</p>
-            </div>
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* 4. Compact CTA Card Finale (Standardized Shared Component) */}
       <ServiceCTA />
-      
       <Footer />
     </main>
   );

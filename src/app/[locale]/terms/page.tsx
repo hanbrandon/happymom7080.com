@@ -2,11 +2,11 @@
 
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export default function TermsPage() {
-  const t = useTranslations('Footer'); // We can use Footer namespace for basic titles if needed, or add a Terms one.
+  const t = useTranslations('Terms');
 
   return (
     <main className="min-h-screen bg-white">
@@ -18,60 +18,107 @@ export default function TermsPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
           >
-            <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">Legal</span>
+            <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">{t('tag')}</span>
             <h1 className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[1.1] mb-8">
-              Terms of Use
+               {t.rich('title', {
+                br: () => <br />
+               })}
             </h1>
+            <p className="text-xl md:text-2xl text-gray-500 max-w-3xl leading-relaxed">
+              {t('subtitle')}
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-20 border-t border-gray-100 bg-white">
+      <section className="py-20 md:py-32 border-t border-gray-100 bg-white">
         <div className="container mx-auto px-10">
           <div className="max-w-4xl mx-auto prose prose-gray">
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">1. 서비스 이용 안내</h3>
-                <p className="text-lg text-gray-500 leading-relaxed break-keep">
-                  해피맘(HappyMom)이 제공하는 모든 서비스는 산모님과 신생아의 건강 회복 및 안정을 최우선으로 합니다. 
-                  고객님은 서비스 신청 시 정확한 출산 예정일과 건강 상태를 제공해야 하며, 변동 사항 발생 시 즉시 당사에 통보해야 합니다.
+            <div className="space-y-16">
+              
+              {/* Medical Disclaimer - NEW & CRITICAL */}
+              <div className="p-10 bg-red-50 rounded-[2rem] border border-red-100">
+                <h3 className="text-2xl font-bold text-red-900 mb-6 tracking-tight flex items-center gap-3">
+                  <span className="w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-sm">!</span>
+                  {t('sections.disclaimer.title')}
+                </h3>
+                <p className="text-lg text-red-800/80 leading-relaxed font-medium">
+                  {t('sections.disclaimer.content')}
                 </p>
               </div>
 
+              {/* 1. Website Terms */}
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">2. 산후관리사 매칭 및 업무 범위</h3>
-                <p className="text-lg text-gray-500 leading-relaxed break-keep">
-                  당사는 산모님의 성향과 요청사항을 반영하여 최적의 산후관리사를 매칭합니다. 
-                  산후관리사의 주요 업무는 산모 케어, 신생아 케어, 가사 지원(산모/신생아 관련)으로 한정되며, 일반 가사도우미와는 차별화된 전문 서비스를 제공합니다.
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">{t('sections.website.title')}</h3>
+                <p className="text-lg text-gray-500 leading-relaxed break-keep mb-6">
+                  {t('sections.website.content')}
+                </p>
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">{t('sections.website.ip.title')}</h4>
+                    <p className="text-gray-500 text-lg leading-relaxed">
+                      {t('sections.website.ip.content')}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">{t('sections.website.prohibited.title')}</h4>
+                    <p className="text-gray-500 text-lg leading-relaxed">
+                      {t('sections.website.prohibited.content')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2. Service Agreement */}
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">{t('sections.service.title')}</h3>
+                <p className="text-lg text-gray-500 leading-relaxed break-keep mb-8">
+                  {t('sections.service.content')}
+                </p>
+                
+                <div className="space-y-10">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4 tracking-tight">{t('sections.service.scope.title')}</h4>
+                    <p className="text-lg text-gray-500 leading-relaxed">
+                      {t('sections.service.scope.content')}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4 tracking-tight">{t('sections.service.travel.title')}</h4>
+                    <p className="text-lg text-gray-500 leading-relaxed">
+                      {t('sections.service.travel.content')}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4 tracking-tight">{t('sections.service.termination.title')}</h4>
+                    <p className="text-lg text-gray-500 leading-relaxed mb-6">
+                      {t('sections.service.termination.content')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3. Jurisdiction */}
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">{t('sections.jurisdiction.title')}</h3>
+                <p className="text-lg text-gray-500 leading-relaxed">
+                  {t('sections.jurisdiction.content')}
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">3. 예약 및 결제 정책</h3>
-                <p className="text-lg text-gray-500 leading-relaxed break-keep">
-                  서비스 확정은 계약금 입금 시점을 기준으로 합니다. 잔금은 서비스 시작 전 당사가 안내한 기한 내에 결제되어야 합니다. 
-                  결제는 은행 송금 및 당사가 지정한 결제 수단을 통해 가능합니다.
+              {/* Contact */}
+              <div className="pt-10 border-t border-gray-100 text-right">
+                <p className="text-lg text-gray-500 italic">
+                  {t('consent')}
                 </p>
+                <p className="mt-4 text-sm text-gray-400">{t('updated')}</p>
               </div>
 
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">4. 취소 및 환불 규정</h3>
-                <p className="text-lg text-gray-500 leading-relaxed break-keep">
-                  상세한 환불 규정은 이용 금액 페이지 하단의 '환불 정책'을 따릅니다. 
-                  단순 변심으로 인한 취소 시 예약금 반환이 불가할 수 있으니 신중하게 결정해 주시기 바랍니다.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">5. 의무 및 책임 제한</h3>
-                <p className="text-lg text-gray-500 leading-relaxed break-keep">
-                  당사는 파견된 인력의 신원 보증 및 전문 교육을 책임집니다. 
-                  다만, 서비스 이용 중 발생한 건강상의 특이 체질이나 기저 질환으로 인한 문제에 대해서는 의학적 책임의 한계가 있을 수 있음을 인지하여 주시기 바랍니다.
-                </p>
-              </div>
             </div>
           </div>
         </div>

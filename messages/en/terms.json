@@ -1,0 +1,45 @@
+{
+  "tag": "Legal & Agreements",
+  "title": "Terms of Use",
+  "subtitle": "These terms govern the use of our website and the premium postpartum care services provided by HappyMom.",
+  "sections": {
+    "disclaimer": {
+      "title": "IMPORTANT: Medical Disclaimer",
+      "content": "HappyMom is not a medical institution, and our caregivers are not doctors or nurses. The postpartum care and domestic support services we provide do not replace medical diagnosis, treatment, prescription, or professional medical advice. If a mother or newborn requires medical assistance, you must immediately contact a professional medical institution or call 911. By using HappyMom's services, you agree that we do not bear any medical responsibility."
+    },
+    "website": {
+      "title": "1. Website Terms of Use",
+      "content": "By using this website (happymom7080.com), you agree to these terms. HappyMom makes every effort to keep the information on the site up to date but does not guarantee the completeness or accuracy of all information.",
+      "ip": {
+        "title": "Intellectual Property Rights",
+        "content": "All text, designs, images, logos, and original content posted on this site are the property of HappyMom and are protected by copyright laws. Unauthorized reproduction or distribution for commercial purposes without prior written consent is strictly prohibited."
+      },
+      "prohibited": {
+        "title": "Prohibited Activities",
+        "content": "Users must not engage in activities that interfere with the normal operation of the site (hacking, distributing malware, entering false information, etc.). Legal action may be taken in cases of identity theft or impersonation of the HappyMom brand."
+      }
+    },
+    "service": {
+      "title": "2. Service Agreement Terms",
+      "content": "HappyMom's postpartum care and domestic support services are provided based on an official Service Agreement. The following key provisions apply when requesting a booking through the website.",
+      "scope": {
+        "title": "Service Scope and Minimum Duration",
+        "content": "All services are based on a minimum unit of 2 weeks and are provided across the United States in accordance with the regulations of a company registered in California. Basic services are for the mother, newborn, and spouse; additional charges apply for additional persons."
+      },
+      "travel": {
+        "title": "Long-Distance Services and Additional Costs",
+        "content": "For out-of-state or long-distance services, airfare and transportation costs are the full responsibility of the client. Caregivers' round-trip airfare and local transportation costs are settled at actual cost and must be prepaid before service commencement."
+      },
+      "termination": {
+        "title": "Service Suspension and Limitation of Liability",
+        "content": "Services may be terminated immediately in cases of unfair treatment of caregivers (insults, unreasonable domestic demands, forcing medical acts, etc.). Furthermore, the company is not responsible for issues arising from health information not disclosed in advance."
+      }
+    },
+    "jurisdiction": {
+      "title": "3. Governing Law and Jurisdiction",
+      "content": "All legal disputes related to the use of this website and services shall be governed by the laws of the State of California, USA, and the court having jurisdiction over the company's headquarters shall be the exclusive court of jurisdiction."
+    }
+  },
+  "consent": "By agreeing to these terms, you acknowledge that you have read and approved all the contents above.",
+  "updated": "Last updated: May 3, 2024"
+}

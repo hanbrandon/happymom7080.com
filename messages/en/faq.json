@@ -2,6 +2,7 @@
   "tag": "FAQ",
   "title": "We solve your <br />questions.",
   "subtitle": "We've collected the most frequently asked questions before using the service. Please feel free to inquire about additional questions at any time.",
+  "searchPlaceholder": "Enter search terms (e.g., refund, live-in, contract...)",
   "items": [
     {
       "question": "What is postpartum care service?",

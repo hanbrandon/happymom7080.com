@@ -90,13 +90,13 @@ export default function Navbar() {
           onMouseEnter={() => setHoveredLink('logo')}
           onMouseLeave={() => setHoveredLink(null)}
         >
-          <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-1 transition-colors ${isDarkTheme ? 'bg-gray-900 group-hover:bg-brand' : 'bg-white/10 backdrop-blur-sm group-hover:bg-brand'}`}>
+          <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-1 transition-colors ${isDarkTheme ? 'bg-gray-900 group-hover:bg-black' : 'bg-white/10 backdrop-blur-sm group-hover:bg-black'}`}>
              <span className="text-white text-xs font-bold">HM</span>
           </div>
           <FlipText 
             text="HappyMom" 
             isHovered={hoveredLink === 'logo'} 
-            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`} 
+            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-black' : 'text-white'}`} 
           />
         </Link>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
               href={link.href}
               onMouseEnter={() => setHoveredLink(link.href)}
               onMouseLeave={() => setHoveredLink(null)}
-              className={`text-[13px] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`}
+              className={`text-[13px] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-black' : 'text-white'}`}
             >
               <FlipText text={link.label} isHovered={hoveredLink === link.href} />
             </Link>
@@ -121,19 +121,20 @@ export default function Navbar() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button 
+                suppressHydrationWarning
                 onMouseEnter={() => setHoveredLink('lang')}
                 onMouseLeave={() => setHoveredLink(null)}
-                className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`}
+                className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-black' : 'text-white'}`}
               >
                 <Globe className="w-4 h-4" />
                 <FlipText text={locale === 'ko' ? '한국어' : 'English'} isHovered={hoveredLink === 'lang'} />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className={`backdrop-blur-xl border-white/10 ${isDarkTheme ? 'bg-white text-gray-900' : 'bg-black/80 text-white'}`}>
-              <DropdownMenuItem className={`cursor-pointer focus:bg-brand focus:text-white transition-colors`} onClick={() => toggleLanguage('en')}>
+              <DropdownMenuItem className={`cursor-pointer focus:bg-black focus:text-white transition-colors`} onClick={() => toggleLanguage('en')}>
                 English
               </DropdownMenuItem>
-              <DropdownMenuItem className={`cursor-pointer focus:bg-brand focus:text-white transition-colors`} onClick={() => toggleLanguage('ko')}>
+              <DropdownMenuItem className={`cursor-pointer focus:bg-black focus:text-white transition-colors`} onClick={() => toggleLanguage('ko')}>
                 한국어
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -150,14 +151,13 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden flex items-center gap-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className={`${isDarkTheme ? 'text-black' : 'text-white'} hover:text-brand transition-colors`}
+          <button
+            className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all active:scale-90 ${isDarkTheme ? 'bg-gray-100 text-black' : 'bg-white/10 text-white backdrop-blur-md'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </Button>
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-7 h-7" />}
+          </button>
         </div>
       </div>
 
@@ -165,38 +165,82 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-6 right-6 bg-black/90 backdrop-blur-2xl shadow-2xl rounded-[2rem] border border-white/10 lg:hidden p-8 mt-4 overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-white z-[60] lg:hidden flex flex-col"
           >
-            <div className="flex flex-col gap-6">
-              {[...navLinks, { href: '/pricing', label: t('pricing') }].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-xl font-medium text-white hover:text-brand transition-colors"
+            {/* Mobile Menu Header */}
+            <div className="flex items-center justify-between px-10 py-8 border-b border-gray-100">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-start gap-0">
+                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center mb-1">
+                  <span className="text-white text-xs font-bold">HM</span>
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-black">HappyMom</span>
+              </Link>
+              <button
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-black active:scale-90 transition-transform"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Mobile Menu Links */}
+            <div className="flex-1 px-10 pt-12 pb-10 flex flex-col justify-between overflow-y-auto">
+              <div className="flex flex-col gap-8">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className="text-4xl font-bold text-gray-900 tracking-tighter active:opacity-50 transition-opacity flex items-center justify-between group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Mobile Menu Footer */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="pt-12 border-t border-gray-100 flex flex-col gap-8"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{t('contact')}</p>
+                    <p className="text-lg font-bold text-gray-900">+1 (213) 700-1415</p>
+                  </div>
+                  <button 
+                    className="flex items-center gap-2 px-4 py-3 bg-gray-100 rounded-full text-xs font-bold uppercase tracking-widest active:bg-gray-200 transition-colors"
+                    onClick={() => {
+                      const newLocale = locale === 'ko' ? 'en' : 'ko';
+                      toggleLanguage(newLocale);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    <Globe className="w-3.5 h-3.5" />
+                    {locale === 'ko' ? 'EN' : 'KO'}
+                  </button>
+                </div>
+                
+                <PremiumButton 
+                  variant="primary" 
+                  href="/contact" 
+                  className="w-full h-16 rounded-[1.5rem] text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="h-px bg-white/10 my-2" />
-              <div className="flex flex-col gap-4">
-                 <button 
-                  className="text-lg font-medium text-white flex items-center gap-3 hover:text-brand transition-colors"
-                  onClick={() => {
-                    toggleLanguage(locale === 'ko' ? 'en' : 'ko');
-                    setIsMobileMenuOpen(false);
-                  }}
-                 >
-                  <Globe className="w-5 h-5" />
-                  {locale === 'ko' ? 'Switch to English' : '한국어로 변경'}
-                </button>
-                <PremiumButton variant="primary" href="/contact" className="w-full h-14 rounded-2xl text-lg font-bold">
                   {t('contact')}
                 </PremiumButton>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         )}

@@ -21,7 +21,11 @@ export default getRequestConfig(async ({requestLocale}) => {
     { name: 'testimonials', ns: 'TestimonialsPage' },
     { name: 'faq', ns: 'FAQ' },
     { name: 'guide', ns: 'Guide' },
-    { name: 'contact', ns: 'Contact' }
+    { name: 'contact', ns: 'Contact' },
+    { name: 'privacy', ns: 'Privacy' },
+    { name: 'terms', ns: 'Terms' },
+    { name: 'refund', ns: 'Refund' },
+    { name: 'do-not-sell', ns: 'DoNotSell' }
   ];
 
   for (const mod of modules) {

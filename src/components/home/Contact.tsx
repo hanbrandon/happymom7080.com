@@ -60,16 +60,16 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
           
           {/* Left Side: Contact Info */}
           <div className="lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6 }}
               className="sticky top-32"
             >
@@ -86,21 +86,21 @@ export default function Contact() {
 
               <div className="space-y-10">
                 <a href="tel:+12137001415" className="flex items-start gap-6 group outline-none">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white">
+                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-black group-hover:text-white">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('callUs')}</h4>
-                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-brand">+1 (213) 700-1415</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-black">+1 (213) 700-1415</p>
                   </div>
                 </a>
                 <a href="mailto:happymom7080@gmail.com" className="flex items-start gap-6 group outline-none">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white">
+                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-black group-hover:text-white">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('emailUs')}</h4>
-                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-brand">happymom7080@gmail.com</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-black">happymom7080@gmail.com</p>
                   </div>
                 </a>
               </div>
@@ -112,7 +112,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6 }}
             >
               <AnimatePresence mode="wait">
@@ -122,7 +122,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     className="py-20 text-center bg-gray-50"
                   >
-                    <div className="w-20 h-20 bg-brand/10 text-brand rounded-full flex items-center justify-center mx-auto mb-8">
+                    <div className="w-20 h-20 bg-black/10 text-black rounded-full flex items-center justify-center mx-auto mb-8">
                       <Send className="w-10 h-10" />
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">{t('successTitle')}</h3>
@@ -138,26 +138,27 @@ export default function Contact() {
                     </PremiumButton>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-12">
+                  <form onSubmit={handleSubmit} className="bg-gray-50 p-8 md:p-16 rounded-[3rem] space-y-12 border border-gray-100">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                       {/* First Name */}
                       <div className="space-y-3">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'firstName' ? 'text-brand' : 'text-gray-400'}`}>
+                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'firstName' ? 'text-black' : 'text-gray-400'}`}>
                           {t('firstName')}
                         </label>
                         <div className="relative">
                           <input 
+                            suppressHydrationWarning
                             required
                             type="text" 
                             value={formData.firstName}
                             onFocus={() => setFocusedField('firstName')}
                             onBlur={() => setFocusedField(null)}
                             onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                            className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                            className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
                             placeholder={t('placeholderFirstName')}
                           />
                           <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
+                            className="absolute bottom-0 left-0 h-0.5 bg-black" 
                             initial={{ width: 0 }}
                             animate={{ width: focusedField === 'firstName' ? '100%' : 0 }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -167,21 +168,22 @@ export default function Contact() {
 
                       {/* Last Name */}
                       <div className="space-y-3">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'lastName' ? 'text-brand' : 'text-gray-400'}`}>
+                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'lastName' ? 'text-black' : 'text-gray-400'}`}>
                           {t('lastName')}
                         </label>
                         <div className="relative">
                           <input 
+                            suppressHydrationWarning
                             type="text" 
                             value={formData.lastName}
                             onFocus={() => setFocusedField('lastName')}
                             onBlur={() => setFocusedField(null)}
                             onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                            className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                            className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
                             placeholder={t('placeholderLastName')}
                           />
                           <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
+                            className="absolute bottom-0 left-0 h-0.5 bg-black" 
                             initial={{ width: 0 }}
                             animate={{ width: focusedField === 'lastName' ? '100%' : 0 }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -192,22 +194,23 @@ export default function Contact() {
 
                     {/* Email */}
                     <div className="space-y-3">
-                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-brand' : 'text-gray-400'}`}>
+                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-black' : 'text-gray-400'}`}>
                         {t('email')}
                       </label>
                       <div className="relative">
                         <input 
+                          suppressHydrationWarning
                           required
                           type="email" 
                           value={formData.email}
                           onFocus={() => setFocusedField('email')}
                           onBlur={() => setFocusedField(null)}
                           onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                          className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
                           placeholder={t('placeholderEmail')}
                         />
                         <motion.div 
-                          className="absolute bottom-0 left-0 h-0.5 bg-brand" 
+                          className="absolute bottom-0 left-0 h-0.5 bg-black" 
                           initial={{ width: 0 }}
                           animate={{ width: focusedField === 'email' ? '100%' : 0 }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -217,22 +220,23 @@ export default function Contact() {
 
                     {/* Message */}
                     <div className="space-y-3">
-                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'message' ? 'text-brand' : 'text-gray-400'}`}>
+                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'message' ? 'text-black' : 'text-gray-400'}`}>
                         {t('message')}
                       </label>
                       <div className="relative">
                         <textarea 
+                          suppressHydrationWarning
                           required
                           rows={4}
                           value={formData.message}
                           onFocus={() => setFocusedField('message')}
                           onBlur={() => setFocusedField(null)}
                           onChange={(e) => setFormData({...formData, message: e.target.value})}
-                          className="w-full bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl resize-none placeholder:text-gray-300 outline-none"
+                          className="w-full bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl resize-none placeholder:text-gray-300 outline-none"
                           placeholder={t('placeholderMessage')}
                         />
                         <motion.div 
-                          className="absolute bottom-0 left-0 h-0.5 bg-brand" 
+                          className="absolute bottom-0 left-0 h-0.5 bg-black" 
                           initial={{ width: 0 }}
                           animate={{ width: focusedField === 'message' ? '100%' : 0 }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}

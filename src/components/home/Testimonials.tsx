@@ -50,9 +50,9 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="py-32 bg-white overflow-hidden">
+        <section className="py-20 md:py-32 bg-white overflow-hidden">
             <div className="container mx-auto px-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
                     {/* Left Column: Heading & CTAs */}
                     <div className="lg:col-span-5 pt-4">
                         <motion.div
@@ -64,15 +64,15 @@ export default function Testimonials() {
                             <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">
                                 {t('tag')}
                             </span>
-                            <h2 
+                            <h2
                                 className="text-5xl md:text-6xl font-bold text-gray-900 leading-[1.1] mb-8"
                                 dangerouslySetInnerHTML={{ __html: t('title') }}
                             />
-                            <p className="text-xl text-gray-500 leading-relaxed max-w-sm mb-12">
+                            <p className="text-xl text-gray-500 leading-relaxed max-w-sm md:mb-12">
                                 {t('subtitle')}
                             </p>
 
-                            <div className="flex flex-wrap gap-4 items-center">
+                            <div className="hidden lg:flex flex-wrap gap-4 items-center">
                                 <PremiumButton
                                     variant="outline"
                                     href="/testimonials"
@@ -91,9 +91,18 @@ export default function Testimonials() {
                     </div>
 
                     {/* Right Column: Carousel */}
-                    <div className="lg:col-span-7 relative min-h-[450px] flex flex-col pt-4">
-                        {/* Quote Text (Animated) */}
-                        <div className="flex-grow">
+                    <div className="lg:col-span-7 relative min-h-[300px] md:min-h-[450px] flex flex-col pt-4">
+                        {/* Quote Text (Animated & Draggable for Mobile) */}
+                        <motion.div
+                            className="flex-grow cursor-grab active:cursor-grabbing touch-none"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                const swipe = offset.x;
+                                if (swipe < -50) handleNext();
+                                else if (swipe > 50) handlePrev();
+                            }}
+                        >
                             <AnimatePresence mode="wait">
                                 <motion.p
                                     key={activeIndex}
@@ -109,9 +118,9 @@ export default function Testimonials() {
                                     "{testimonials[activeIndex].content}"
                                 </motion.p>
                             </AnimatePresence>
-                        </div>
+                        </motion.div>
 
-                        {/* Bottom Row: Profile (Animated) & Navigation (Static) */}
+                        {/* Bottom Row: Profile & Navigation/Mobile Buttons */}
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-4">
                             <div className="flex-1">
                                 <AnimatePresence mode="wait">
@@ -126,7 +135,7 @@ export default function Testimonials() {
                                         }}
                                         className="flex items-center gap-6"
                                     >
-                                        <div className="w-20 h-20 rounded-full overflow-hidden">
+                                        <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
                                             <Image
                                                 src={
                                                     testimonials[activeIndex]
@@ -153,8 +162,26 @@ export default function Testimonials() {
                                 </AnimatePresence>
                             </div>
 
-                            {/* Static Navigation */}
-                            <div className="flex items-center gap-8">
+                            {/* Mobile-only Buttons: Replacing indicators on mobile */}
+                            <div className="flex lg:hidden items-center gap-2 w-full pt-4 border-t border-gray-50">
+                                <PremiumButton
+                                    variant="outline"
+                                    href="/testimonials"
+                                    className="flex-1"
+                                >
+                                    전체 후기
+                                </PremiumButton>
+                                <PremiumButton
+                                    variant="outline"
+                                    href="/testimonials"
+                                    className="flex-1"
+                                >
+                                    후기 작성
+                                </PremiumButton>
+                            </div>
+
+                            {/* Desktop-only Navigation (Indicators & Arrows) */}
+                            <div className="hidden lg:flex items-center gap-8">
                                 <div className="flex items-center gap-2 font-mono text-lg">
                                     <span className="text-gray-900 font-bold">
                                         0{activeIndex + 1}
@@ -166,12 +193,14 @@ export default function Testimonials() {
                                 </div>
                                 <div className="flex gap-2">
                                     <button
+                                        suppressHydrationWarning
                                         onClick={handlePrev}
                                         className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:border-gray-900 transition-all"
                                     >
                                         <ChevronLeft className="w-5 h-5" />
                                     </button>
                                     <button
+                                        suppressHydrationWarning
                                         onClick={handleNext}
                                         className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:border-gray-900 transition-all"
                                     >
