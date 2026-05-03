@@ -38,8 +38,8 @@ export default function Hero() {
               className="object-cover"
               priority
             />
-            {/* Subtle darker overlay for text readability, but not blurry */}
-            <div className="absolute inset-0 bg-black/30 z-10" />
+            {/* Minimal solid overlay for text readability - No Gradient */}
+            <div className="absolute inset-0 bg-black/25 z-10" />
         </motion.div>
       </motion.div>
 
@@ -84,9 +84,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Decorative Bottom Gradient - Sharp transition to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   );
 }
