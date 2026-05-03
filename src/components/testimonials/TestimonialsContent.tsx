@@ -172,7 +172,7 @@ export default function TestimonialsContent() {
             {/* Left Column: Sticky Title */}
             <div className="lg:col-span-4 lg:sticky lg:top-64">
               <ScrollReveal>
-                <span className="text-xs font-black text-rose-400 uppercase tracking-[0.5em] mb-10 block">{t('tag')}</span>
+                <span className="text-xs font-black text-black uppercase tracking-[0.5em] mb-10 block">{t('tag')}</span>
                 <h1 
                   className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-12"
                   dangerouslySetInnerHTML={{ __html: t('title') }}
@@ -183,7 +183,7 @@ export default function TestimonialsContent() {
                 
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="px-10 h-16 rounded-full bg-black text-white font-black text-xs uppercase tracking-[0.3em] hover:bg-rose-400 transition-all flex items-center gap-4 group mb-16 shadow-2xl shadow-rose-100"
+                  className="px-10 h-16 rounded-full bg-black text-white font-black text-xs uppercase tracking-[0.3em] hover:bg-gray-900 transition-all flex items-center gap-4 group mb-16 shadow-2xl shadow-gray-100"
                 >
                   <SquarePen className="w-5 h-5" />
                   {t('formSubmit')}
@@ -255,7 +255,7 @@ export default function TestimonialsContent() {
               <div className="h-full md:max-h-[90vh] overflow-y-auto p-10 md:p-24">
                 {submitted ? (
                   <div className="py-20 text-center">
-                    <div className="w-24 h-24 bg-rose-50 text-rose-400 rounded-full flex items-center justify-center mx-auto mb-10">
+                    <div className="w-24 h-24 bg-gray-50 text-black rounded-full flex items-center justify-center mx-auto mb-10">
                       <Send className="w-10 h-10" />
                     </div>
                     <h3 className="text-4xl font-bold text-gray-900 mb-6 tracking-tighter">감사합니다!</h3>
@@ -272,7 +272,7 @@ export default function TestimonialsContent() {
                 ) : (
                   <>
                     <div className="mb-20">
-                      <span className="text-xs font-black text-rose-400 uppercase tracking-[0.4em] mb-6 block">Share Your Experience</span>
+                      <span className="text-xs font-black text-black uppercase tracking-[0.4em] mb-6 block">Share Your Experience</span>
                       <h2 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tighter mb-10">{t('formTitle')}</h2>
                       <p className="text-xl text-gray-400 font-light leading-relaxed max-w-2xl">
                         {t('formDesc')}
@@ -293,7 +293,7 @@ export default function TestimonialsContent() {
                               onFocus={() => setFocusedField('name')}
                               onBlur={() => setFocusedField(null)}
                               onChange={(e) => setFormData({...formData, name: e.target.value})}
-                              className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl placeholder:text-gray-100 outline-none"
+                              className="w-full bg-transparent border-b border-black/[0.05] focus:border-black rounded-none py-4 transition-all text-gray-900 font-medium text-2xl placeholder:text-gray-100 outline-none"
                               placeholder="Jane Doe"
                             />
                           </div>
@@ -311,7 +311,7 @@ export default function TestimonialsContent() {
                               onFocus={() => setFocusedField('location')}
                               onBlur={() => setFocusedField(null)}
                               onChange={(e) => setFormData({...formData, location: e.target.value})}
-                              className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl placeholder:text-gray-100 outline-none"
+                              className="w-full bg-transparent border-b border-black/[0.05] focus:border-black rounded-none py-4 transition-all text-gray-900 font-medium text-2xl placeholder:text-gray-100 outline-none"
                               placeholder="Los Angeles, CA"
                             />
                           </div>
@@ -326,7 +326,7 @@ export default function TestimonialsContent() {
                           required
                           value={formData.service}
                           onChange={(e) => setFormData({...formData, service: e.target.value})}
-                          className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl outline-none appearance-none"
+                          className="w-full bg-transparent border-b border-black/[0.05] focus:border-black rounded-none py-4 transition-all text-gray-900 font-medium text-2xl outline-none appearance-none"
                         >
                           <option value="postpartum">{t('postpartum')}</option>
                           <option value="babysitting">{t('babysitting')}</option>
@@ -342,7 +342,7 @@ export default function TestimonialsContent() {
                           rows={4}
                           value={formData.content}
                           onChange={(e) => setFormData({...formData, content: e.target.value})}
-                          className="w-full bg-transparent border-b border-black/[0.05] focus:border-rose-400 rounded-none py-4 transition-all text-gray-900 font-medium text-2xl resize-none placeholder:text-gray-100 outline-none"
+                          className="w-full bg-transparent border-b border-black/[0.05] focus:border-black rounded-none py-4 transition-all text-gray-900 font-medium text-2xl resize-none placeholder:text-gray-100 outline-none"
                           placeholder="Please share your honest experience..."
                         />
                       </div>
@@ -350,7 +350,7 @@ export default function TestimonialsContent() {
                       <button 
                         disabled={isSubmitting}
                         type="submit"
-                        className="w-full md:w-fit px-16 h-20 bg-black text-white font-black text-xs uppercase tracking-[0.4em] rounded-full hover:bg-rose-400 hover:-translate-y-2 transition-all flex items-center justify-center gap-6 disabled:opacity-50 disabled:cursor-not-allowed group shadow-2xl shadow-rose-100 cursor-pointer"
+                        className="w-full md:w-fit px-16 h-20 bg-black text-white font-black text-xs uppercase tracking-[0.4em] rounded-full hover:bg-gray-900 hover:-translate-y-2 transition-all flex items-center justify-center gap-6 disabled:opacity-50 disabled:cursor-not-allowed group shadow-2xl shadow-gray-100 cursor-pointer"
                       >
                         {isSubmitting ? (
                           <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
