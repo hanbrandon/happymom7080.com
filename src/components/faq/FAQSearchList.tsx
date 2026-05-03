@@ -38,7 +38,7 @@ export default function FAQSearchList() {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="검색어를 입력하세요 (예: 환불, 입주, 계약...)"
-                                className="w-full h-20 bg-white border-2 border-black rounded-none pl-16 pr-16 focus:bg-gray-50 transition-all text-gray-900 font-bold text-xl placeholder:text-gray-300"
+                                className="w-full h-20 bg-white border-b-2 border-black rounded-none pl-16 pr-16 focus:bg-gray-50 transition-all text-gray-900 font-bold text-xl placeholder:text-gray-300"
                             />
                             {searchQuery && (
                                 <button
@@ -62,7 +62,7 @@ export default function FAQSearchList() {
                                 return (
                                     <div
                                         key={index}
-                                        className="border-2 border-black mb-6 px-8 hover:bg-gray-50 transition-colors duration-300"
+                                        className="border-b-2 border-black mb-2 hover:bg-gray-50 transition-colors duration-300"
                                     >
                                         <button
                                             onClick={() =>
