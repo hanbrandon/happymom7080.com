@@ -188,7 +188,7 @@ export default function TestimonialsPage() {
                 
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="px-8 h-12 rounded-full bg-gray-900 text-white font-bold text-sm uppercase tracking-widest hover:bg-gray-800 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center gap-2 group mb-16 shadow-lg shadow-gray-900/10 cursor-pointer"
+                  className="px-8 h-12 rounded-full bg-brand text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center gap-2 group mb-16 shadow-lg shadow-brand/20 cursor-pointer"
                 >
                   <SquarePen className="w-4 h-4" />
                   {t('formSubmit')}
@@ -264,7 +264,7 @@ export default function TestimonialsPage() {
               <div className="h-full md:max-h-[90vh] overflow-y-auto p-8 md:p-20">
                 {submitted ? (
                   <div className="py-20 text-center">
-                    <div className="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <div className="w-20 h-20 bg-brand/10 text-brand rounded-full flex items-center justify-center mx-auto mb-8">
                       <Send className="w-10 h-10" />
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">감사합니다!</h3>
@@ -307,7 +307,7 @@ export default function TestimonialsPage() {
                               placeholder="Jane Doe"
                             />
                             <motion.div 
-                              className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                              className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                               initial={{ width: 0 }}
                               animate={{ width: focusedField === 'name' ? '100%' : 0 }}
                               transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -332,7 +332,7 @@ export default function TestimonialsPage() {
                               placeholder="Los Angeles, CA"
                             />
                             <motion.div 
-                              className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                              className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                               initial={{ width: 0 }}
                               animate={{ width: focusedField === 'location' ? '100%' : 0 }}
                               transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -359,7 +359,7 @@ export default function TestimonialsPage() {
                             <option value="babysitting">{t('babysitting')}</option>
                           </select>
                           <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                             initial={{ width: 0 }}
                             animate={{ width: focusedField === 'service' ? '100%' : 0 }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -384,7 +384,7 @@ export default function TestimonialsPage() {
                             placeholder="해피맘 서비스에 대한 진솔한 후기를 남겨주세요..."
                           />
                           <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                             initial={{ width: 0 }}
                             animate={{ width: focusedField === 'content' ? '100%' : 0 }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -395,7 +395,7 @@ export default function TestimonialsPage() {
                       <button 
                         disabled={isSubmitting}
                         type="submit"
-                        className="w-full md:w-fit px-12 h-16 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 hover:-translate-y-1 hover:shadow-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-xl shadow-gray-900/10 cursor-pointer"
+                        className="w-full md:w-fit px-12 h-16 bg-brand text-white font-bold rounded-full hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-xl shadow-brand/20 cursor-pointer"
                       >
                         {isSubmitting ? (
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

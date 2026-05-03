@@ -27,7 +27,7 @@ export default function Mission() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Button size="lg" className="bg-black hover:bg-gray-800 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-white rounded-full px-10 h-14 text-lg font-semibold cursor-pointer">
+            <Button size="lg" className="bg-brand hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-white rounded-full px-10 h-14 text-lg font-semibold cursor-pointer border-none">
               {t('button')}
             </Button>
           </motion.div>

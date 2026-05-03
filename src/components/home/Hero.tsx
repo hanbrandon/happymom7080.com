@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -9,36 +8,37 @@ export default function Hero() {
   const t = useTranslations('Hero');
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-end pb-32 overflow-hidden">
-      {/* Background Image */}
+    <section className="relative h-[100vh] flex items-center overflow-hidden">
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero.png"
-          alt="HappyMom Hero"
+          src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=2070&auto=format&fit=crop"
+          alt="HappyMom Care"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-10">
+      <div className="container mx-auto px-10 relative z-20">
         <div className="max-w-4xl">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-6xl md:text-8xl font-bold text-white leading-[1.1] mb-8 tracking-tight"
           >
-            {t('title1')} <br />
-            {t('title2')}
-          </motion.h1>
-          
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight leading-[1.05] mb-8">
+              {t('title1')} <br />
+              <span className="text-brand">{t('title2')}</span>
+            </h1>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl leading-relaxed font-medium"
+            className="text-xl md:text-2xl text-white/90 max-w-2xl leading-relaxed mb-12 font-medium"
           >
             {t('subtitle')}
           </motion.p>
@@ -49,7 +49,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
             className="flex flex-wrap gap-4"
           >
-            <button className="px-10 h-14 rounded-full bg-white text-black font-bold text-base hover:bg-white/90 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <button className="px-10 h-14 rounded-full bg-brand text-white font-bold text-base hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer border-none">
               {t('cta1')}
             </button>
             <button className="px-10 h-14 rounded-full border border-white text-white font-bold text-base hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer">
@@ -59,8 +59,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Decorative gradient at bottom - subtle to ensure text contrast */}
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+      {/* Decorative Gradient Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   );
 }

@@ -46,7 +46,7 @@ export default function FAQ() {
 
               <Link 
                 href={`/${locale}/faq`}
-                className="inline-flex items-center gap-2 text-gray-900 font-bold hover:gap-4 transition-all group cursor-pointer"
+                className="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-brand hover:gap-4 transition-all group cursor-pointer"
               >
                 더 많은 질문 보기 
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -69,7 +69,7 @@ export default function FAQ() {
                     value={`item-${index}`} 
                     className="border-b border-gray-100 py-4"
                   >
-                    <AccordionTrigger className="text-xl md:text-2xl font-bold text-gray-900 hover:no-underline text-left py-6 cursor-pointer">
+                    <AccordionTrigger className="text-xl md:text-2xl font-bold text-gray-900 hover:no-underline hover:text-brand text-left py-6 cursor-pointer transition-colors">
                       {t(`items.${index}.question`)}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-500 text-lg leading-relaxed pb-8">

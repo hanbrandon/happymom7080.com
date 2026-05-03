@@ -13,6 +13,36 @@ import { Globe, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Flip Board (Split-flap) Character Component
+const FlipChar = ({ char, index, isHovered }: { char: string; index: number; isHovered: boolean }) => {
+  return (
+    <motion.span
+      initial={false}
+      animate={isHovered ? {
+        rotateX: [0, 90, 0],
+        transition: {
+          duration: 0.4,
+          delay: index * 0.04,
+          ease: "easeInOut"
+        }
+      } : { rotateX: 0 }}
+      style={{ display: 'inline-block', transformStyle: 'preserve-3d' }}
+    >
+      {char === " " ? "\u00A0" : char}
+    </motion.span>
+  );
+};
+
+const FlipText = ({ text, className, isHovered }: { text: string; className?: string; isHovered: boolean }) => {
+  return (
+    <span className={`${className} flex overflow-hidden`}>
+      {text.split("").map((char, i) => (
+        <FlipChar key={i} char={char} index={i} isHovered={isHovered} />
+      ))}
+    </span>
+  );
+};
+
 export default function Navbar() {
   const t = useTranslations('Navbar');
   const locale = useLocale();
@@ -20,6 +50,7 @@ export default function Navbar() {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,11 +83,20 @@ export default function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-10 flex items-center justify-between">
         {/* Left: Logo */}
-        <Link href="/" className="flex flex-col items-start gap-0 group cursor-pointer">
-          <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-1 transition-colors ${isDarkTheme ? 'bg-gray-900 group-hover:bg-gray-800' : 'bg-white/10 backdrop-blur-sm group-hover:bg-rose-500/20'}`}>
+        <Link 
+          href="/" 
+          className="flex flex-col items-start gap-0 group cursor-pointer"
+          onMouseEnter={() => setHoveredLink('logo')}
+          onMouseLeave={() => setHoveredLink(null)}
+        >
+          <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-1 transition-colors ${isDarkTheme ? 'bg-gray-900 group-hover:bg-brand' : 'bg-white/10 backdrop-blur-sm group-hover:bg-brand'}`}>
              <span className="text-white text-xs font-bold">HM</span>
           </div>
-          <span className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-gray-900' : 'text-white'}`}>HappyMom</span>
+          <FlipText 
+            text="HappyMom" 
+            isHovered={hoveredLink === 'logo'} 
+            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`} 
+          />
         </Link>
 
         {/* Center: Navigation Pill */}
@@ -65,9 +105,11 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[13px] font-semibold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-200/50' : 'text-white/90 hover:text-white hover:bg-white/10'}`}
+              onMouseEnter={() => setHoveredLink(link.href)}
+              onMouseLeave={() => setHoveredLink(null)}
+              className={`text-[13px] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`}
             >
-              {link.label}
+              <FlipText text={link.label} isHovered={hoveredLink === link.href} />
             </Link>
           ))}
         </div>
@@ -77,23 +119,27 @@ export default function Navbar() {
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className={`text-sm font-medium transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-white/80'}`}>
+              <button 
+                onMouseEnter={() => setHoveredLink('lang')}
+                onMouseLeave={() => setHoveredLink(null)}
+                className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`}
+              >
                 <Globe className="w-4 h-4" />
-                {locale === 'ko' ? '한국어' : 'English'}
+                <FlipText text={locale === 'ko' ? '한국어' : 'English'} isHovered={hoveredLink === 'lang'} />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className={`backdrop-blur-xl border-white/10 ${isDarkTheme ? 'bg-white text-gray-900' : 'bg-black/80 text-white'}`}>
-              <DropdownMenuItem className={`${isDarkTheme ? 'hover:bg-gray-100' : 'hover:bg-white/10'} cursor-pointer`} onClick={() => toggleLanguage('en')}>
+              <DropdownMenuItem className={`cursor-pointer focus:bg-brand focus:text-white transition-colors`} onClick={() => toggleLanguage('en')}>
                 English
               </DropdownMenuItem>
-              <DropdownMenuItem className={`${isDarkTheme ? 'hover:bg-gray-100' : 'hover:bg-white/10'} cursor-pointer`} onClick={() => toggleLanguage('ko')}>
+              <DropdownMenuItem className={`cursor-pointer focus:bg-brand focus:text-white transition-colors`} onClick={() => toggleLanguage('ko')}>
                 한국어
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
           <Link href="/contact" className="cursor-pointer">
-            <Button className={`font-bold rounded-full px-8 h-12 text-sm transition-all cursor-pointer ${isDarkTheme ? 'bg-gray-900 text-white hover:bg-gray-800' : 'bg-white text-black hover:bg-white/90'}`}>
+            <Button className={`font-bold rounded-full px-8 h-12 text-sm transition-all cursor-pointer border-none ${isDarkTheme ? 'bg-brand text-white hover:opacity-90 shadow-lg shadow-brand/20' : 'bg-white text-black hover:bg-brand hover:text-white'}`}>
               {t('contact')}
             </Button>
           </Link>
@@ -104,7 +150,7 @@ export default function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="text-white"
+            className={`${isDarkTheme ? 'text-black' : 'text-white'} hover:text-brand transition-colors`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -126,7 +172,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xl font-medium text-white hover:text-white/60 transition-colors"
+                  className="text-xl font-medium text-white hover:text-brand transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -135,7 +181,7 @@ export default function Navbar() {
               <div className="h-px bg-white/10 my-2" />
               <div className="flex flex-col gap-4">
                  <button 
-                  className="text-lg font-medium text-white flex items-center gap-3"
+                  className="text-lg font-medium text-white flex items-center gap-3 hover:text-brand transition-colors"
                   onClick={() => {
                     toggleLanguage(locale === 'ko' ? 'en' : 'ko');
                     setIsMobileMenuOpen(false);
@@ -144,7 +190,7 @@ export default function Navbar() {
                   <Globe className="w-5 h-5" />
                   {locale === 'ko' ? 'Switch to English' : '한국어로 변경'}
                 </button>
-                <Button className="w-full bg-white hover:bg-white/90 text-black h-14 rounded-2xl text-lg font-bold">
+                <Button className="w-full bg-brand hover:opacity-90 text-white h-14 rounded-2xl text-lg font-bold border-none">
                   {t('contact')}
                 </Button>
               </div>

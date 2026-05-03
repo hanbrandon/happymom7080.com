@@ -71,7 +71,7 @@ export default function Pricing() {
           </div>
           <div className="pt-4">
             <Link href="/pricing">
-              <button className="px-10 h-16 rounded-full bg-white border border-gray-100 text-gray-900 font-bold text-sm uppercase tracking-widest hover:bg-gray-900 hover:text-white hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer shadow-sm group flex items-center gap-3">
+              <button className="px-10 h-16 rounded-full bg-white border border-gray-100 text-gray-900 font-bold text-sm uppercase tracking-widest hover:bg-brand hover:text-white hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer shadow-sm group flex items-center gap-3">
                 Full Pricing Details
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -87,10 +87,10 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group hover:shadow-2xl hover:shadow-gray-900/5 ${plan.featured ? 'ring-2 ring-gray-900' : 'border border-gray-100'}`}
+              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group hover:shadow-2xl hover:shadow-brand/5 ${plan.featured ? 'ring-2 ring-brand shadow-xl shadow-brand/10' : 'border border-gray-100'}`}
             >
               {plan.featured && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full">
                   Most Popular
                 </div>
               )}
@@ -109,7 +109,7 @@ export default function Pricing() {
               <div className="space-y-4 mb-12 flex-1">
                 {plan.features.map((feature, fIndex) => (
                   <div key={fIndex} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-gray-900 group-hover:text-white transition-colors">
+                    <div className="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-brand group-hover:text-white transition-colors">
                       <Check className="w-3 h-3" />
                     </div>
                     <span className="text-gray-600 font-medium">{feature}</span>
@@ -129,7 +129,7 @@ export default function Pricing() {
               </div>
 
               <Link href="/pricing" className="mt-auto">
-                <button className={`w-full h-16 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 cursor-pointer ${plan.featured ? 'bg-gray-900 text-white hover:bg-gray-800 hover:-translate-y-1' : 'bg-gray-50 text-gray-900 hover:bg-gray-200 hover:-translate-y-1'}`}>
+                <button className={`w-full h-16 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 cursor-pointer ${plan.featured ? 'bg-brand text-white hover:opacity-90 hover:-translate-y-1' : 'bg-gray-50 text-gray-900 hover:bg-gray-200 hover:-translate-y-1'}`}>
                   {t('learnMore')}
                 </button>
               </Link>
@@ -139,7 +139,7 @@ export default function Pricing() {
 
         <div className="mt-24 text-center">
           <p className="text-gray-400 text-sm font-medium">
-            * Custom plans available for twins or out-of-state services. <Link href="/contact" className="text-gray-900 underline underline-offset-4 decoration-1 font-bold">Inquire Now</Link>
+            * Custom plans available for twins or out-of-state services. <Link href="/contact" className="text-brand underline underline-offset-4 decoration-1 font-bold">Inquire Now</Link>
           </p>
         </div>
       </div>

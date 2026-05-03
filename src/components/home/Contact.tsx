@@ -69,21 +69,21 @@ export default function Contact() {
 
               <div className="space-y-10">
                 <a href="tel:+12137001415" className="flex items-start gap-6 group outline-none">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-gray-900 group-hover:text-white group-hover:-translate-y-1 group-hover:shadow-lg">
+                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white group-hover:-translate-y-1 group-hover:shadow-lg">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('callUs')}</h4>
-                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2">+1 (213) 700-1415</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-brand">+1 (213) 700-1415</p>
                   </div>
                 </a>
                 <a href="mailto:happymom7080@gmail.com" className="flex items-start gap-6 group outline-none">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-gray-900 group-hover:text-white group-hover:-translate-y-1 group-hover:shadow-lg">
+                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white group-hover:-translate-y-1 group-hover:shadow-lg">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('emailUs')}</h4>
-                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2">happymom7080@gmail.com</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-brand">happymom7080@gmail.com</p>
                   </div>
                 </a>
               </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     className="py-20 text-center bg-gray-50"
                   >
-                    <div className="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <div className="w-20 h-20 bg-brand/10 text-brand rounded-full flex items-center justify-center mx-auto mb-8">
                       <Send className="w-10 h-10" />
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">{t('successTitle')}</h3>
@@ -114,7 +114,7 @@ export default function Contact() {
                     </p>
                     <button 
                       onClick={() => setSubmitted(false)}
-                      className="px-10 h-14 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 hover:-translate-y-1 hover:shadow-xl transition-all"
+                      className="px-10 h-14 bg-brand text-white font-bold rounded-full hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all cursor-pointer shadow-lg shadow-brand/20"
                     >
                       {t('resend')}
                     </button>
@@ -124,7 +124,7 @@ export default function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                       {/* First Name */}
                       <div className="space-y-3">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'firstName' ? 'text-gray-900' : 'text-gray-400'}`}>
+                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'firstName' ? 'text-brand' : 'text-gray-400'}`}>
                           {t('firstName')}
                         </label>
                         <div className="relative">
@@ -139,7 +139,7 @@ export default function Contact() {
                             placeholder={t('placeholderFirstName')}
                           />
                           <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                             initial={{ width: 0 }}
                             animate={{ width: focusedField === 'firstName' ? '100%' : 0 }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -149,7 +149,7 @@ export default function Contact() {
 
                       {/* Last Name */}
                       <div className="space-y-3">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'lastName' ? 'text-gray-900' : 'text-gray-400'}`}>
+                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'lastName' ? 'text-brand' : 'text-gray-400'}`}>
                           {t('lastName')}
                         </label>
                         <div className="relative">
@@ -163,7 +163,7 @@ export default function Contact() {
                             placeholder={t('placeholderLastName')}
                           />
                           <motion.div 
-                            className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                            className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                             initial={{ width: 0 }}
                             animate={{ width: focusedField === 'lastName' ? '100%' : 0 }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -174,7 +174,7 @@ export default function Contact() {
 
                     {/* Email */}
                     <div className="space-y-3">
-                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-gray-900' : 'text-gray-400'}`}>
+                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-brand' : 'text-gray-400'}`}>
                         {t('email')}
                       </label>
                       <div className="relative">
@@ -189,7 +189,7 @@ export default function Contact() {
                           placeholder={t('placeholderEmail')}
                         />
                         <motion.div 
-                          className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                          className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                           initial={{ width: 0 }}
                           animate={{ width: focusedField === 'email' ? '100%' : 0 }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -199,7 +199,7 @@ export default function Contact() {
 
                     {/* Message */}
                     <div className="space-y-3">
-                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'message' ? 'text-gray-900' : 'text-gray-400'}`}>
+                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'message' ? 'text-brand' : 'text-gray-400'}`}>
                         {t('message')}
                       </label>
                       <div className="relative">
@@ -214,7 +214,7 @@ export default function Contact() {
                           placeholder={t('placeholderMessage')}
                         />
                         <motion.div 
-                          className="absolute bottom-0 left-0 h-0.5 bg-gray-900" 
+                          className="absolute bottom-0 left-0 h-0.5 bg-brand" 
                           initial={{ width: 0 }}
                           animate={{ width: focusedField === 'message' ? '100%' : 0 }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -225,7 +225,7 @@ export default function Contact() {
                     <button 
                       disabled={isSubmitting}
                       type="submit"
-                      className="w-full md:w-fit px-12 h-16 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-xl shadow-gray-900/10 cursor-pointer"
+                      className="w-full md:w-fit px-12 h-16 bg-brand text-white font-bold rounded-full hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-xl shadow-brand/20 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
