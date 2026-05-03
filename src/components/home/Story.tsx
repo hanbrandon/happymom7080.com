@@ -7,31 +7,28 @@ export default function Story() {
   const t = useTranslations('Story');
 
   return (
-    <section className="py-40 bg-white border-y border-black/[0.03]">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-baseline">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           {/* Left Column: Label */}
           <div className="lg:col-span-3">
             <ScrollReveal>
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-[1px] bg-black" />
-                <span className="text-xs font-black text-black uppercase tracking-[0.4em]">
-                  {t('label')}
-                </span>
-              </div>
+              <span className="text-sm font-bold text-gray-900 uppercase tracking-widest">
+                {t('label')}
+              </span>
             </ScrollReveal>
           </div>
 
           {/* Right Column: Content */}
-          <div className="lg:col-span-9 space-y-16">
+          <div className="lg:col-span-9 space-y-12">
             <ScrollReveal delay={0.2}>
-              <h3 className="text-4xl md:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tighter">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
                 {t('title')}
               </h3>
             </ScrollReveal>
 
             <ScrollReveal delay={0.4}>
-              <p className="text-2xl md:text-3xl text-gray-400 leading-relaxed font-light">
+              <p className="text-xl md:text-2xl text-gray-500 leading-relaxed">
                 {t('description')}
               </p>
             </ScrollReveal>

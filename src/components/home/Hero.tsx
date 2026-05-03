@@ -15,20 +15,20 @@ export default function Hero() {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-[100vh] flex items-center overflow-hidden bg-black">
-      {/* Background Image with Zoom and Parallax */}
+    <section ref={containerRef} className="relative h-[100vh] flex items-center overflow-hidden bg-white">
+      {/* Background Image - Sharp and Clear */}
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 z-0"
       >
         <motion.div
-            initial={{ scale: 1.2, opacity: 0 }}
+            initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
             className="relative w-full h-full"
         >
             <Image
@@ -38,40 +38,41 @@ export default function Hero() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-black/40 z-10" />
+            {/* Subtle darker overlay for text readability, but not blurry */}
+            <div className="absolute inset-0 bg-black/30 z-10" />
         </motion.div>
       </motion.div>
 
       <div className="container mx-auto px-10 relative z-20">
         <motion.div 
             style={{ y: textY, opacity: textOpacity }}
-            className="max-w-5xl"
+            className="max-w-4xl"
         >
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
           >
-            <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.9] mb-10">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight leading-[1.05] mb-8">
               {t('title1')} <br />
-              <span className="text-rose-400">{t('title2')}</span>
+              <span className="text-brand">{t('title2')}</span>
             </h1>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-xl md:text-3xl text-white/80 max-w-2xl leading-tight mb-16 font-light"
+            transition={{ duration: 0.8, delay: 0.7, ease: 'easeOut' }}
+            className="text-xl md:text-2xl text-white/90 max-w-2xl leading-relaxed mb-12 font-medium"
           >
             {t('subtitle')}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap gap-6"
+            transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
+            className="flex flex-wrap gap-4"
           >
             <PremiumButton variant="primary">
               {t('cta1')}
@@ -84,19 +85,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Decorative Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white via-white/50 to-transparent z-10" />
-      
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center space-y-4"
-      >
-        <span className="text-[10px] text-black font-black uppercase tracking-[0.5em] rotate-90 mb-8 origin-center">Scroll</span>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-black to-transparent" />
-      </motion.div>
+      {/* Decorative Bottom Gradient - Sharp transition to white */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   );
 }
