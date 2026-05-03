@@ -12,9 +12,9 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     title: `${t('heroTitle').replace('|', ' ')} | HappyMom Guide`,
     description: t('heroSubtitle'),
     alternates: {
-      canonical: `${baseUrl}/${locale}${path}`,
+      canonical: locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
       languages: {
-        'ko-KR': `${baseUrl}/ko${path}`,
+        'ko-KR': `${baseUrl}${path}`,
         'en-US': `${baseUrl}/en${path}`,
       },
     },

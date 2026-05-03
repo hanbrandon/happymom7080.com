@@ -12,9 +12,9 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     title: `${t('heroTag')} | HappyMom`,
     description: t('heroSubtitle'),
     alternates: {
-      canonical: `${baseUrl}/${locale}${path}`,
+      canonical: locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
       languages: {
-        'ko-KR': `${baseUrl}/ko${path}`,
+        'ko-KR': `${baseUrl}${path}`,
         'en-US': `${baseUrl}/en${path}`,
       },
     },
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 export default async function PricingPage({ params }: { params: { locale: string } }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'PricingDetail' });
+  const baseUrl = 'https://happymom7080.com';
 
   const jsonLd = {
     "@context": "https://schema.org",

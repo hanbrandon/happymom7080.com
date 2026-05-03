@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? "미국 전역 산모를 위한 전문 산후조리 및 신생아 케어 서비스. 전문가의 손길로 정성껏 모십니다."
       : "Professional Postpartum Care for Mothers Across the US. Expert newborn support and maternal healing.",
     alternates: {
-      canonical: `${baseUrl}/${locale}`,
+      canonical: locale === 'ko' ? baseUrl : `${baseUrl}/en`,
       languages: {
-        'ko-KR': `${baseUrl}/ko`,
+        'ko-KR': baseUrl,
         'en-US': `${baseUrl}/en`,
-        'x-default': baseUrl, // 언어 설정 없을 때의 기본 페이지
+        'x-default': baseUrl,
       },
     },
     openGraph: {
@@ -40,13 +40,14 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default async function Home({ params }: { params: { locale: string } }) {
   const { locale } = await params;
+  const baseUrl = 'https://happymom7080.com';
   
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "HappyMom",
     "image": "https://happymom7080.com/logo.png",
-    "url": `https://happymom7080.com/${locale}`,
+    "url": locale === 'ko' ? baseUrl : `${baseUrl}/en`,
     "telephone": "213-210-8274",
     "address": {
       "@type": "PostalAddress",

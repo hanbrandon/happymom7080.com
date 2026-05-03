@@ -12,9 +12,9 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     title: `${t('postpartumTitle')} | HappyMom Services`,
     description: t('postpartumDesc'),
     alternates: {
-      canonical: `${baseUrl}/${locale}${path}`,
+      canonical: locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
       languages: {
-        'ko-KR': `${baseUrl}/ko${path}`,
+        'ko-KR': `${baseUrl}${path}`,
         'en-US': `${baseUrl}/en${path}`,
       },
     },
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 export default async function ServicesPage({ params }: { params: { locale: string } }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'ServicesDetail' });
+  const baseUrl = 'https://happymom7080.com';
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -38,7 +39,7 @@ export default async function ServicesPage({ params }: { params: { locale: strin
     "provider": {
       "@type": "LocalBusiness",
       "name": "HappyMom",
-      "url": `https://happymom7080.com/${locale}`
+      "url": locale === 'ko' ? `${baseUrl}/services` : `${baseUrl}/en/services`
     },
     "description": t('postpartumDesc')
   };
