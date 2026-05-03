@@ -31,6 +31,7 @@ export default async function TestimonialsPage({ params }: { params: { locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'TestimonialsPage' });
   const baseUrl = 'https://happymom7080.com';
+  const path = '/testimonials';
 
   const jsonLd = {
     "@context": "https://schema.org",
