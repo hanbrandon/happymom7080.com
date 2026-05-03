@@ -14,6 +14,7 @@ interface PremiumButtonProps {
   icon?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  ariaLabel?: string;
 }
 
 export default function PremiumButton({
@@ -25,6 +26,7 @@ export default function PremiumButton({
   icon,
   type = 'button',
   disabled = false,
+  ariaLabel,
 }: PremiumButtonProps) {
   
   const variantStyles = {
@@ -58,7 +60,12 @@ export default function PremiumButton({
 
   if (href) {
     return (
-      <Link href={href as any} className={commonClasses} onClick={onClick}>
+      <Link 
+        href={href as any} 
+        className={commonClasses} 
+        onClick={onClick}
+        aria-label={ariaLabel}
+      >
         {buttonContent}
       </Link>
     );
@@ -70,6 +77,7 @@ export default function PremiumButton({
       disabled={disabled}
       onClick={onClick}
       className={commonClasses}
+      aria-label={ariaLabel}
     >
       {buttonContent}
     </button>

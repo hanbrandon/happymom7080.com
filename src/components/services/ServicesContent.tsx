@@ -92,7 +92,22 @@ export default function ServicesContent() {
         </div>
       </section>
 
-      {/* 4. Service Disclaimer (Pricing Style) */}
+      {/* 4. Medical Disclaimer (Prominent Card) */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-10">
+           <div className="max-w-4xl p-10 bg-red-50 rounded-[2rem] border border-red-100">
+              <h3 className="text-xl font-bold text-red-900 mb-4 flex items-center gap-3">
+                <span className="w-6 h-6 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs">!</span>
+                {t('medicalDisclaimerTitle')}
+              </h3>
+              <p className="text-sm text-red-800/80 font-medium leading-relaxed break-keep">
+                {t('medicalDisclaimerDesc')}
+              </p>
+           </div>
+        </div>
+      </section>
+
+      {/* 5. Service Warning (Existing) */}
       <section className="py-12 bg-white border-t border-gray-100">
         <div className="container mx-auto px-10">
            <div className="max-w-4xl">

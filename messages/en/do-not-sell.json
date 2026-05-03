@@ -1,0 +1,34 @@
+{
+  "tag": "Privacy Rights",
+  "title": "Do Not Sell My Information",
+  "subtitle": "HappyMom does not sell your personal information. Nevertheless, in accordance with California law, you may exercise your right to opt-out of the sale and sharing of your personal information.",
+  "optout": {
+    "title": "One-Click Browser-Based Opt-Out",
+    "description": "Click the button below to immediately opt-out of all data collection and sharing for marketing purposes occurring on this browser.",
+    "button": "Opt-Out Now with One Click",
+    "active": "Opt-Out Activated",
+    "success": "Settings have been successfully saved."
+  },
+  "commitment": {
+    "title": "Privacy Commitment",
+    "content": "HappyMom clearly states that we do not sell or rent client personal information to third parties for profit. We use client information solely for our inherent business purposes: improving service quality and matching caregivers.",
+    "additional": "Since the definition of 'sale' under legal definitions can be interpreted broadly, we operate this page to ensure California residents can clearly exercise their rights."
+  },
+  "ccpa": {
+    "title": "California Consumer Privacy Act (CCPA)",
+    "content": "The CCPA and CPRA grant California residents the right to opt-out of the 'sale' or 'sharing' of their personal information with third parties. HappyMom fully respects these rights and guarantees the same level of opt-out rights for all clients."
+  },
+  "other": {
+    "title": "Other Opt-Out Methods",
+    "description": "In addition to the one-click button above, you can directly communicate your opt-out intent through the following methods:",
+    "email": {
+      "title": "Email Request",
+      "content": "Please send your name and contact information to happymom7080@gmail.com."
+    },
+    "phone": {
+      "title": "Customer Service",
+      "content": "You can make a request to a representative via phone at +1 (213) 700-1415."
+    }
+  },
+  "footer": "Identity verification may be required to process this request. We will guide you through the results within 15 business days of receiving the application. Last updated: May 3, 2024"
+}

@@ -77,7 +77,7 @@ export default function FAQSearchList() {
                                     >
                                         <button
                                             onClick={() => toggleAccordion(index)}
-                                            className="w-full py-12 flex items-center justify-between text-left group relative"
+                                            className="w-full py-12 flex items-center justify-between text-left group relative cursor-pointer"
                                         >
                                             <div className="flex items-center space-x-8 z-10 transition-transform duration-500 group-hover:translate-x-2">
                                                 <span className="text-xs font-bold text-gray-200 group-hover:text-black transition-colors duration-500 tracking-tighter">

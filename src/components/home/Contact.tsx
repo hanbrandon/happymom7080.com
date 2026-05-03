@@ -138,7 +138,7 @@ export default function Contact() {
                     </PremiumButton>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-12">
+                  <form onSubmit={handleSubmit} className="bg-gray-50 p-8 md:p-16 rounded-[3rem] space-y-12 border border-gray-100">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                       {/* First Name */}
                       <div className="space-y-3">
@@ -153,7 +153,7 @@ export default function Contact() {
                             onFocus={() => setFocusedField('firstName')}
                             onBlur={() => setFocusedField(null)}
                             onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                            className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                            className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
                             placeholder={t('placeholderFirstName')}
                           />
                           <motion.div 
@@ -177,7 +177,7 @@ export default function Contact() {
                             onFocus={() => setFocusedField('lastName')}
                             onBlur={() => setFocusedField(null)}
                             onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                            className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                            className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
                             placeholder={t('placeholderLastName')}
                           />
                           <motion.div 
@@ -203,7 +203,7 @@ export default function Contact() {
                           onFocus={() => setFocusedField('email')}
                           onBlur={() => setFocusedField(null)}
                           onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          className="w-full h-auto bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                          className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
                           placeholder={t('placeholderEmail')}
                         />
                         <motion.div 
@@ -228,7 +228,7 @@ export default function Contact() {
                           onFocus={() => setFocusedField('message')}
                           onBlur={() => setFocusedField(null)}
                           onChange={(e) => setFormData({...formData, message: e.target.value})}
-                          className="w-full bg-transparent border-b border-gray-100 rounded-none px-4 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl resize-none placeholder:text-gray-300 outline-none"
+                          className="w-full bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl resize-none placeholder:text-gray-300 outline-none"
                           placeholder={t('placeholderMessage')}
                         />
                         <motion.div 
