@@ -28,11 +28,11 @@ export default function PremiumButton({
 }: PremiumButtonProps) {
   
   const variantStyles = {
-    primary: 'bg-brand text-white border-none hover:bg-gray-900',
+    primary: 'bg-black text-white border-none hover:bg-gray-900',
     secondary: 'border border-white text-white hover:bg-white/10',
     dark: 'bg-gray-900 text-white border-none hover:bg-black',
     outline: 'border border-gray-200 text-gray-900 hover:bg-gray-50',
-    ghost: 'text-gray-600 hover:text-brand bg-transparent',
+    ghost: 'text-gray-600 hover:text-black bg-transparent',
   };
 
   const buttonContent = (

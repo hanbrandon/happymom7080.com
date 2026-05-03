@@ -55,7 +55,7 @@ export default function Hero() {
           >
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight leading-[1.05] mb-8">
               {t('title1')} <br />
-              <span className="text-brand">{t('title2')}</span>
+              <span className="text-black">{t('title2')}</span>
             </h1>
           </motion.div>
 

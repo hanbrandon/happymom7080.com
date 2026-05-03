@@ -23,7 +23,7 @@ export default function Mission() {
             <div className="container mx-auto px-10">
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
                     <ScrollReveal delay={0.1}>
-                        <span className="text-brand font-bold uppercase tracking-[0.3em] mb-6 block text-sm">
+                        <span className="text-black font-bold uppercase tracking-[0.3em] mb-6 block text-sm">
                             {t('tag')}
                         </span>
                     </ScrollReveal>

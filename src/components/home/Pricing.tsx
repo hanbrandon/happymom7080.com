@@ -90,10 +90,10 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group ${plan.featured ? 'ring-2 ring-brand' : 'border border-gray-100'}`}
+              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group ${plan.featured ? 'ring-2 ring-black' : 'border border-gray-100'}`}
             >
               {plan.featured && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full">
                   {th('popular')}
                 </div>
               )}
@@ -112,7 +112,7 @@ export default function Pricing() {
               <div className="space-y-4 mb-12 flex-1">
                 {plan.features.map((feature, fIndex) => (
                   <div key={fIndex} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-brand group-hover:text-white transition-colors">
+                    <div className="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-black group-hover:text-white transition-colors">
                       <Check className="w-3 h-3" />
                     </div>
                     <span className="text-gray-600 font-medium">{feature}</span>

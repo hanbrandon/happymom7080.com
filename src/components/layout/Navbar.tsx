@@ -90,13 +90,13 @@ export default function Navbar() {
           onMouseEnter={() => setHoveredLink('logo')}
           onMouseLeave={() => setHoveredLink(null)}
         >
-          <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-1 transition-colors ${isDarkTheme ? 'bg-gray-900 group-hover:bg-brand' : 'bg-white/10 backdrop-blur-sm group-hover:bg-brand'}`}>
+          <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-1 transition-colors ${isDarkTheme ? 'bg-gray-900 group-hover:bg-black' : 'bg-white/10 backdrop-blur-sm group-hover:bg-black'}`}>
              <span className="text-white text-xs font-bold">HM</span>
           </div>
           <FlipText 
             text="HappyMom" 
             isHovered={hoveredLink === 'logo'} 
-            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-brand' : 'text-white'}`} 
+            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-black' : 'text-white'}`} 
           />
         </Link>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
               href={link.href}
               onMouseEnter={() => setHoveredLink(link.href)}
               onMouseLeave={() => setHoveredLink(null)}
-              className={`text-[13px] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-brand' : 'text-white'}`}
+              className={`text-[13px] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-black' : 'text-white'}`}
             >
               <FlipText text={link.label} isHovered={hoveredLink === link.href} />
             </Link>
@@ -123,17 +123,17 @@ export default function Navbar() {
               <button 
                 onMouseEnter={() => setHoveredLink('lang')}
                 onMouseLeave={() => setHoveredLink(null)}
-                className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-brand' : 'text-white'}`}
+                className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-black' : 'text-white'}`}
               >
                 <Globe className="w-4 h-4" />
                 <FlipText text={locale === 'ko' ? '한국어' : 'English'} isHovered={hoveredLink === 'lang'} />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className={`backdrop-blur-xl border-white/10 ${isDarkTheme ? 'bg-white text-gray-900' : 'bg-brand/80 text-white'}`}>
-              <DropdownMenuItem className={`cursor-pointer focus:bg-brand focus:text-white transition-colors`} onClick={() => toggleLanguage('en')}>
+            <DropdownMenuContent align="end" className={`backdrop-blur-xl border-white/10 ${isDarkTheme ? 'bg-white text-gray-900' : 'bg-black/80 text-white'}`}>
+              <DropdownMenuItem className={`cursor-pointer focus:bg-black focus:text-white transition-colors`} onClick={() => toggleLanguage('en')}>
                 English
               </DropdownMenuItem>
-              <DropdownMenuItem className={`cursor-pointer focus:bg-brand focus:text-white transition-colors`} onClick={() => toggleLanguage('ko')}>
+              <DropdownMenuItem className={`cursor-pointer focus:bg-black focus:text-white transition-colors`} onClick={() => toggleLanguage('ko')}>
                 한국어
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -153,7 +153,7 @@ export default function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className={`${isDarkTheme ? 'text-black' : 'text-white'} hover:text-brand transition-colors`}
+            className={`${isDarkTheme ? 'text-black' : 'text-white'} hover:text-black transition-colors`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -175,7 +175,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xl font-medium text-white hover:text-brand transition-colors"
+                  className="text-xl font-medium text-white hover:text-black transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -184,7 +184,7 @@ export default function Navbar() {
               <div className="h-px bg-white/10 my-2" />
               <div className="flex flex-col gap-4">
                  <button 
-                  className="text-lg font-medium text-white flex items-center gap-3 hover:text-brand transition-colors"
+                  className="text-lg font-medium text-white flex items-center gap-3 hover:text-black transition-colors"
                   onClick={() => {
                     toggleLanguage(locale === 'ko' ? 'en' : 'ko');
                     setIsMobileMenuOpen(false);
