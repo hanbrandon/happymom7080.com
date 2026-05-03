@@ -11,18 +11,24 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     openGraph: {
       title: `${t('tag')} | HappyMom`,
       description: t('subtitle'),
+      locale: locale,
       type: 'website',
     },
   };
 }
 
-export default function TestimonialsPage() {
+export default async function TestimonialsPage({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'TestimonialsPage' });
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FeedbackEditor",
-    "name": "HappyMom Testimonials",
-    "description": "Real stories and feedback from mothers who experienced HappyMom's premium postpartum care.",
-    "url": "https://happymom7080.com/testimonials"
+    "name": locale === 'ko' ? "해피맘 이용 후기" : "HappyMom Testimonials",
+    "description": locale === 'ko' 
+      ? "해피맘의 프리미엄 산후조리를 경험하신 산모님들의 생생한 목소리를 확인하세요." 
+      : "Real stories and feedback from mothers who experienced HappyMom's premium postpartum care.",
+    "url": `https://happymom7080.com/${locale}/testimonials`
   };
 
   return (

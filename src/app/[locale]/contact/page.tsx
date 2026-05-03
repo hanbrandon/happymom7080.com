@@ -17,7 +17,9 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
+  
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -32,7 +34,8 @@ export default function ContactPage() {
         "addressRegion": "CA",
         "addressCountry": "US"
       }
-    }
+    },
+    "description": locale === 'ko' ? "해피맘 서비스에 대해 궁금한 점을 문의해 주세요." : "Contact us for any questions regarding HappyMom services."
   };
 
   return (

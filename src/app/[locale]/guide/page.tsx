@@ -6,10 +6,10 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const t = await getTranslations({ locale, namespace: 'Guide' });
 
   return {
-    title: `${t('heroTitle')} | HappyMom Guide`,
+    title: `${t('heroTitle').replace('|', ' ')} | HappyMom Guide`,
     description: t('heroSubtitle'),
     openGraph: {
-      title: `${t('heroTitle')} | HappyMom`,
+      title: `${t('heroTitle').replace('|', ' ')} | HappyMom`,
       description: t('heroSubtitle'),
       locale: locale,
       type: 'website',
@@ -17,26 +17,29 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default function GuidePage() {
+export default async function GuidePage({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Guide' });
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to apply for HappyMom Postpartum Care",
+    "name": locale === 'ko' ? "해피맘 산후조리 서비스 신청 방법" : "How to apply for HappyMom Postpartum Care",
     "step": [
       {
         "@type": "HowToStep",
-        "name": "Consultation Request",
-        "text": "Contact HappyMom via phone or website to request a consultation."
+        "name": t('step01Title'),
+        "text": t('step01Desc').replace(/<[^>]*>?/gm, '') // HTML 태그 제거
       },
       {
         "@type": "HowToStep",
-        "name": "Service Selection",
-        "text": "Consult with the director to choose the best service for your needs."
+        "name": t('step02Title'),
+        "text": t('step02Desc')
       },
       {
         "@type": "HowToStep",
-        "name": "Contract Submission",
-        "text": "Review and submit the signed contract via email."
+        "name": t('step03Title'),
+        "text": t('step03Desc').replace(/<[^>]*>?/gm, '')
       }
     ]
   };

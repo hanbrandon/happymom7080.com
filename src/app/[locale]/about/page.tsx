@@ -17,15 +17,20 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'About' });
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "mainEntity": {
       "@type": "LocalBusiness",
       "name": "HappyMom",
-      "description": "Professional postpartum care and newborn support services in the United States.",
-      "url": "https://happymom7080.com"
+      "description": locale === 'ko' 
+        ? "해피맘은 미국 전역의 산모님들을 위한 프리미엄 산후조리 및 신생아 케어 전문 기관입니다." 
+        : "Professional postpartum care and newborn support services in the United States.",
+      "url": `https://happymom7080.com/${locale}`
     }
   };
 

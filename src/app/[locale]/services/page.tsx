@@ -17,17 +17,20 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ServicesDetail' });
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Postpartum Care & Babysitting",
+    "serviceType": locale === 'ko' ? "전문 산후조리 및 아기돌봄 서비스" : "Premium Postpartum Care & Babysitting",
     "provider": {
       "@type": "LocalBusiness",
       "name": "HappyMom",
-      "url": "https://happymom7080.com"
+      "url": `https://happymom7080.com/${locale}`
     },
-    "description": "Premium postpartum care services and professional babysitting for mothers in the US."
+    "description": t('postpartumDesc')
   };
 
   return (

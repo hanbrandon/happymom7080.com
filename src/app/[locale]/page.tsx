@@ -16,23 +16,27 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
   return {
     title: `HappyMom | ${t('title1')} ${t('title2')}`,
-    description: "Professional Postpartum Care for Mothers Across the US. Expert newborn support and maternal healing.",
+    description: locale === 'ko' 
+      ? "미국 전역 산모를 위한 전문 산후조리 및 신생아 케어 서비스. 전문가의 손길로 정성껏 모십니다."
+      : "Professional Postpartum Care for Mothers Across the US. Expert newborn support and maternal healing.",
     openGraph: {
       title: `HappyMom | Premium Postpartum Care`,
-      description: "Supporting mothers through their journey into motherhood with expert care.",
+      description: locale === 'ko' ? "정성과 사랑으로 함께하는 해피맘 산후조리" : "Supporting mothers through their journey into motherhood with expert care.",
       locale: locale,
       type: 'website',
     },
   };
 }
 
-export default function Home() {
+export default async function Home({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
+  
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "HappyMom",
     "image": "https://happymom7080.com/logo.png",
-    "url": "https://happymom7080.com",
+    "url": `https://happymom7080.com/${locale}`,
     "telephone": "213-210-8274",
     "address": {
       "@type": "PostalAddress",
@@ -40,7 +44,9 @@ export default function Home() {
       "addressRegion": "CA",
       "addressCountry": "US"
     },
-    "description": "Professional Postpartum Care for Mothers Across the US. Expert newborn support and maternal healing."
+    "description": locale === 'ko' 
+      ? "미국 전역 산모를 위한 전문 산후조리 및 신생아 케어 서비스. 숙련된 전문가의 정성 어린 케어를 경험해 보세요."
+      : "Professional Postpartum Care for Mothers Across the US. Expert newborn support and maternal healing."
   };
 
   return (
