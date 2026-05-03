@@ -1,0 +1,35 @@
+{
+  "Navbar": {
+    "about": "소개",
+    "services": "서비스",
+    "guide": "이용안내",
+    "pricing": "가격",
+    "testimonials": "후기",
+    "faq": "자주 묻는 질문",
+    "contact": "문의하기",
+    "login": "로그인",
+    "signup": "회원가입"
+  },
+  "Footer": {
+    "about": "소개",
+    "menu": "메뉴",
+    "services": "서비스",
+    "more": "더 보기",
+    "mission": "우리의 사명",
+    "pricing": "이용 금액",
+    "testimonials": "이용 후기",
+    "faq": "자주 묻는 질문",
+    "contact": "문의하기",
+    "terms": "이용약관",
+    "privacy": "개인정보처리방침",
+    "rights": "© 2026 HappyMom. All rights reserved.",
+    "siteBy": "Site by",
+    "intro": "해피맘은 산모와 신생아를 위한 프리미엄 산후 조리 및 맞춤형 지원 서비스를 제공하는 전문 기관입니다.",
+    "guide": "이용안내",
+    "policies": "정책",
+    "refund": "환불 정책",
+    "contract": "계약서",
+    "callUs": "전화 문의",
+    "emailUs": "이메일 문의"
+  }
+}

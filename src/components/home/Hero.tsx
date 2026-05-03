@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import PremiumButton from '@/components/ui/PremiumButton';
 
 export default function Hero() {
   const t = useTranslations('Hero');
@@ -49,12 +50,13 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
             className="flex flex-wrap gap-4"
           >
-            <button className="px-10 h-14 rounded-full bg-brand text-white font-bold text-base hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer border-none">
+            <PremiumButton variant="primary">
               {t('cta1')}
-            </button>
-            <button className="px-10 h-14 rounded-full border border-white text-white font-bold text-base hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            </PremiumButton>
+
+            <PremiumButton variant="secondary">
               {t('cta2')}
-            </button>
+            </PremiumButton>
           </motion.div>
         </div>
       </div>

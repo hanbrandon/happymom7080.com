@@ -12,6 +12,7 @@ import {
 import { Globe, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import PremiumButton from '@/components/ui/PremiumButton';
 
 // Flip Board (Split-flap) Character Component
 const FlipChar = ({ char, index, isHovered }: { char: string; index: number; isHovered: boolean }) => {
@@ -138,11 +139,13 @@ export default function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link href="/contact" className="cursor-pointer">
-            <Button className={`font-bold rounded-full px-8 h-12 text-sm transition-all cursor-pointer border-none ${isDarkTheme ? 'bg-brand text-white hover:opacity-90 shadow-lg shadow-brand/20' : 'bg-white text-black hover:bg-brand hover:text-white'}`}>
-              {t('contact')}
-            </Button>
-          </Link>
+          <PremiumButton 
+            variant="primary" 
+            href="/contact"
+            className="h-12 px-8"
+          >
+            {t('contact')}
+          </PremiumButton>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -190,9 +193,9 @@ export default function Navbar() {
                   <Globe className="w-5 h-5" />
                   {locale === 'ko' ? 'Switch to English' : '한국어로 변경'}
                 </button>
-                <Button className="w-full bg-brand hover:opacity-90 text-white h-14 rounded-2xl text-lg font-bold border-none">
+                <PremiumButton variant="primary" href="/contact" className="w-full h-14 rounded-2xl text-lg font-bold">
                   {t('contact')}
-                </Button>
+                </PremiumButton>
               </div>
             </div>
           </motion.div>

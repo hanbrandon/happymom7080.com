@@ -1,0 +1,19 @@
+{
+  "tag": "Contact",
+  "title": "Please contact us <br />anytime.",
+  "subtitle": "HappyMom sincerely supports the mother's new beginning. Please feel free to contact us anytime with any questions.",
+  "callUs": "Call Us",
+  "emailUs": "Email Us",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "email": "Email Address",
+  "message": "Message",
+  "placeholderFirstName": "Enter your first name",
+  "placeholderLastName": "Enter your last name",
+  "placeholderEmail": "example@email.com",
+  "placeholderMessage": "How can we help you?",
+  "submit": "Send Message",
+  "successTitle": "Message Sent",
+  "successDesc": "Thank you for contacting us. We will get back to you as soon as possible.",
+  "resend": "Resend"
+}

@@ -4,6 +4,7 @@ import { Mail, Phone, Send, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import PremiumButton from '@/components/ui/PremiumButton';
 
 export default function Contact() {
   const t = useTranslations('Contact');
@@ -69,7 +70,7 @@ export default function Contact() {
 
               <div className="space-y-10">
                 <a href="tel:+12137001415" className="flex items-start gap-6 group outline-none">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white group-hover:-translate-y-1 group-hover:shadow-lg">
+                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -78,7 +79,7 @@ export default function Contact() {
                   </div>
                 </a>
                 <a href="mailto:happymom7080@gmail.com" className="flex items-start gap-6 group outline-none">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white group-hover:-translate-y-1 group-hover:shadow-lg">
+                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-brand group-hover:text-white">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -112,12 +113,13 @@ export default function Contact() {
                     <p className="text-lg text-gray-600 max-w-sm mx-auto mb-10">
                       {t('successDesc')}
                     </p>
-                    <button 
+                    <PremiumButton 
+                      variant="primary" 
                       onClick={() => setSubmitted(false)}
-                      className="px-10 h-14 bg-brand text-white font-bold rounded-full hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all cursor-pointer shadow-lg shadow-brand/20"
+                      className="mx-auto"
                     >
                       {t('resend')}
-                    </button>
+                    </PremiumButton>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-12">
@@ -222,20 +224,17 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <button 
-                      disabled={isSubmitting}
+                    <PremiumButton 
                       type="submit"
-                      className="w-full md:w-fit px-12 h-16 bg-brand text-white font-bold rounded-full hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-xl shadow-brand/20 cursor-pointer"
+                      disabled={isSubmitting}
+                      variant="primary"
+                      className="w-full md:w-fit"
+                      icon={isSubmitting ? null : <ArrowRight className="w-5 h-5" />}
                     >
                       {isSubmitting ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      ) : (
-                        <>
-                          {t('submit')}
-                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </>
-                      )}
-                    </button>
+                      ) : t('submit')}
+                    </PremiumButton>
                   </form>
                 )}
               </AnimatePresence>

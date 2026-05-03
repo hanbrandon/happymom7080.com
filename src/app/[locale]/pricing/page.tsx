@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
+import ServiceCTA from '@/components/layout/ServiceCTA';
 
 export default function PricingPage() {
   const t = useTranslations('PricingDetail');
@@ -22,155 +22,103 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <span className="text-sm font-bold text-gray-500 uppercase tracking-[0.3em] mb-6 block">{t('heroTag')}</span>
-            <h1 className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[1.1] mb-8">
-              {t('heroTitle')}
+            <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">{t('heroTag')}</span>
+            <h1 className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[1.1] mb-8 break-keep">
+              {t('heroTitle').split('|').map((part, index, array) => (
+                <span key={index}>
+                  {part}
+                  {index < array.length - 1 && <br />}
+                </span>
+              ))}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-500 max-w-3xl leading-relaxed">
               "{t('heroSubtitle')}"
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 2. Main Pricing Tables */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      {/* 2. Detailed Pricing Information */}
+      <section className="py-32 bg-white border-t border-gray-100">
         <div className="container mx-auto px-10">
-          
-          {/* Postpartum Care Section */}
-          <div className="mb-32">
-             <div className="flex items-end justify-between mb-16 border-b border-gray-200 pb-8">
-                <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight">{t('postpartumTitle')}</h2>
-                <span className="text-gray-500 font-medium hidden md:block">{t('weeklyRates')}</span>
-             </div>
-
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                <div className="space-y-6">
-                   <h3 className="text-2xl font-bold text-gray-900 uppercase tracking-widest">{t('liveInTitle')}</h3>
-                   <div className="text-5xl font-bold text-gray-900 py-4 border-y border-gray-100">
-                      {t('liveInPrice')}
-                   </div>
-                   <div className="space-y-2">
-                      <p className="text-lg text-gray-900 font-bold">{t('liveInDeposit')}</p>
-                      <p className="text-gray-700">{t('liveInHours')}</p>
-                   </div>
-                </div>
-                <div className="space-y-6">
-                   <h3 className="text-2xl font-bold text-gray-900 uppercase tracking-widest">{t('commutingTitle')}</h3>
-                   <div className="text-5xl font-bold text-gray-900 py-4 border-y border-gray-100">
-                      {t('commutingPrice')}
-                   </div>
-                   <div className="space-y-2">
-                      <p className="text-lg text-gray-900 font-bold">{t('commutingDeposit')}</p>
-                      <p className="text-gray-700">{t('commutingHours')}</p>
-                   </div>
+          <div className="mb-24">
+             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-6 mb-12">
+                <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter">
+                  {t('postpartumTitle')}
+                </h2>
+                <div className="bg-gray-50 px-6 py-3 rounded-2xl border border-gray-100">
+                   <p className="text-sm text-gray-600 font-medium">
+                     ※ {t('minPeriod')}
+                   </p>
                 </div>
              </div>
-
-             {/* Integrated Disclaimer for Postpartum Care */}
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-gray-100">
-                <div className="space-y-6">
-                   <p className="text-sm text-gray-900 font-bold leading-relaxed">
-                      {t('minPeriod')}
-                   </p>
-                   <p className="text-xs text-gray-900 font-bold leading-relaxed">
-                      ※ {t('longDistanceNote')}
-                   </p>
-                   <ul className="space-y-4 text-xs text-gray-600 font-medium leading-relaxed">
-                      <li>{t('basicConditions')}</li>
-                      <li>{t('breakTimes')}</li>
-                      <li>{t('transportation')}</li>
-                      <li>{t('serviceChange')}</li>
-                      <li>{t('extension')}</li>
-                      <li>{t('commutingAreaNote')}</li>
-                   </ul>
-                </div>
-
-                {/* Right Column: Essential Info Cards */}
-                <div className="space-y-8">
-                   {/* 1. Insurance Section */}
-                   <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
-                      <h4 className="text-lg font-bold text-gray-900 mb-4">{t('carrotTitle')}</h4>
-                      <p className="text-xs text-gray-600 font-medium leading-relaxed mb-6">
-                         {t('carrotDesc')}
-                      </p>
-                      <Link href="/guide#insurance" className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors">
-                         Insurance Support 자세히 보기 →
-                      </Link>
+             
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                {/* Live-in Option */}
+                <div className="group bg-gray-50 rounded-[2.5rem] p-12 border border-gray-100 transition-all hover:bg-white hover:shadow-xl">
+                   <div className="flex justify-between items-start mb-8">
+                      <h3 className="text-3xl font-bold text-gray-900 tracking-tight">{t('liveInTitle')}</h3>
+                      <div className="text-right">
+                         <p className="text-4xl font-bold text-gray-900 tracking-tight">{t('liveInPrice').split('/')[0]}</p>
+                         <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mt-1">/ {t('liveInPrice').split('/')[1]}</p>
+                      </div>
                    </div>
-
-                   {/* 2. Refund Summary Section */}
-                   <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
-                      <h4 className="text-lg font-bold text-gray-900 mb-6">{t('refundTitle')}</h4>
-                      <ul className="space-y-4 text-xs text-gray-700 font-medium leading-relaxed mb-8">
-                         <li>{t('noRefund')}</li>
-                         <li>{t('fullRefund')}</li>
-                         <li>{t('depositRefund')}</li>
-                      </ul>
-                      <Link href="/policy" className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors">
-                         {t('viewRefund')} →
-                      </Link>
-                   </div>
-
-                   {/* 3. Contract Section */}
-                   <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-between">
-                      <h4 className="text-lg font-bold text-gray-900">{t('officialContract')}</h4>
-                      <Link href="/guide#contract-step" className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors">
-                         {t('viewContract')} →
-                      </Link>
+                   <div className="space-y-6">
+                      <div className="pb-6 border-b border-gray-200/60">
+                         <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mb-2">Payment Structure</p>
+                         <p className="text-xl text-gray-700 font-medium">{t('liveInDeposit')}</p>
+                      </div>
+                      <div>
+                         <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mb-2">Service Hours</p>
+                         <p className="text-xl text-gray-700 font-medium">{t('liveInHours')}</p>
+                      </div>
                    </div>
                 </div>
+
+                {/* Commuting Option */}
+                <div className="group bg-gray-50 rounded-[2.5rem] p-12 border border-gray-100 transition-all hover:bg-white hover:shadow-xl">
+                   <div className="flex justify-between items-start mb-8">
+                      <h3 className="text-3xl font-bold text-gray-900 tracking-tight">{t('commutingTitle')}</h3>
+                      <div className="text-right">
+                         <p className="text-4xl font-bold text-gray-900 tracking-tight">{t('commutingPrice').split('/')[0]}</p>
+                         <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mt-1">/ {t('commutingPrice').split('/')[1]}</p>
+                      </div>
+                   </div>
+                   <div className="space-y-6">
+                      <div className="pb-6 border-b border-gray-200/60">
+                         <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mb-2">Payment Structure</p>
+                         <p className="text-xl text-gray-700 font-medium">{t('commutingDeposit')}</p>
+                      </div>
+                      <div>
+                         <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mb-2">Service Hours</p>
+                         <p className="text-xl text-gray-700 font-medium">{t('commutingHours')}</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             {/* Out of State Note */}
+             <div className="mt-12 bg-white border border-gray-100 p-10 rounded-[2rem]">
+                <p className="text-lg text-gray-600 leading-relaxed break-keep">
+                   {t('longDistanceNote')}
+                </p>
              </div>
           </div>
 
-          {/* Babysitting */}
-          <div className="mb-32">
-             <div className="flex items-end justify-between mb-16 border-b border-gray-200 pb-8">
-                <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight">{t('babysitTitle')}</h2>
-                <span className="text-gray-500 font-medium hidden md:block">{t('premiumWeekly')}</span>
+          <div className="pt-24 border-t border-gray-100">
+             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-6 mb-16">
+                <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter">
+                   {t('additionalFeesTitle')}
+                </h2>
              </div>
-
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                <div className="space-y-6">
-                   <h3 className="text-2xl font-bold text-gray-900 uppercase tracking-widest">Premium Weekly</h3>
-                   <div className="text-5xl font-bold text-gray-900 py-4 border-y border-gray-100">
-                      {t('babysitPrice')}
-                   </div>
-                   <div className="space-y-2">
-                      <p className="text-lg text-gray-900 font-bold">{t('babysitDeposit')}</p>
-                      <p className="text-gray-700">{t('babysitHours')}</p>
-                   </div>
-                </div>
-             </div>
-
-             {/* Integrated Disclaimer for Babysitting (Customized) */}
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-gray-100">
-                <div className="space-y-6">
-                   <ul className="space-y-4 text-xs text-gray-600 font-medium leading-relaxed">
-                      <li>※ {t('minPeriod')}</li>
-                      <li>{t('serviceChange')}</li>
-                      <li>{t('twins')}</li>
-                      <li>{t('breakTimes')}</li>
-                      <li>{t('extension')}</li>
-                      <li>{t('commutingAreaNote')}</li>
-                   </ul>
-                </div>
-             </div>
-          </div>
-
-          {/* Additional Fees Table */}
-          <div className="mb-32">
-             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-gray-200 pb-8 gap-4">
-                <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight">{t('additionalFeesTitle')}</h2>
-             </div>
-
+             
              <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                    <thead>
                       <tr className="border-b-2 border-gray-900">
-                         <th className="py-6 text-xl font-bold text-gray-900">{t('feeTable.category')}</th>
-                         <th className="py-6 text-xl font-bold text-gray-900">{t('feeTable.liveIn')}</th>
-                         <th className="py-6 text-xl font-bold text-gray-900">{t('feeTable.commuting')}</th>
+                         <th className="pb-6 text-sm font-bold text-gray-400 uppercase tracking-widest">{t('feeTable.category')}</th>
+                         <th className="pb-6 text-sm font-bold text-gray-400 uppercase tracking-widest">{t('feeTable.liveIn')}</th>
+                         <th className="pb-6 text-sm font-bold text-gray-400 uppercase tracking-widest">{t('feeTable.commuting')}</th>
                       </tr>
                    </thead>
                    <tbody className="divide-y divide-gray-100">
@@ -206,28 +154,11 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* 3. Final CTA */}
-      <section className="pb-32 bg-white">
-         <div className="container mx-auto px-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative w-full h-[300px] overflow-hidden rounded-[2.5rem] p-10 md:p-16 flex flex-col justify-center items-start group"
-            >
-              <Image src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop" alt="CTA" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
-              <div className="relative z-10 max-w-2xl space-y-10">
-                <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight tracking-tight">
-                  Have more questions <br />about our <span className="underline decoration-gray-500 underline-offset-8">pricing plans?</span>
-                </h2>
-                <button className="h-12 px-10 bg-white text-gray-900 font-bold text-xs rounded-full hover:bg-gray-100 transition-all uppercase tracking-[0.2em]">
-                  {t('getQuote')}
-                </button>
-              </div>
-            </motion.div>
-         </div>
-      </section>
+      {/* 3. Final CTA (Standardized Shared Component) */}
+      <ServiceCTA 
+        title={t('ctaTitle')}
+        buttonText={t('getQuote')}
+      />
 
       <Footer />
     </main>

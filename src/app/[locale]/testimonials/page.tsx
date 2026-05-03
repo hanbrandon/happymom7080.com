@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Star, Quote, Send, ArrowRight, X, SquarePen } from 'lucide-react';
 import { useParams } from 'next/navigation';
+import PremiumButton from '@/components/ui/PremiumButton';
 
 // Individual Testimonial Item with InView tracking
 function TestimonialItem({ item, index, onInView }: { item: any, index: number, onInView: (i: number) => void }) {
@@ -74,7 +75,7 @@ export default function TestimonialsPage() {
       location: 'Los Angeles, CA',
       service: 'Postpartum Care',
       content: 'HappyMom was a lifesaver. Their lactation consultant helped me when I was about to give up. The support group is amazing!',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar.png',
       rating: 5
     },
     {
@@ -82,7 +83,7 @@ export default function TestimonialsPage() {
       location: 'Irvine, CA',
       service: 'Maternal Wellness',
       content: 'I felt so overwhelmed, but the mental wellness sessions gave me the tools to cope. I highly recommend their services to all new moms.',
-      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar.png',
       rating: 5
     },
     {
@@ -90,7 +91,7 @@ export default function TestimonialsPage() {
       location: 'Pasadena, CA',
       service: 'Family Support',
       content: 'Seeing my wife so well-cared for made our transition to parenthood so much smoother. HappyMom supports the whole family.',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar.png',
       rating: 5
     },
     {
@@ -98,7 +99,7 @@ export default function TestimonialsPage() {
       location: 'Santa Monica, CA',
       service: 'Newborn Care',
       content: 'The nighttime care was a blessing. I could finally get some sleep knowing my baby was in professional hands. Highly recommend!',
-      avatar: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar.png',
       rating: 5
     },
     {
@@ -106,7 +107,7 @@ export default function TestimonialsPage() {
       location: 'Fullerton, CA',
       service: 'Postpartum Care',
       content: '한국에서 온 관리사님의 정성 어린 케어 덕분에 낯선 미국 땅에서도 친정 엄마가 계신 것 같은 따뜻함을 느꼈습니다. 감사합니다.',
-      avatar: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar.png',
       rating: 5
     },
     {
@@ -114,7 +115,7 @@ export default function TestimonialsPage() {
       location: 'Newport Beach, CA',
       service: 'Babysitting Service',
       content: 'Reliable, professional, and so caring. My toddler absolutely loves her HappyMom sitter. It gives me such peace of mind.',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar.png',
       rating: 5
     }
   ];
@@ -186,13 +187,14 @@ export default function TestimonialsPage() {
                   "{t('subtitle')}"
                 </p>
                 
-                <button 
+                <PremiumButton 
+                  variant="primary" 
                   onClick={() => setIsModalOpen(true)}
-                  className="px-8 h-12 rounded-full bg-brand text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center gap-2 group mb-16 shadow-lg shadow-brand/20 cursor-pointer"
+                  className="mb-16"
+                  icon={<SquarePen className="w-4 h-4" />}
                 >
-                  <SquarePen className="w-4 h-4" />
                   {t('formSubmit')}
-                </button>
+                </PremiumButton>
 
                 <div className="hidden lg:block w-px h-24 bg-gray-100" />
               </motion.div>
@@ -268,15 +270,16 @@ export default function TestimonialsPage() {
                       <Send className="w-10 h-10" />
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">감사합니다!</h3>
-                    <p className="text-lg text-gray-600 max-w-sm mx-auto">
+                    <p className="text-lg text-gray-600 max-w-sm mx-auto mb-10">
                       {t('formSuccess')}
                     </p>
-                    <button 
+                    <PremiumButton 
+                      variant="outline" 
                       onClick={closeAndReset}
-                      className="mt-12 px-10 h-14 border border-gray-900 rounded-full font-bold text-gray-900 hover:bg-gray-900 hover:text-white transition-all"
+                      className="mx-auto"
                     >
                       닫기
-                    </button>
+                    </PremiumButton>
                   </div>
                 ) : (
                   <>
@@ -292,7 +295,7 @@ export default function TestimonialsPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         {/* Name Input with Loading Bar Motion */}
                         <div className="space-y-3 group">
-                          <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'name' ? 'text-gray-900' : 'text-gray-400'}`}>
+                          <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'name' ? 'text-brand' : 'text-gray-400'}`}>
                             {t('formName')}
                           </label>
                           <div className="relative">
@@ -317,7 +320,7 @@ export default function TestimonialsPage() {
 
                         {/* Location Input with Loading Bar Motion */}
                         <div className="space-y-3 group">
-                          <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'location' ? 'text-gray-900' : 'text-gray-400'}`}>
+                          <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'location' ? 'text-brand' : 'text-gray-400'}`}>
                             {t('formLocation')}
                           </label>
                           <div className="relative">
@@ -343,7 +346,7 @@ export default function TestimonialsPage() {
 
                       {/* Service Selection with Loading Bar Motion */}
                       <div className="space-y-3 group">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'service' ? 'text-gray-900' : 'text-gray-400'}`}>
+                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'service' ? 'text-brand' : 'text-gray-400'}`}>
                           {t('formService')}
                         </label>
                         <div className="relative">
@@ -369,7 +372,7 @@ export default function TestimonialsPage() {
 
                       {/* Content Textarea with Loading Bar Motion */}
                       <div className="space-y-3 group">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'content' ? 'text-gray-900' : 'text-gray-400'}`}>
+                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'content' ? 'text-brand' : 'text-gray-400'}`}>
                           {t('formContent')}
                         </label>
                         <div className="relative">
@@ -392,20 +395,17 @@ export default function TestimonialsPage() {
                         </div>
                       </div>
 
-                      <button 
-                        disabled={isSubmitting}
+                      <PremiumButton 
                         type="submit"
-                        className="w-full md:w-fit px-12 h-16 bg-brand text-white font-bold rounded-full hover:opacity-90 hover:-translate-y-1 hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group shadow-xl shadow-brand/20 cursor-pointer"
+                        disabled={isSubmitting}
+                        variant="primary"
+                        className="w-full md:w-fit"
+                        icon={isSubmitting ? null : <ArrowRight className="w-5 h-5" />}
                       >
                         {isSubmitting ? (
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        ) : (
-                          <>
-                            {t('formSubmit')}
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                          </>
-                        )}
-                      </button>
+                        ) : t('formSubmit')}
+                      </PremiumButton>
                     </form>
                   </>
                 )}

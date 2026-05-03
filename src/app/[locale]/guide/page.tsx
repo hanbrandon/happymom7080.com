@@ -5,17 +5,19 @@ import Footer from '@/components/layout/Footer';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import SplitText from '@/components/ui/SplitText';
+import ServiceCTA from '@/components/layout/ServiceCTA';
 
 export default function GuidePage() {
   const t = useTranslations('Guide');
 
   const steps = [
-    { number: '01', title: t('step01Title'), description: t('step01Desc') },
-    { number: '02', title: t('step02Title'), description: t('step02Desc') },
-    { number: '03', title: t('step03Title'), description: t('step03Desc') },
-    { number: '04', title: t('step04Title'), description: t('step04Desc') },
-    { number: '05', title: t('step05Title'), description: t('step05Desc') },
-    { number: '06', title: t('step06Title'), description: t('step06Desc') }
+    { number: '01', title: t('step01Title'), description: t.raw('step01Desc') },
+    { number: '02', title: t('step02Title'), description: t.raw('step02Desc') },
+    { number: '03', title: t('step03Title'), description: t.raw('step03Desc') },
+    { number: '04', title: t('step04Title'), description: t.raw('step04Desc') },
+    { number: '05', title: t('step05Title'), description: t.raw('step05Desc') },
+    { number: '06', title: t('step06Title'), description: t.raw('step06Desc') }
   ];
 
   return (
@@ -31,8 +33,8 @@ export default function GuidePage() {
             transition={{ duration: 1 }}
           >
             <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">{t('heroTag')}</span>
-            <h1 className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[1.1] mb-8">
-              {t('heroTitle')}
+            <h1 className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[1.1] mb-8 break-keep">
+              <SplitText text={t('heroTitle')} />
             </h1>
             <p className="text-xl md:text-2xl text-gray-500 max-w-3xl leading-relaxed">
               "{t('heroSubtitle')}"
@@ -107,33 +109,8 @@ export default function GuidePage() {
         </div>
       </section>
 
-      {/* 4. Compact CTA Card Finale (Standardized) */}
-      <section className="pb-40 bg-white">
-         <div className="container mx-auto px-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative w-full h-[300px] overflow-hidden rounded-[2.5rem] p-10 md:p-16 flex flex-col justify-center items-start group"
-            >
-              <Image 
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop" 
-                alt="CTA Background" 
-                fill 
-                className="object-cover group-hover:scale-105 transition-transform duration-1000" 
-              />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
-              <div className="relative z-10 max-w-2xl space-y-10">
-                <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight tracking-tight">
-                  Ready to start your journey <br />with <span className="underline decoration-gray-500 underline-offset-8">professional care?</span>
-                </h2>
-                <button className="h-12 px-10 bg-white text-gray-900 font-bold text-xs rounded-full hover:bg-gray-100 transition-all uppercase tracking-[0.2em] cursor-pointer">
-                  Contact Us
-                </button>
-              </div>
-            </motion.div>
-         </div>
-      </section>
+      {/* 4. Compact CTA Card Finale (Standardized Shared Component) */}
+      <ServiceCTA />
       
       <Footer />
     </main>

@@ -3,10 +3,11 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
-import { Link } from '@/i18n/routing';
+import PremiumButton from '@/components/ui/PremiumButton';
 
 export default function Pricing() {
   const t = useTranslations('Pricing');
+  const th = useTranslations('PricingHome');
 
   const plans = [
     {
@@ -17,10 +18,10 @@ export default function Pricing() {
       serviceFee: '$1,300',
       deposit: '$300',
       features: [
-        '24/7 Professional Care',
-        'Specialized Newborn Support',
-        'Maternal Physical Recovery',
-        'Nutrition & Meal Management'
+        th('plans.0.features.0'),
+        th('plans.0.features.1'),
+        th('plans.0.features.2'),
+        th('plans.0.features.3'),
       ]
     },
     {
@@ -32,10 +33,10 @@ export default function Pricing() {
       deposit: '$300',
       featured: true,
       features: [
-        'Mon-Fri 9:00 - 18:00',
-        'Personalized Newborn Care',
-        'Maternal Health Check',
-        'Family & Environment Support'
+        th('plans.1.features.0'),
+        th('plans.1.features.1'),
+        th('plans.1.features.2'),
+        th('plans.1.features.3'),
       ]
     },
     {
@@ -46,10 +47,10 @@ export default function Pricing() {
       serviceFee: '$1,000',
       deposit: '$200',
       features: [
-        'Expert Babysitting Service',
-        'Infant Development Support',
-        'Daily Log & Health Recording',
-        'Safety Focused Care'
+        th('plans.2.features.0'),
+        th('plans.2.features.1'),
+        th('plans.2.features.2'),
+        th('plans.2.features.3'),
       ]
     }
   ];
@@ -60,22 +61,24 @@ export default function Pricing() {
         <div className="flex flex-col lg:flex-row items-start justify-between mb-24 gap-12">
           <div className="max-w-2xl">
             <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">
-              Investment in Care
+              {th('tag')}
             </span>
-            <h2 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tighter leading-[1.05] mb-8">
-              Transparent Pricing <br />for Peace of Mind.
-            </h2>
+            <h2 
+              className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tighter leading-[1.05] mb-8"
+              dangerouslySetInnerHTML={{ __html: th('title') }}
+            />
             <p className="text-xl text-gray-500 leading-relaxed max-w-lg">
-              Choose the care plan that best fits your family's needs. No hidden fees, just pure professional support.
+              {th('subtitle')}
             </p>
           </div>
           <div className="pt-4">
-            <Link href="/pricing">
-              <button className="px-10 h-16 rounded-full bg-white border border-gray-100 text-gray-900 font-bold text-sm uppercase tracking-widest hover:bg-brand hover:text-white hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-pointer shadow-sm group flex items-center gap-3">
-                Full Pricing Details
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </Link>
+            <PremiumButton 
+              variant="outline" 
+              href="/pricing"
+              icon={<ArrowRight className="w-4 h-4" />}
+            >
+              {th('fullPricing')}
+            </PremiumButton>
           </div>
         </div>
 
@@ -87,11 +90,11 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group hover:shadow-2xl hover:shadow-brand/5 ${plan.featured ? 'ring-2 ring-brand shadow-xl shadow-brand/10' : 'border border-gray-100'}`}
+              className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group ${plan.featured ? 'ring-2 ring-brand' : 'border border-gray-100'}`}
             >
               {plan.featured && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full">
-                  Most Popular
+                  {th('popular')}
                 </div>
               )}
 
@@ -128,20 +131,18 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <Link href="/pricing" className="mt-auto">
-                <button className={`w-full h-16 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 cursor-pointer ${plan.featured ? 'bg-brand text-white hover:opacity-90 hover:-translate-y-1' : 'bg-gray-50 text-gray-900 hover:bg-gray-200 hover:-translate-y-1'}`}>
-                  {t('learnMore')}
-                </button>
-              </Link>
+              <PremiumButton 
+                variant={plan.featured ? 'primary' : 'outline'} 
+                href="/pricing"
+                className="w-full"
+              >
+                {t('learnMore')}
+              </PremiumButton>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-24 text-center">
-          <p className="text-gray-400 text-sm font-medium">
-            * Custom plans available for twins or out-of-state services. <Link href="/contact" className="text-brand underline underline-offset-4 decoration-1 font-bold">Inquire Now</Link>
-          </p>
-        </div>
+
       </div>
     </section>
   );

@@ -1,0 +1,19 @@
+{
+  "tag": "문의하기",
+  "title": "언제든 <br />문의해 주세요.",
+  "subtitle": "해피맘은 산모님의 새로운 시작을 진심으로 응원합니다. 궁금한 점은 언제든 편하게 연락 주세요.",
+  "callUs": "전화 문의",
+  "emailUs": "이메일 문의",
+  "firstName": "이름",
+  "lastName": "성",
+  "email": "이메일 주소",
+  "message": "문의 내용",
+  "placeholderFirstName": "이름을 입력하세요",
+  "placeholderLastName": "성을 입력하세요",
+  "placeholderEmail": "example@email.com",
+  "placeholderMessage": "무엇을 도와드릴까요?",
+  "submit": "메시지 보내기",
+  "successTitle": "메시지가 전송되었습니다",
+  "successDesc": "문의해주셔서 감사합니다. 빠른 시일 내에 답변해 드리겠습니다.",
+  "resend": "다시 보내기"
+}

@@ -125,6 +125,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
   }
   html {
     @apply font-sans;
