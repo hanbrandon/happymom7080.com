@@ -73,6 +73,7 @@ export default function PremiumButton({
 
   return (
     <button
+      suppressHydrationWarning
       type={type}
       disabled={disabled}
       onClick={onClick}

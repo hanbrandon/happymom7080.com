@@ -12,22 +12,25 @@ export default function Mission() {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start end", "end start"]
+        offset: ['start end', 'end start'],
     });
 
     const imageScale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
-    const imageY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+    const imageY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
 
     return (
-        <section ref={containerRef} className="py-32 bg-white overflow-hidden">
+        <section
+            ref={containerRef}
+            className="py-20 md:py-32 bg-white overflow-hidden"
+        >
             <div className="container mx-auto px-10">
-                <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
+                <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-10 md:mb-20">
                     <ScrollReveal delay={0.1}>
                         <span className="text-black font-bold uppercase tracking-[0.3em] mb-6 block text-sm">
                             {t('tag')}
                         </span>
                     </ScrollReveal>
-                    
+
                     <ScrollReveal delay={0.2}>
                         <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tighter mb-8">
                             {t('title')}
@@ -35,31 +38,31 @@ export default function Mission() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.3}>
-                        <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mb-12">
+                        <p className="text-xl text-gray-600 leading-relaxed mb-12">
                             {t('description')}
                         </p>
                     </ScrollReveal>
 
-                    <ScrollReveal delay={0.4}>
+                    <ScrollReveal delay={0.4} width="fit-content">
                         <PremiumButton variant="primary">
                             {t('button')}
                         </PremiumButton>
                     </ScrollReveal>
                 </div>
 
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative aspect-[21/9] rounded-[2.5rem] overflow-hidden group"
+                    className="relative aspect-[4/3] md:aspect-[21/9] rounded-[2.5rem] overflow-hidden group"
                 >
-                    <motion.div 
+                    <motion.div
                         style={{ scale: imageScale, y: imageY }}
                         className="absolute inset-0"
                     >
                         <Image
-                            src="/home/about.png"
+                            src="/mission-about.png"
                             alt="Professional Postpartum Care"
                             fill
                             className="object-cover"

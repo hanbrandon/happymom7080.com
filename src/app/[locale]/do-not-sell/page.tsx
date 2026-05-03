@@ -54,7 +54,7 @@ export default function DoNotSellPage() {
       </section>
 
       {/* One-Click Opt-Out Action Section */}
-      <section className="py-20 bg-white border-t border-gray-100 text-center">
+      <section className="py-20 md:py-32 bg-white border-t border-gray-100 text-center">
         <div className="container mx-auto px-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-8">
@@ -103,7 +103,7 @@ export default function DoNotSellPage() {
       </section>
 
       {/* Content */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
         <div className="container mx-auto px-10">
           <div className="max-w-4xl mx-auto prose prose-gray">
             <div className="space-y-16">

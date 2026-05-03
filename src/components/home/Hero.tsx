@@ -19,7 +19,7 @@ export default function Hero() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-[100vh] flex items-center overflow-hidden bg-white">
+    <section ref={containerRef} className="relative min-h-[100dvh] flex items-center overflow-hidden bg-white">
       {/* Background Image - Sharp and Clear */}
       <motion.div 
         style={{ y: backgroundY }}

@@ -34,7 +34,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* Content */}
-      <section className="py-20 border-t border-gray-100 bg-white">
+      <section className="py-20 md:py-32 border-t border-gray-100 bg-white">
         <div className="container mx-auto px-10">
           <div className="max-w-4xl mx-auto prose prose-gray">
             <div className="space-y-16">

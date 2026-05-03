@@ -21,9 +21,9 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24">
           {/* Left: Heading */}
           <div className="lg:col-span-5">
             <motion.div
@@ -70,6 +70,7 @@ export default function FAQ() {
                     className="border-b border-black/5"
                   >
                     <button
+                      suppressHydrationWarning
                       onClick={() => toggleAccordion(index)}
                       className="w-full py-10 flex items-center justify-between text-left group relative cursor-pointer"
                     >

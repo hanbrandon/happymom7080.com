@@ -46,7 +46,7 @@ export default function AboutContent() {
             </section>
 
             {/* 2. Narrative Section */}
-            <section className="py-40 bg-white border-t border-gray-100">
+            <section className="py-20 md:py-32 bg-white border-t border-gray-100">
                 <div className="container mx-auto px-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                         <div className="lg:col-span-7">
@@ -91,7 +91,7 @@ export default function AboutContent() {
             </section>
 
             {/* 4. Pillars Section */}
-            <section className="py-40 bg-white">
+            <section className="py-20 md:py-32 bg-white">
                 <div className="container mx-auto px-10">
                     <div className="mb-24">
                         <ScrollReveal>
@@ -109,12 +109,12 @@ export default function AboutContent() {
                             {[
                                 { title: t('pillar1Title'), desc: t('pillar1Desc') },
                                 { title: t('pillar2Title'), desc: t('pillar2Desc') },
-                                { title: t('pillar3Label'), desc: t('pillar3Desc') }
+                                { title: t('pillar3Title'), desc: t('pillar3Desc') }
                             ].map((pillar, idx) => (
                                 <StaggerItem key={idx}>
-                                    <div className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-gray-100 last:border-b transition-colors duration-500">
+                                    <div className="py-10 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 border-t border-gray-100 last:border-b transition-colors duration-500">
                                         <div className="lg:col-span-5">
-                                            <h4 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-[-0.04em]">
+                                            <h4 className="text-2xl md:text-4xl font-bold text-gray-900 tracking-tight">
                                                 {pillar.title}
                                             </h4>
                                         </div>

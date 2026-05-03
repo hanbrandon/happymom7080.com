@@ -56,9 +56,9 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="py-40 bg-gray-50">
+    <section className="py-20 md:py-40 bg-gray-50">
       <div className="container mx-auto px-10">
-        <div className="flex flex-col lg:flex-row items-start justify-between mb-24 gap-12">
+        <div className="flex flex-col lg:flex-row items-start justify-between mb-12 md:mb-24 gap-8 md:gap-12">
           <div className="max-w-2xl">
             <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">
               {th('tag')}
@@ -88,7 +88,7 @@ export default function Pricing() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className={`relative flex flex-col p-12 bg-white rounded-[2rem] transition-all group ${plan.featured ? 'ring-2 ring-black' : 'border border-gray-100'}`}
             >

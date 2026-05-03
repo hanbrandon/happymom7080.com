@@ -44,7 +44,7 @@ export default function GuideContent() {
       </section>
 
       {/* 2. Service Process Steps */}
-      <section className="py-32 bg-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
         <div className="container mx-auto px-10">
           <div className="space-y-32">
             {steps.map((step, index) => (
@@ -79,7 +79,7 @@ export default function GuideContent() {
       </section>
 
       {/* 3. Additional Information Section */}
-      <section className="py-40 bg-gray-50 border-y border-gray-100">
+      <section className="py-20 md:py-32 bg-gray-50 border-y border-gray-100">
         <div className="container mx-auto px-10">
           <div className="mb-24">
              <ScrollReveal>

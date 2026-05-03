@@ -131,7 +131,8 @@
     "callUs": "Call Us",
     "emailUs": "Email Us",
     "doNotSell": "Do Not Sell My Personal Information",
-    "disclaimer": "HappyMom is not a medical institution and does not provide medical services. Our services are not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified health provider for medical concerns. HappyMom is an Equal Opportunity care provider and does not discriminate on any basis. We may provide information regarding third-party services (such as insurance claims) for your convenience, but we do not assume responsibility for their final outcomes."
+    "disclaimer1": "HappyMom is not a medical institution and does not provide medical services. Our services are not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified health provider for medical concerns.",
+    "disclaimer2": "HappyMom is an Equal Opportunity care provider and does not discriminate on any basis. We may provide information regarding third-party services (such as insurance claims) for your convenience, but we do not assume responsibility for their final outcomes."
   },
   "CTA": {
     "title": "Ready to start your journey | with professional care?",

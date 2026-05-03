@@ -60,16 +60,16 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
           
           {/* Left Side: Contact Info */}
           <div className="lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6 }}
               className="sticky top-32"
             >
@@ -112,7 +112,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6 }}
             >
               <AnimatePresence mode="wait">
@@ -147,6 +147,7 @@ export default function Contact() {
                         </label>
                         <div className="relative">
                           <input 
+                            suppressHydrationWarning
                             required
                             type="text" 
                             value={formData.firstName}
@@ -172,6 +173,7 @@ export default function Contact() {
                         </label>
                         <div className="relative">
                           <input 
+                            suppressHydrationWarning
                             type="text" 
                             value={formData.lastName}
                             onFocus={() => setFocusedField('lastName')}
@@ -197,6 +199,7 @@ export default function Contact() {
                       </label>
                       <div className="relative">
                         <input 
+                          suppressHydrationWarning
                           required
                           type="email" 
                           value={formData.email}
@@ -222,6 +225,7 @@ export default function Contact() {
                       </label>
                       <div className="relative">
                         <textarea 
+                          suppressHydrationWarning
                           required
                           rows={4}
                           value={formData.message}

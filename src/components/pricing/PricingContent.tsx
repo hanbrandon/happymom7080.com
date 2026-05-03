@@ -35,7 +35,7 @@ export default function PricingContent() {
       </section>
 
       {/* 2. Main Pricing Tables */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
         <div className="container mx-auto px-10">
           
           {/* Postpartum Care Section */}
@@ -240,7 +240,7 @@ export default function PricingContent() {
          <div className="container mx-auto px-10">
             <ScrollReveal>
                 <div className="relative w-full h-[300px] overflow-hidden rounded-[2.5rem] p-10 md:p-16 flex flex-col justify-center items-start group shadow-xl">
-                  <Image src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop" alt="CTA" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+                  <Image src="/cta-bg.png" alt="CTA" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
                   <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
                   <div className="relative z-10 max-w-2xl space-y-10">
                     <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight tracking-tight">

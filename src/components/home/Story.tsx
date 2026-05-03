@@ -7,11 +7,11 @@ export default function Story() {
   const t = useTranslations('Story');
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24">
           {/* Left Column: Label */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 hidden lg:block">
             <ScrollReveal>
               <span className="text-sm font-bold text-gray-900 uppercase tracking-widest">
                 {t('label')}

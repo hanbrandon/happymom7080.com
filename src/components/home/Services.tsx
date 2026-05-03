@@ -4,7 +4,11 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+import {
+    ScrollReveal,
+    StaggerContainer,
+    StaggerItem,
+} from '@/components/ui/ScrollReveal';
 
 export default function Services() {
     const t = useTranslations('Services');
@@ -14,29 +18,29 @@ export default function Services() {
             id: 'newborn',
             title: t('newborn'),
             desc: t('newbornDesc'),
-            image: '/home/service-1.png',
+            image: '/service-1.png',
         },
         {
             id: 'maternal',
             title: t('maternal'),
             desc: t('maternalDesc'),
-            image: '/home/service-2.png',
+            image: '/service-2.png',
         },
         {
             id: 'family',
             title: t('family'),
             desc: t('familyDesc'),
-            image: '/home/service-3.png',
+            image: '/service-3.png',
         },
     ];
 
     return (
-        <section className="py-24 bg-white border-t border-gray-50">
+        <section className="py-16 md:py-24 bg-white border-t border-gray-50">
             <div className="container mx-auto px-10">
-                <div className="flex flex-col lg:flex-row items-start justify-between mb-16 gap-8">
+                <div className="flex flex-col lg:flex-row items-start justify-between mb-10 md:mb-16 gap-8">
                     <div className="max-w-xl">
                         <ScrollReveal>
-                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tighter">
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 md:mb-6 tracking-tighter">
                                 {t('title')}
                             </h2>
                         </ScrollReveal>
@@ -54,7 +58,7 @@ export default function Services() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {services.map((service, index) => (
                             <StaggerItem key={index}>
-                                <div className="relative group aspect-[4/5] overflow-hidden rounded-lg cursor-pointer">
+                                <div className="relative group aspect-square md:aspect-[4/5] overflow-hidden rounded-lg cursor-pointer">
                                     <Image
                                         src={service.image}
                                         alt={service.title}

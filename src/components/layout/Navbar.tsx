@@ -121,6 +121,7 @@ export default function Navbar() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button 
+                suppressHydrationWarning
                 onMouseEnter={() => setHoveredLink('lang')}
                 onMouseLeave={() => setHoveredLink(null)}
                 className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-black' : 'text-white'}`}
