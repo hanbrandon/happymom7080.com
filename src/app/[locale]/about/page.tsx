@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import AboutContent from '@/components/about/AboutContent';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'About' });
 
@@ -18,5 +18,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function AboutPage() {
-  return <AboutContent />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "HappyMom",
+      "description": "Professional postpartum care and newborn support services in the United States.",
+      "url": "https://happymom7080.com"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <AboutContent />
+    </>
+  );
 }

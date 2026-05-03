@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import GuideContent from '@/components/guide/GuideContent';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Guide' });
 
@@ -18,5 +18,36 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function GuidePage() {
-  return <GuideContent />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to apply for HappyMom Postpartum Care",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Consultation Request",
+        "text": "Contact HappyMom via phone or website to request a consultation."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Service Selection",
+        "text": "Consult with the director to choose the best service for your needs."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Contract Submission",
+        "text": "Review and submit the signed contract via email."
+      }
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <GuideContent />
+    </>
+  );
 }
