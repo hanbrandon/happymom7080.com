@@ -5,9 +5,19 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'FAQ' });
 
+  const baseUrl = 'https://happymom7080.com';
+  const path = '/faq';
+
   return {
     title: `FAQ | HappyMom`,
     description: t('subtitle'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}${path}`,
+      languages: {
+        'ko-KR': `${baseUrl}/ko${path}`,
+        'en-US': `${baseUrl}/en${path}`,
+      },
+    },
     openGraph: {
       title: `FAQ | HappyMom`,
       description: t('subtitle'),
@@ -25,7 +35,7 @@ export default async function FAQPage({ params }: { params: { locale: string } }
   const faqItems = [
     { q: t('items.0.question'), a: t('items.0.answer') },
     { q: t('items.1.question'), a: t('items.1.answer') },
-    { q: t('items.8.question'), a: t('items.8.answer') } // 수면/휴식 시간 등 중요 문항
+    { q: t('items.8.question'), a: t('items.8.answer') }
   ];
 
   const jsonLd = {

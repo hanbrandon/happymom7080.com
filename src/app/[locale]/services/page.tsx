@@ -5,9 +5,19 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'ServicesDetail' });
 
+  const baseUrl = 'https://happymom7080.com';
+  const path = '/services';
+
   return {
     title: `${t('postpartumTitle')} | HappyMom Services`,
     description: t('postpartumDesc'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}${path}`,
+      languages: {
+        'ko-KR': `${baseUrl}/ko${path}`,
+        'en-US': `${baseUrl}/en${path}`,
+      },
+    },
     openGraph: {
       title: `${t('postpartumTitle')} | HappyMom`,
       description: t('postpartumDesc'),

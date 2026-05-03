@@ -5,9 +5,19 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Guide' });
 
+  const baseUrl = 'https://happymom7080.com';
+  const path = '/guide';
+
   return {
     title: `${t('heroTitle').replace('|', ' ')} | HappyMom Guide`,
     description: t('heroSubtitle'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}${path}`,
+      languages: {
+        'ko-KR': `${baseUrl}/ko${path}`,
+        'en-US': `${baseUrl}/en${path}`,
+      },
+    },
     openGraph: {
       title: `${t('heroTitle').replace('|', ' ')} | HappyMom`,
       description: t('heroSubtitle'),
@@ -29,7 +39,7 @@ export default async function GuidePage({ params }: { params: { locale: string }
       {
         "@type": "HowToStep",
         "name": t('step01Title'),
-        "text": t('step01Desc').replace(/<[^>]*>?/gm, '') // HTML 태그 제거
+        "text": t('step01Desc').replace(/<[^>]*>?/gm, '')
       },
       {
         "@type": "HowToStep",

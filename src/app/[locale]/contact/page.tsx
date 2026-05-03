@@ -5,9 +5,19 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Contact' });
 
+  const baseUrl = 'https://happymom7080.com';
+  const path = '/contact';
+
   return {
     title: `Contact | HappyMom`,
     description: t('subtitle'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}${path}`,
+      languages: {
+        'ko-KR': `${baseUrl}/ko${path}`,
+        'en-US': `${baseUrl}/en${path}`,
+      },
+    },
     openGraph: {
       title: `Contact | HappyMom`,
       description: t('subtitle'),

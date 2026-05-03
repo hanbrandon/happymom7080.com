@@ -14,11 +14,21 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Hero' });
 
+  const baseUrl = 'https://happymom7080.com';
+
   return {
     title: `HappyMom | ${t('title1')} ${t('title2')}`,
     description: locale === 'ko' 
       ? "미국 전역 산모를 위한 전문 산후조리 및 신생아 케어 서비스. 전문가의 손길로 정성껏 모십니다."
       : "Professional Postpartum Care for Mothers Across the US. Expert newborn support and maternal healing.",
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        'ko-KR': `${baseUrl}/ko`,
+        'en-US': `${baseUrl}/en`,
+        'x-default': baseUrl, // 언어 설정 없을 때의 기본 페이지
+      },
+    },
     openGraph: {
       title: `HappyMom | Premium Postpartum Care`,
       description: locale === 'ko' ? "정성과 사랑으로 함께하는 해피맘 산후조리" : "Supporting mothers through their journey into motherhood with expert care.",
