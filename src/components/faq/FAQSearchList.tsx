@@ -1,13 +1,14 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { Search, X } from 'lucide-react';
+import { Search, X, ChevronDown } from 'lucide-react';
 
 export default function FAQSearchList() {
   const t = useTranslations('FAQ');
   const [searchQuery, setSearchQuery] = useState('');
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   
   // Total indices from the translation file (0 to 21)
   const faqIndices = Array.from({ length: 22 }, (_, i) => i);
@@ -20,12 +21,16 @@ export default function FAQSearchList() {
     return question.includes(query) || answer.includes(query);
   });
 
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-10">
         <div className="max-w-4xl mx-auto">
           
-          {/* 1. Search Bar (Sharp Edges) */}
+          {/* 1. Search Bar */}
           <div className="relative mb-20">
             <div className="relative group">
               <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-gray-900 transition-colors" />
@@ -50,24 +55,47 @@ export default function FAQSearchList() {
             </p>
           </div>
 
-          {/* 2. Expanded FAQ List (Sharp Edges, No Accordion) */}
+          {/* 2. Accordion FAQ List */}
           <div className="space-y-0">
             {filteredIndices.length > 0 ? (
-              filteredIndices.map((index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="border-b border-gray-100 py-12 first:border-t"
-                >
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug">
-                    Q. {t(`items.${index}.question`)}
-                  </h3>
-                  <div className="text-gray-600 text-lg md:text-xl leading-relaxed whitespace-pre-wrap pl-6 border-l-2 border-gray-100">
-                    A. {t(`items.${index}.answer`)}
+              filteredIndices.map((index) => {
+                const isOpen = openIndex === index;
+                return (
+                  <div key={index} className="border-b border-gray-100 first:border-t">
+                    <button
+                      onClick={() => toggleAccordion(index)}
+                      className="w-full py-10 flex items-start justify-between text-left group"
+                    >
+                      <h3 className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${isOpen ? 'text-gray-900' : 'text-gray-400 group-hover:text-gray-600'}`}>
+                        Q. {t(`items.${index}.question`)}
+                      </h3>
+                      <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-2 ml-4 flex-shrink-0"
+                      >
+                        <ChevronDown className={`w-6 h-6 ${isOpen ? 'text-gray-900' : 'text-gray-300'}`} />
+                      </motion.div>
+                    </button>
+                    
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pb-12 text-gray-600 text-lg md:text-xl leading-relaxed whitespace-pre-wrap pl-6 border-l-2 border-gray-900 ml-1">
+                            {t(`items.${index}.answer`)}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                </motion.div>
-              ))
+                );
+              })
             ) : (
               <div className="text-center py-24 bg-gray-50 border border-dashed border-gray-200">
                  <p className="text-xl text-gray-400 font-medium italic">No results match your search.</p>

@@ -12,6 +12,7 @@ export default function Contact() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -19,8 +20,23 @@ export default function Contact() {
     message: ''
   });
 
+  const validateEmail = (email: string) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+
+    if (!validateEmail(formData.email)) {
+      setError("올바른 이메일 형식을 입력해 주세요.");
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
@@ -33,11 +49,11 @@ export default function Contact() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert("메시지 전송 중 오류가 발생했습니다.");
+        setError("메시지 전송 중 오류가 발생했습니다. 다시 시도해 주세요.");
       }
-    } catch (error) {
-      console.error(error);
-      alert("전송 중 오류가 발생했습니다.");
+    } catch (err) {
+      console.error(err);
+      setError("네트워크 연결을 확인하고 다시 시도해 주세요.");
     } finally {
       setIsSubmitting(false);
     }
@@ -223,6 +239,20 @@ export default function Contact() {
                         />
                       </div>
                     </div>
+
+                    {/* Error Message */}
+                    <AnimatePresence>
+                      {error && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="text-red-500 text-sm font-medium bg-red-50 border-l-4 border-red-500 p-4 mb-6"
+                        >
+                          {error}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
 
                     <PremiumButton 
                       type="submit"
