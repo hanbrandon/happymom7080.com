@@ -37,13 +37,13 @@ function TestimonialItem({ item, index, onInView }: { item: any, index: number, 
       </div>
       
       <div className="flex items-center gap-8">
-        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-rose-100 shadow-xl shadow-rose-50/50">
+        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-100 shadow-xl shadow-gray-50/50">
           <Image src={item.avatar} alt={item.name} width={80} height={80} className="object-cover" />
         </div>
         <div>
           <h4 className="text-2xl font-bold text-gray-900 mb-1 tracking-tight">{item.name}</h4>
           <p className="text-lg text-gray-400 font-light">
-             {item.location} <span className="text-rose-200 mx-3">/</span> {item.service}
+             {item.location} <span className="text-gray-300 mx-3">/</span> {item.service}
           </p>
         </div>
       </div>
@@ -264,7 +264,7 @@ export default function TestimonialsContent() {
                     </p>
                     <button 
                       onClick={closeAndReset}
-                      className="mt-16 px-12 h-16 bg-black text-white rounded-full font-black text-xs uppercase tracking-widest hover:bg-rose-400 transition-all"
+                      className="mt-16 px-12 h-16 bg-black text-white rounded-full font-black text-xs uppercase tracking-widest hover:bg-gray-900 transition-all"
                     >
                       닫기
                     </button>

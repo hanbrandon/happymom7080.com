@@ -96,7 +96,7 @@ export default function Navbar() {
           <FlipText 
             text="HappyMom" 
             isHovered={hoveredLink === 'logo'} 
-            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`} 
+            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-brand' : 'text-white'}`} 
           />
         </Link>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
               href={link.href}
               onMouseEnter={() => setHoveredLink(link.href)}
               onMouseLeave={() => setHoveredLink(null)}
-              className={`text-[13px] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`}
+              className={`text-[13px] font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${isDarkTheme ? 'text-brand' : 'text-white'}`}
             >
               <FlipText text={link.label} isHovered={hoveredLink === link.href} />
             </Link>
@@ -123,13 +123,13 @@ export default function Navbar() {
               <button 
                 onMouseEnter={() => setHoveredLink('lang')}
                 onMouseLeave={() => setHoveredLink(null)}
-                className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-[#000000]' : 'text-white'}`}
+                className={`text-sm font-bold transition-colors flex items-center gap-2 outline-none cursor-pointer ${isDarkTheme ? 'text-brand' : 'text-white'}`}
               >
                 <Globe className="w-4 h-4" />
                 <FlipText text={locale === 'ko' ? '한국어' : 'English'} isHovered={hoveredLink === 'lang'} />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className={`backdrop-blur-xl border-white/10 ${isDarkTheme ? 'bg-white text-gray-900' : 'bg-black/80 text-white'}`}>
+            <DropdownMenuContent align="end" className={`backdrop-blur-xl border-white/10 ${isDarkTheme ? 'bg-white text-gray-900' : 'bg-brand/80 text-white'}`}>
               <DropdownMenuItem className={`cursor-pointer focus:bg-brand focus:text-white transition-colors`} onClick={() => toggleLanguage('en')}>
                 English
               </DropdownMenuItem>
