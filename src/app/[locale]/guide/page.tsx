@@ -39,7 +39,7 @@ export default async function GuidePage({ params }: { params: { locale: string }
       {
         "@type": "HowToStep",
         "name": t('step01Title'),
-        "text": t('step01Desc').replace(/<[^>]*>?/gm, '')
+        "text": t.raw('step01Desc').replace(/<[^>]*>?/gm, '')
       },
       {
         "@type": "HowToStep",
@@ -49,7 +49,7 @@ export default async function GuidePage({ params }: { params: { locale: string }
       {
         "@type": "HowToStep",
         "name": t('step03Title'),
-        "text": t('step03Desc').replace(/<[^>]*>?/gm, '')
+        "text": t.raw('step03Desc').replace(/<[^>]*>?/gm, '')
       }
     ]
   };

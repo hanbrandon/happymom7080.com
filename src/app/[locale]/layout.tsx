@@ -16,8 +16,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import PageTransition from '@/components/layout/PageTransition';
-
 export const metadata: Metadata = {
   title: "해피맘 (HappyMom) | 프리미엄 미국 산후조리 서비스",
   description: "미국 전역 산모님들을 위한 프리미엄 산후조리, 맞춤형 신생아 케어 전문가 그룹 해피맘입니다.",
@@ -44,9 +42,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-rose-100 selection:text-rose-900`}>
         <NextIntlClientProvider messages={messages}>
-          <PageTransition>
-            {children}
-          </PageTransition>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
