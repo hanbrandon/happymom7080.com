@@ -43,11 +43,11 @@ export default function Pricing() {
     },
     {
       serviceKey: 'babyCare',
-      typeKey: 'liveIn',
-      price: '1,200',
+      typeKey: 'liveInCommuting',
+      price: '1,350',
       period: '/ week',
-      serviceFee: '$1,000',
-      deposit: '$200',
+      serviceFee: '$1,050',
+      deposit: '$300',
       features: [
         th('plans.2.features.0'),
         th('plans.2.features.1'),

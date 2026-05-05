@@ -40,6 +40,8 @@ export default function ServiceCTA({
                         src="/cta-bg.png"
                         alt="CTA Background"
                         fill
+                        priority
+                        quality={90}
                         className="object-cover group-hover:scale-105 transition-transform duration-1000"
                     />
 

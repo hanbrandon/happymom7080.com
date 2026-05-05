@@ -109,7 +109,7 @@ export default function PricingContent() {
                                  {t('carrotDesc')}
                               </p>
                               <Link href="/guide#insurance" className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors">
-                                 Insurance Support 자세히 보기 →
+                                 {t('viewInsurance')}
                               </Link>
                            </div>
                        </StaggerItem>
@@ -124,7 +124,7 @@ export default function PricingContent() {
                                  <li>{t('depositRefund')}</li>
                               </ul>
                               <Link href="/policy" className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors">
-                                 {t('viewRefund')} →
+                                 {t('viewRefund')}
                               </Link>
                            </div>
                        </StaggerItem>
@@ -134,7 +134,7 @@ export default function PricingContent() {
                            <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-between">
                               <h4 className="text-lg font-bold text-gray-900">{t('officialContract')}</h4>
                               <Link href="/guide#contract-step" className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors">
-                                 {t('viewContract')} →
+                                 {t('viewContract')}
                               </Link>
                            </div>
                        </StaggerItem>
@@ -155,7 +155,7 @@ export default function PricingContent() {
              <ScrollReveal delay={0.2}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                     <div className="space-y-6">
-                       <h3 className="text-2xl font-bold text-gray-900 uppercase tracking-widest">Premium Weekly</h3>
+                       <h3 className="text-2xl font-bold text-gray-900 uppercase tracking-widest">{t('liveInCommuting')}</h3>
                        <div className="text-5xl font-bold text-gray-900 py-4 border-y border-gray-100">
                           {t('babysitPrice')}
                        </div>
@@ -238,7 +238,7 @@ export default function PricingContent() {
 
       {/* 3. Final CTA */}
       <ServiceCTA 
-        title="Have more questions about our pricing plans?"
+        title={t('ctaTitle')}
         buttonText={t('getQuote')}
       />
 

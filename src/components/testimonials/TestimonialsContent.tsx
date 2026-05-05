@@ -73,7 +73,7 @@ export default function TestimonialsContent() {
       location: 'Los Angeles, CA',
       service: 'Postpartum Care',
       content: 'HappyMom was a lifesaver. Their lactation consultant helped me when I was about to give up. The support group is amazing!',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar_sarah.png',
       rating: 5
     },
     {
@@ -81,7 +81,7 @@ export default function TestimonialsContent() {
       location: 'Irvine, CA',
       service: 'Maternal Wellness',
       content: 'I felt so overwhelmed, but the mental wellness sessions gave me the tools to cope. I highly recommend their services to all new moms.',
-      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar2.png',
       rating: 5
     },
     {
@@ -89,7 +89,7 @@ export default function TestimonialsContent() {
       location: 'Pasadena, CA',
       service: 'Family Support',
       content: 'Seeing my wife so well-cared for made our transition to parenthood so much smoother. HappyMom supports the whole family.',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar_michael.png',
       rating: 5
     },
     {
@@ -97,7 +97,7 @@ export default function TestimonialsContent() {
       location: 'Santa Monica, CA',
       service: 'Newborn Care',
       content: 'The nighttime care was a blessing. I could finally get some sleep knowing my baby was in professional hands. Highly recommend!',
-      avatar: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar_emily.png',
       rating: 5
     },
     {
@@ -105,7 +105,7 @@ export default function TestimonialsContent() {
       location: 'Fullerton, CA',
       service: 'Postpartum Care',
       content: '한국에서 온 관리사님의 정성 어린 케어 덕분에 낯선 미국 땅에서도 친정 엄마가 계신 것 같은 따뜻함을 느꼈습니다. 감사합니다.',
-      avatar: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar1.png',
       rating: 5
     },
     {
@@ -113,7 +113,7 @@ export default function TestimonialsContent() {
       location: 'Newport Beach, CA',
       service: 'Babysitting Service',
       content: 'Reliable, professional, and so caring. My toddler absolutely loves her HappyMom sitter. It gives me such peace of mind.',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop',
+      avatar: '/testimonials/avatar_emily.png', // Reusing emily for jessica
       rating: 5
     }
   ];

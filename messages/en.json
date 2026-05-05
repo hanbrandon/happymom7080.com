@@ -1,4 +1,8 @@
 {
+  "Metadata": {
+    "title": "HappyMom | Premium Postpartum Care in the US",
+    "description": "Professional postpartum care and customized newborn support for mothers across the United States."
+  },
   "Navbar": {
     "about": "About",
     "services": "Services",
@@ -104,6 +108,8 @@
     "babyCare": "Babysitting Service",
     "liveIn": "Live-in",
     "commuting": "Commuting",
+    "babyCareType": "Live-in / Commuting",
+    "liveInCommuting": "Live-in / Commuting",
     "serviceFee": "Service Fee",
     "deposit": "Deposit",
     "total": "Total",

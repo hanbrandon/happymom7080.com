@@ -16,19 +16,19 @@ export default function Testimonials() {
             name: t('items.0.name'),
             role: t('items.0.role'),
             content: t('items.0.content'),
-            avatar: '/testimonials/avatar.png',
+            avatar: '/testimonials/avatar1.png',
         },
         {
             name: t('items.1.name'),
             role: t('items.1.role'),
             content: t('items.1.content'),
-            avatar: '/testimonials/avatar.png',
+            avatar: '/testimonials/avatar2.png',
         },
         {
             name: t('items.2.name'),
             role: t('items.2.role'),
             content: t('items.2.content'),
-            avatar: '/testimonials/avatar.png',
+            avatar: '/testimonials/avatar3.png',
         },
     ];
 
@@ -169,14 +169,14 @@ export default function Testimonials() {
                                     href="/testimonials"
                                     className="flex-1 text-sm h-12"
                                 >
-                                    전체 후기
+                                    {t('more')}
                                 </PremiumButton>
                                 <PremiumButton
                                     variant="primary"
                                     href="/testimonials"
                                     className="flex-1 text-sm h-12"
                                 >
-                                    후기 작성
+                                    {t('write')}
                                 </PremiumButton>
                             </div>
 
