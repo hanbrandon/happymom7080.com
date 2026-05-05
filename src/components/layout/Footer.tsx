@@ -3,6 +3,7 @@
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { Mail, Phone } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -29,12 +30,16 @@ export default function Footer() {
                     <div className="lg:col-span-4">
                         <Link 
                             href="/" 
-                            className="flex flex-col items-start gap-0 group cursor-pointer mb-8"
+                            className="flex items-center gap-3 group cursor-pointer mb-8"
                         >
-                            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-1 transition-all group-hover:bg-white group-hover:text-black">
-                                <span className="text-white text-xs font-bold group-hover:text-black transition-colors">HM</span>
+                            <div className="relative h-8 w-32">
+                                <Image
+                                    src="/logo_black.png"
+                                    alt="HappyMom Logo"
+                                    fill
+                                    className="object-contain brightness-0 invert"
+                                />
                             </div>
-                            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white">HappyMom</span>
                         </Link>
                         <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
                             {t('intro')}

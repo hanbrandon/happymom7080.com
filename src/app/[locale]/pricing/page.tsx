@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     openGraph: {
       title: `${t('heroTag')} | HappyMom`,
       description: t('heroSubtitle'),
+      images: ['/og-image.png'],
       locale: locale,
       type: 'website',
     },

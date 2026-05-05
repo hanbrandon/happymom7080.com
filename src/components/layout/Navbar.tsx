@@ -13,6 +13,7 @@ import { Globe, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PremiumButton from '@/components/ui/PremiumButton';
+import Image from 'next/image';
 
 // Flip Board (Split-flap) Character Component
 const FlipChar = ({ char, index, isHovered }: { char: string; index: number; isHovered: boolean }) => {
@@ -86,18 +87,18 @@ export default function Navbar() {
         {/* Left: Logo */}
         <Link 
           href="/" 
-          className="flex flex-col items-start gap-0 group cursor-pointer"
-          onMouseEnter={() => setHoveredLink('logo')}
-          onMouseLeave={() => setHoveredLink(null)}
+          className="flex items-center gap-3 group cursor-pointer"
+          onClick={() => setIsMobileMenuOpen(false)}
         >
-          <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-1 transition-colors ${isDarkTheme ? 'bg-gray-900 group-hover:bg-black' : 'bg-white/10 backdrop-blur-sm group-hover:bg-black'}`}>
-             <span className="text-white text-xs font-bold">HM</span>
+          <div className="relative h-10 w-40">
+            <Image
+              src="/logo_black.png"
+              alt="HappyMom Logo"
+              fill
+              className={`object-contain transition-all duration-300 ${!isDarkTheme ? 'brightness-0 invert' : ''}`}
+              priority
+            />
           </div>
-          <FlipText 
-            text="HappyMom" 
-            isHovered={hoveredLink === 'logo'} 
-            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-colors ${isDarkTheme ? 'text-black' : 'text-white'}`} 
-          />
         </Link>
 
         {/* Center: Navigation Pill */}
@@ -172,11 +173,15 @@ export default function Navbar() {
           >
             {/* Mobile Menu Header */}
             <div className="flex items-center justify-between px-10 py-8 border-b border-gray-100">
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-start gap-0">
-                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center mb-1">
-                  <span className="text-white text-xs font-bold">HM</span>
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3">
+                <div className="relative h-8 w-32">
+                  <Image
+                    src="/logo_black.png"
+                    alt="HappyMom Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-black">HappyMom</span>
               </Link>
               <button
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-black active:scale-90 transition-transform"
