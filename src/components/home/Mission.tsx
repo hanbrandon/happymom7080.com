@@ -44,7 +44,7 @@ export default function Mission() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4} width="fit-content">
-                        <PremiumButton variant="primary">
+                        <PremiumButton variant="primary" href="/about">
                             {t('button')}
                         </PremiumButton>
                     </ScrollReveal>
@@ -55,18 +55,34 @@ export default function Mission() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative aspect-[4/3] md:aspect-[21/9] rounded-[2.5rem] overflow-hidden group"
+                    className="relative aspect-[2/3] md:aspect-[21/9] rounded-[2.5rem] overflow-hidden group"
                 >
                     <motion.div
                         style={{ scale: imageScale, y: imageY }}
                         className="absolute inset-0"
                     >
-                        <Image
-                            src="/mission-about.png"
-                            alt="Professional Postpartum Care"
-                            fill
-                            className="object-cover"
-                        />
+                        {/* Desktop Image */}
+                        <div className="hidden md:block absolute inset-0">
+                            <Image
+                                src="/mission-about.png"
+                                alt="Professional Postpartum Care"
+                                fill
+                                className="object-cover"
+                                sizes="100vw"
+                                priority
+                            />
+                        </div>
+                        {/* Mobile Image */}
+                        <div className="block md:hidden absolute inset-0">
+                            <Image
+                                src="/about-mobile.png"
+                                alt="Professional Postpartum Care"
+                                fill
+                                className="object-cover"
+                                sizes="100vw"
+                                priority
+                            />
+                        </div>
                     </motion.div>
                     <div className="absolute inset-0 bg-black/10 transition-opacity duration-700 group-hover:opacity-30" />
                 </motion.div>

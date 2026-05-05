@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import ServiceCTA from '@/components/layout/ServiceCTA';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 
 export default function PricingContent() {
@@ -236,24 +237,10 @@ export default function PricingContent() {
       </section>
 
       {/* 3. Final CTA */}
-      <section className="pb-32 bg-white">
-         <div className="container mx-auto px-10">
-            <ScrollReveal>
-                <div className="relative w-full h-[300px] overflow-hidden rounded-[2.5rem] p-10 md:p-16 flex flex-col justify-center items-start group shadow-xl">
-                  <Image src="/cta-bg.png" alt="CTA" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
-                  <div className="relative z-10 max-w-2xl space-y-10">
-                    <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight tracking-tight">
-                      Have more questions <br />about our <span className="underline decoration-gray-500 underline-offset-8">pricing plans?</span>
-                    </h2>
-                    <button className="h-12 px-10 bg-white text-gray-900 font-bold text-xs rounded-full hover:bg-gray-100 transition-all uppercase tracking-[0.2em]">
-                      {t('getQuote')}
-                    </button>
-                  </div>
-                </div>
-            </ScrollReveal>
-         </div>
-      </section>
+      <ServiceCTA 
+        title="Have more questions about our pricing plans?"
+        buttonText={t('getQuote')}
+      />
 
       <Footer />
     </main>
