@@ -87,7 +87,7 @@ export default function FAQ() {
                       className="w-full py-10 flex items-center justify-between text-left relative cursor-pointer"
                     >
                       <div className="flex items-center space-x-8 z-10 transition-transform duration-500 group-hover:translate-x-2">
-                        <span className={`text-xs font-bold transition-colors duration-500 tracking-tighter ${isOpen ? 'text-black' : 'text-gray-200 group-hover:text-black'}`}>
+                        <span className={`text-xs font-bold transition-colors duration-500 tracking-tighter ${isOpen ? 'text-black' : 'text-gray-400 group-hover:text-black'}`}>
                           {(i + 1).toString().padStart(2, '0')}
                         </span>
                         <h3 className={`text-xl md:text-2xl font-medium tracking-tight transition-colors duration-500 ${isOpen ? 'text-black' : 'text-gray-400 group-hover:text-black'}`}>
@@ -105,7 +105,7 @@ export default function FAQ() {
                           stiffness: 300, 
                           damping: 15 
                         }}
-                        className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center z-10 transition-colors duration-500 ${isOpen ? 'bg-black border-black text-white' : 'border-gray-100 text-gray-300 group-hover:border-black group-hover:text-black'}`}
+                        className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center z-10 transition-colors duration-500 ${isOpen ? 'bg-black border-black text-white' : 'border-gray-300 text-gray-500 group-hover:border-black group-hover:text-black'}`}
                       >
                         <Plus className="w-5 h-5" />
                       </motion.div>

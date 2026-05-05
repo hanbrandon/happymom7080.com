@@ -41,9 +41,9 @@ function TestimonialItem({ item, index, onInView }: { item: any, index: number, 
           <Image src={item.avatar} alt={item.name} width={80} height={80} className="object-cover" />
         </div>
         <div>
-          <h4 className="text-2xl font-bold text-gray-900 mb-1 tracking-tight">{item.name}</h4>
-          <p className="text-lg text-gray-400 font-light">
-             {item.location} <span className="text-gray-300 mx-3">/</span> {item.service}
+          <h3 className="text-2xl font-bold text-gray-900 mb-1 tracking-tight">{item.name}</h3>
+          <p className="text-lg text-gray-600 font-light">
+             {item.location} <span className="text-gray-400 mx-3">/</span> {item.service}
           </p>
         </div>
       </div>
@@ -67,56 +67,7 @@ export default function TestimonialsContent() {
     content: ''
   });
 
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      location: 'Los Angeles, CA',
-      service: 'Postpartum Care',
-      content: 'HappyMom was a lifesaver. Their lactation consultant helped me when I was about to give up. The support group is amazing!',
-      avatar: '/testimonials/avatar_sarah.png',
-      rating: 5
-    },
-    {
-      name: 'Kim Ji-won',
-      location: 'Irvine, CA',
-      service: 'Maternal Wellness',
-      content: 'I felt so overwhelmed, but the mental wellness sessions gave me the tools to cope. I highly recommend their services to all new moms.',
-      avatar: '/testimonials/avatar2.png',
-      rating: 5
-    },
-    {
-      name: 'Michael Chen',
-      location: 'Pasadena, CA',
-      service: 'Family Support',
-      content: 'Seeing my wife so well-cared for made our transition to parenthood so much smoother. HappyMom supports the whole family.',
-      avatar: '/testimonials/avatar_michael.png',
-      rating: 5
-    },
-    {
-      name: 'Emily Davis',
-      location: 'Santa Monica, CA',
-      service: 'Newborn Care',
-      content: 'The nighttime care was a blessing. I could finally get some sleep knowing my baby was in professional hands. Highly recommend!',
-      avatar: '/testimonials/avatar_emily.png',
-      rating: 5
-    },
-    {
-      name: 'Park So-young',
-      location: 'Fullerton, CA',
-      service: 'Postpartum Care',
-      content: '한국에서 온 관리사님의 정성 어린 케어 덕분에 낯선 미국 땅에서도 친정 엄마가 계신 것 같은 따뜻함을 느꼈습니다. 감사합니다.',
-      avatar: '/testimonials/avatar1.png',
-      rating: 5
-    },
-    {
-      name: 'Jessica Miller',
-      location: 'Newport Beach, CA',
-      service: 'Babysitting Service',
-      content: 'Reliable, professional, and so caring. My toddler absolutely loves her HappyMom sitter. It gives me such peace of mind.',
-      avatar: '/testimonials/avatar_emily.png', // Reusing emily for jessica
-      rating: 5
-    }
-  ];
+  const testimonials = t.raw('items') || [];
 
   useEffect(() => {
     if (isModalOpen) {
@@ -177,7 +128,7 @@ export default function TestimonialsContent() {
                   className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-12"
                   dangerouslySetInnerHTML={{ __html: t('title') }}
                 />
-                <p className="text-2xl text-gray-400 max-w-sm leading-tight font-light mb-16">
+                <p className="text-2xl text-gray-600 max-w-sm leading-tight font-light mb-16">
                   "{t('subtitle')}"
                 </p>
                 
@@ -216,8 +167,8 @@ export default function TestimonialsContent() {
                      >
                         {(activeIndex + 1).toString().padStart(2, '0')}
                      </motion.span>
-                     <span className="text-gray-200">/</span>
-                     <span className="text-gray-300">{(testimonials.length).toString().padStart(2, '0')}</span>
+                     <span className="text-gray-500">/</span>
+                     <span className="text-gray-500">{(testimonials.length).toString().padStart(2, '0')}</span>
                   </div>
                   <div className="w-[1px] flex-grow bg-black/[0.05]" />
                </div>

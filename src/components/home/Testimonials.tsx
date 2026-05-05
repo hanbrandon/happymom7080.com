@@ -11,26 +11,7 @@ export default function Testimonials() {
     const t = useTranslations('TestimonialsHome');
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const testimonials = [
-        {
-            name: t('items.0.name'),
-            role: t('items.0.role'),
-            content: t('items.0.content'),
-            avatar: '/testimonials/avatar1.png',
-        },
-        {
-            name: t('items.1.name'),
-            role: t('items.1.role'),
-            content: t('items.1.content'),
-            avatar: '/testimonials/avatar2.png',
-        },
-        {
-            name: t('items.2.name'),
-            role: t('items.2.role'),
-            content: t('items.2.content'),
-            avatar: '/testimonials/avatar3.png',
-        },
-    ];
+    const testimonials = t.raw('items') || [];
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -61,7 +42,7 @@ export default function Testimonials() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">
+                            <span className="text-sm font-bold text-gray-500 uppercase tracking-[0.3em] mb-6 block">
                                 {t('tag')}
                             </span>
                             <h2
@@ -151,10 +132,10 @@ export default function Testimonials() {
                                             />
                                         </div>
                                         <div>
-                                            <h4 className="text-xl font-bold text-gray-900 mb-1">
+                                            <h3 className="text-xl font-bold text-gray-900 mb-1">
                                                 {testimonials[activeIndex].name}
-                                            </h4>
-                                            <p className="text-lg text-gray-500 font-medium">
+                                            </h3>
+                                            <p className="text-lg text-gray-600 font-medium">
                                                 {testimonials[activeIndex].role}
                                             </p>
                                         </div>
@@ -186,8 +167,8 @@ export default function Testimonials() {
                                     <span className="text-gray-900 font-bold">
                                         0{activeIndex + 1}
                                     </span>
-                                    <span className="text-gray-300">/</span>
-                                    <span className="text-gray-400">
+                                    <span className="text-gray-500">/</span>
+                                    <span className="text-gray-500">
                                         0{testimonials.length}
                                     </span>
                                 </div>
@@ -195,6 +176,7 @@ export default function Testimonials() {
                                     <button
                                         suppressHydrationWarning
                                         onClick={handlePrev}
+                                        aria-label="Previous testimonial"
                                         className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:border-gray-900 transition-all"
                                     >
                                         <ChevronLeft className="w-5 h-5" />
@@ -202,6 +184,7 @@ export default function Testimonials() {
                                     <button
                                         suppressHydrationWarning
                                         onClick={handleNext}
+                                        aria-label="Next testimonial"
                                         className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:border-gray-900 transition-all"
                                     >
                                         <ChevronRight className="w-5 h-5" />

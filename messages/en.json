@@ -47,25 +47,28 @@
   },
   "TestimonialsHome": {
     "tag": "Testimonials",
-    "title": "Vivid Stories <br />from Mothers",
+    "title": "Vivid Reviews <br />from Mothers",
     "subtitle": "Check out the sincere stories of mothers who have experienced HappyMom.",
-    "more": "View More Testimonials",
-    "write": "Write a Testimonial",
+    "more": "View More",
+    "write": "Write Review",
     "items": [
       {
-        "name": "Jihyun Kim",
-        "role": "Mother of two",
-        "content": "HappyMom was like a savior to me. When I felt like giving up, I received help from a breastfeeding specialist, and the community support was also a great strength."
+        "name": "Miro Ryu",
+        "role": "Postpartum Care",
+        "content": "I'm a mom who has been giving birth for two weeks. I highly recommend Amy, who really loves babies! I was able to sleep well because she took care of the baby all night.",
+        "avatar": "/testimonials/avatar1.png"
       },
       {
-        "name": "Jiwon Kim",
-        "role": "New Mom",
-        "content": "Everything felt overwhelming, but I gained the strength to overcome through the mental wellness sessions. I highly recommend it to all new moms."
+        "name": "Sara Lee",
+        "role": "Postpartum Care",
+        "content": "I recommend Joyce! She loved the baby so much and took care of everything from head shape correction to defecation records. Especially her cooking skills were great.",
+        "avatar": "/testimonials/avatar_emily.png"
       },
       {
-        "name": "Minsu Park",
-        "role": "Reliable Dad",
-        "content": "Seeing my wife receive such meticulous care made the process of becoming a parent much easier. HappyMom reliably supports the whole family."
+        "name": "Mi Jung Kim",
+        "role": "Postpartum Care",
+        "content": "I gave birth to my second child at the end of March and was with Susan, and it was the best choice! She has a kind and friendly personality, and her cooking is perfect.",
+        "avatar": "/testimonials/avatar2.png"
       }
     ]
   },

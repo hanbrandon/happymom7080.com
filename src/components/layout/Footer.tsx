@@ -12,10 +12,10 @@ export default function Footer() {
             <div className="container mx-auto px-10">
                 {/* Global Disclaimer */}
                 <div className="mb-10 space-y-2">
-                    <p className="text-[11px] text-gray-500 leading-relaxed break-keep opacity-60">
+                    <p className="text-[11px] text-gray-400 leading-relaxed break-keep">
                         {t('disclaimer1')}
                     </p>
-                    <p className="text-[11px] text-gray-500 leading-relaxed break-keep opacity-60">
+                    <p className="text-[11px] text-gray-400 leading-relaxed break-keep">
                         {t('disclaimer2')}
                     </p>
                 </div>
@@ -36,16 +36,16 @@ export default function Footer() {
                             </div>
                             <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white">HappyMom</span>
                         </Link>
-                        <p className="text-sm text-gray-400 leading-relaxed max-w-xs opacity-70">
+                        <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
                             {t('intro')}
                         </p>
                     </div>
 
                     {/* Column 2: Site Menu */}
                     <div className="lg:col-span-2">
-                        <h4 className="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.3em] opacity-30">
+                        <h3 className="font-bold text-gray-500 mb-8 text-[10px] uppercase tracking-[0.3em]">
                             {t('menu')}
-                        </h4>
+                        </h3>
                         <ul className="space-y-4">
                             {[
                                 { href: '/about', label: t('about') },
@@ -69,9 +69,9 @@ export default function Footer() {
 
                     {/* Column 3: Policies */}
                     <div className="lg:col-span-3">
-                        <h4 className="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.3em] opacity-30">
+                        <h3 className="font-bold text-gray-500 mb-8 text-[10px] uppercase tracking-[0.3em]">
                             {t('policies')}
-                        </h4>
+                        </h3>
                         <ul className="space-y-4">
                             {[
                                 { href: '/terms', label: t('terms') },
@@ -93,9 +93,9 @@ export default function Footer() {
 
                     {/* Column 4: Contact Info */}
                     <div className="lg:col-span-3">
-                        <h4 className="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.3em] opacity-30">
+                        <h3 className="font-bold text-gray-500 mb-8 text-[10px] uppercase tracking-[0.3em]">
                             {t('contact')}
-                        </h4>
+                        </h3>
                         <div className="space-y-10">
                             <a
                                 suppressHydrationWarning
@@ -106,7 +106,7 @@ export default function Footer() {
                                     <Phone className="w-5 h-5 text-white group-hover:text-black transition-colors duration-500" />
                                 </div>
                                 <div className="space-y-0.5">
-                                    <p className="text-[9px] font-black text-gray-500 uppercase tracking-[0.2em] mb-0.5">
+                                    <p className="text-[9px] font-black text-gray-400 uppercase tracking-[0.2em] mb-0.5">
                                         {t('callUs')}
                                     </p>
                                     <p className="text-base font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
@@ -123,7 +123,7 @@ export default function Footer() {
                                     <Mail className="w-5 h-5 text-white group-hover:text-black transition-colors duration-500" />
                                 </div>
                                 <div className="space-y-0.5">
-                                    <p className="text-[9px] font-black text-gray-500 uppercase tracking-[0.2em] mb-0.5">
+                                    <p className="text-[9px] font-black text-gray-400 uppercase tracking-[0.2em] mb-0.5">
                                         {t('emailUs')}
                                     </p>
                                     <p className="text-base font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
@@ -137,10 +137,10 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-8">
-                    <p className="text-[10px] font-medium text-gray-500 uppercase tracking-widest">
+                    <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
                         {t('rights')}
                     </p>
-                    <p className="text-[10px] font-medium text-gray-500 uppercase tracking-widest">
+                    <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
                         {t('siteBy')}{' '}
                         <a
                             href="https://gawoori.com"
