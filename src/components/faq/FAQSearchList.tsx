@@ -73,17 +73,29 @@ export default function FAQSearchList() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: i * 0.05 }}
                                         key={index}
-                                        className="border-b border-black/5"
+                                        whileHover="hover"
+                                        className="relative group -mt-[1px]"
                                     >
+                                        {/* Top Animated Border */}
+                                        <div className="absolute top-0 left-0 w-full h-[1px] bg-black/5" />
+                                        <motion.div 
+                                            variants={{
+                                                hover: { scaleX: 1 }
+                                            }}
+                                            animate={{ scaleX: isOpen ? 1 : 0 }}
+                                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                                            className="absolute top-0 left-0 w-full h-[1px] bg-black z-20 origin-left"
+                                        />
+
                                         <button
                                             onClick={() => toggleAccordion(index)}
-                                            className="w-full py-12 flex items-center justify-between text-left group relative cursor-pointer"
+                                            className="w-full py-12 flex items-center justify-between text-left relative cursor-pointer"
                                         >
                                             <div className="flex items-center space-x-8 z-10 transition-transform duration-500 group-hover:translate-x-2">
-                                                <span className="text-xs font-bold text-gray-200 group-hover:text-black transition-colors duration-500 tracking-tighter">
+                                                <span className={`text-xs font-bold transition-colors duration-500 tracking-tighter ${isOpen ? 'text-black' : 'text-gray-200 group-hover:text-black'}`}>
                                                     {(i + 1).toString().padStart(2, '0')}
                                                 </span>
-                                                <h3 className={`text-xl md:text-2xl font-medium tracking-tight transition-colors duration-500 ${isOpen ? 'text-black' : 'text-gray-400'}`}>
+                                                <h3 className={`text-xl md:text-2xl font-medium tracking-tight transition-colors duration-500 ${isOpen ? 'text-black' : 'text-gray-400 group-hover:text-black'}`}>
                                                     {t(`items.${index}.question`)}
                                                 </h3>
                                             </div>
@@ -102,15 +114,6 @@ export default function FAQSearchList() {
                                             >
                                                 <Plus className="w-5 h-5" />
                                             </motion.div>
-                                            
-                                            {/* Subtle Hover Background - Wrapped in overflow-hidden div */}
-                                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                                                <motion.div 
-                                                    className="absolute inset-0 bg-gray-50/50 -z-0 translate-x-[-101%]"
-                                                    whileHover={{ translateX: "0%" }}
-                                                    transition={{ duration: 0.4, ease: "circOut" }}
-                                                />
-                                            </div>
                                         </button>
 
                                         <AnimatePresence>
@@ -138,6 +141,17 @@ export default function FAQSearchList() {
                                                 </motion.div>
                                             )}
                                         </AnimatePresence>
+
+                                        {/* Bottom Animated Border - Now below the answer */}
+                                        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-black/5" />
+                                        <motion.div 
+                                            variants={{
+                                                hover: { scaleX: 1 }
+                                            }}
+                                            animate={{ scaleX: isOpen ? 1 : 0 }}
+                                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                                            className="absolute bottom-0 left-0 w-full h-[1px] bg-black z-20 origin-left"
+                                        />
                                     </motion.div>
                                 );
                             })

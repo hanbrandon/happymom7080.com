@@ -82,7 +82,7 @@ export default function AboutContent() {
             <section ref={parallaxRef} className="h-[50vh] relative overflow-hidden bg-gray-100 border-y border-gray-100">
                 <motion.div style={{ y }} className="absolute inset-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=2000&auto=format&fit=crop"
+                        src="/hero-bg.jpg"
                         alt="Panoramic"
                         fill
                         className="object-cover opacity-100"

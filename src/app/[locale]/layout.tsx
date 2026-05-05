@@ -5,6 +5,7 @@ import {routing} from '@/i18n/routing';
 import type { Metadata } from "next";
 import { Outfit, Noto_Sans_KR } from "next/font/google";
 import "../globals.css";
+import PageTransition from '@/components/ui/PageTransition';
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -44,7 +45,9 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${outfit.variable} ${notoTabsKR.variable}`} suppressHydrationWarning>
       <body className="antialiased selection:bg-black selection:text-white">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </NextIntlClientProvider>
       </body>
     </html>

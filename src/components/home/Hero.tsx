@@ -32,7 +32,7 @@ export default function Hero() {
             className="relative w-full h-full"
         >
             <Image
-              src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=2070&auto=format&fit=crop"
+              src="/hero-bg.jpg"
               alt="HappyMom Care"
               fill
               className="object-cover"
@@ -74,11 +74,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
             className="flex flex-wrap gap-4"
           >
-            <PremiumButton variant="primary">
+            <PremiumButton variant="primary" href="/services">
               {t('cta1')}
             </PremiumButton>
 
-            <PremiumButton variant="secondary">
+            <PremiumButton variant="secondary" href="/contact">
               {t('cta2')}
             </PremiumButton>
           </motion.div>

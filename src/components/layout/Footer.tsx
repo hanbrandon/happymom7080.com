@@ -27,130 +27,86 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
                     {/* Column 1: Logo & Intro */}
                     <div className="lg:col-span-4">
-                        <Link href="/" className="inline-block mb-8">
-                            <span className="text-2xl font-bold text-white tracking-tighter">
-                                HappyMom
-                            </span>
+                        <Link 
+                            href="/" 
+                            className="flex flex-col items-start gap-0 group cursor-pointer mb-8"
+                        >
+                            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-1 transition-all group-hover:bg-white group-hover:text-black">
+                                <span className="text-white text-xs font-bold group-hover:text-black transition-colors">HM</span>
+                            </div>
+                            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white">HappyMom</span>
                         </Link>
-                        <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
+                        <p className="text-sm text-gray-400 leading-relaxed max-w-xs opacity-70">
                             {t('intro')}
                         </p>
                     </div>
 
                     {/* Column 2: Site Menu */}
                     <div className="lg:col-span-2">
-                        <h4 className="font-bold text-white mb-8 text-xs uppercase tracking-[0.25em] opacity-50">
+                        <h4 className="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.3em] opacity-30">
                             {t('menu')}
                         </h4>
                         <ul className="space-y-4">
-                            <li>
-                                <Link
-                                    href="/about"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('about')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/services"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('services')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/guide"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('guide')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/pricing"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('pricing')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/testimonials"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('testimonials')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/faq"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('faq')}
-                                </Link>
-                            </li>
+                            {[
+                                { href: '/about', label: t('about') },
+                                { href: '/services', label: t('services') },
+                                { href: '/guide', label: t('guide') },
+                                { href: '/pricing', label: t('pricing') },
+                                { href: '/testimonials', label: t('testimonials') },
+                                { href: '/faq', label: t('faq') },
+                            ].map((item) => (
+                                <li key={item.href}>
+                                    <Link
+                                        href={item.href}
+                                        className="text-gray-400 text-sm font-medium hover:text-white transition-all hover:translate-x-1 inline-block"
+                                    >
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Column 3: Policies */}
                     <div className="lg:col-span-3">
-                        <h4 className="font-bold text-white mb-8 text-xs uppercase tracking-[0.25em] opacity-50">
+                        <h4 className="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.3em] opacity-30">
                             {t('policies')}
                         </h4>
                         <ul className="space-y-4">
-                            <li>
-                                <Link
-                                    href="/terms"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('terms')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/privacy"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('privacy')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/do-not-sell"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('doNotSell')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/policy"
-                                    className="text-gray-300 text-sm font-medium hover:text-white transition-colors"
-                                >
-                                    {t('refund')}
-                                </Link>
-                            </li>
+                            {[
+                                { href: '/terms', label: t('terms') },
+                                { href: '/privacy', label: t('privacy') },
+                                { href: '/do-not-sell', label: t('doNotSell') },
+                                { href: '/policy', label: t('refund') },
+                            ].map((item) => (
+                                <li key={item.href}>
+                                    <Link
+                                        href={item.href}
+                                        className="text-gray-400 text-sm font-medium hover:text-white transition-all hover:translate-x-1 inline-block"
+                                    >
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Column 4: Contact Info */}
                     <div className="lg:col-span-3">
-                        <h4 className="font-bold text-white mb-8 text-xs uppercase tracking-[0.25em] opacity-50">
+                        <h4 className="font-bold text-white mb-8 text-[10px] uppercase tracking-[0.3em] opacity-30">
                             {t('contact')}
                         </h4>
-                        <div className="space-y-8">
+                        <div className="space-y-10">
                             <a
                                 suppressHydrationWarning
                                 href="tel:+12137001415"
-                                className="flex items-start gap-4 group outline-none"
+                                className="flex items-center gap-5 group outline-none"
                             >
-                                <div className="w-10 h-10 bg-white/10 flex-shrink-0 flex items-center justify-center transition-all group-hover:bg-white group-hover:text-black">
-                                    <Phone className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                                <div className="w-12 h-12 bg-white/5 rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:scale-110 group-hover:rotate-12">
+                                    <Phone className="w-5 h-5 text-white group-hover:text-black transition-colors duration-500" />
                                 </div>
-                                <div>
-                                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">
+                                <div className="space-y-0.5">
+                                    <p className="text-[9px] font-black text-gray-500 uppercase tracking-[0.2em] mb-0.5">
                                         {t('callUs')}
                                     </p>
                                     <p className="text-base font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
@@ -161,13 +117,13 @@ export default function Footer() {
                             <a
                                 suppressHydrationWarning
                                 href="mailto:happymom7080@gmail.com"
-                                className="flex items-start gap-4 group outline-none"
+                                className="flex items-center gap-5 group outline-none"
                             >
-                                <div className="w-10 h-10 bg-white/10 flex-shrink-0 flex items-center justify-center transition-all group-hover:bg-white group-hover:text-black">
-                                    <Mail className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                                <div className="w-12 h-12 bg-white/5 rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:scale-110 group-hover:rotate-[-12deg]">
+                                    <Mail className="w-5 h-5 text-white group-hover:text-black transition-colors duration-500" />
                                 </div>
-                                <div>
-                                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">
+                                <div className="space-y-0.5">
+                                    <p className="text-[9px] font-black text-gray-500 uppercase tracking-[0.2em] mb-0.5">
                                         {t('emailUs')}
                                     </p>
                                     <p className="text-base font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">

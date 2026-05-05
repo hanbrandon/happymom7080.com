@@ -74,13 +74,13 @@ export default function Testimonials() {
 
                             <div className="hidden lg:flex flex-wrap gap-4 items-center">
                                 <PremiumButton
-                                    variant="outline"
+                                    variant="primary"
                                     href="/testimonials"
                                 >
                                     {t('more')}
                                 </PremiumButton>
                                 <PremiumButton
-                                    variant="outline"
+                                    variant="primary"
                                     href="/testimonials"
                                     icon={<SquarePen className="w-4 h-4" />}
                                 >
@@ -165,16 +165,16 @@ export default function Testimonials() {
                             {/* Mobile-only Buttons: Replacing indicators on mobile */}
                             <div className="flex lg:hidden items-center gap-2 w-full pt-4 border-t border-gray-50">
                                 <PremiumButton
-                                    variant="outline"
+                                    variant="primary"
                                     href="/testimonials"
-                                    className="flex-1"
+                                    className="flex-1 text-sm h-12"
                                 >
                                     전체 후기
                                 </PremiumButton>
                                 <PremiumButton
-                                    variant="outline"
+                                    variant="primary"
                                     href="/testimonials"
-                                    className="flex-1"
+                                    className="flex-1 text-sm h-12"
                                 >
                                     후기 작성
                                 </PremiumButton>
