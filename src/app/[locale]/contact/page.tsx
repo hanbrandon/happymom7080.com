@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const path = '/contact';
 
   return {
-    title: `Contact | HappyMom`,
+    title: t('browserTitle'),
     description: t('subtitle'),
     alternates: {
       canonical: locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,

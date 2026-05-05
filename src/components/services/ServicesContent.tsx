@@ -41,9 +41,6 @@ export default function ServicesContent() {
 
     return (
         <main className="min-h-screen bg-white relative">
-            {/* Premium Grainy Texture Overlay */}
-            <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-multiply bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-
             <Navbar />
 
             {/* 1. Standardized Minimalist Hero (Matching Guide Page) */}

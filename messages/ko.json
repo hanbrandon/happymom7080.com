@@ -1,4 +1,8 @@
 {
+    "Metadata": {
+        "title": "해피맘 (HappyMom) | 프리미엄 미국 산후조리 서비스",
+        "description": "미국 전역 산모님들을 위한 프리미엄 산후조리, 맞춤형 신생아 케어 전문가 그룹 해피맘입니다."
+    },
     "Navbar": {
         "about": "소개",
         "services": "서비스",
@@ -104,6 +108,8 @@
         "babyCare": "아기돌봄 서비스",
         "liveIn": "입주형",
         "commuting": "출퇴근형",
+        "babyCareType": "입주/출퇴근형",
+        "liveInCommuting": "입주/출퇴근형",
         "serviceFee": "서비스 이용금액",
         "deposit": "예약금",
         "total": "총액",

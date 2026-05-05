@@ -54,7 +54,7 @@ export default function FAQSearchList() {
                             )}
                         </motion.div>
                         <p className="mt-6 text-[10px] text-gray-300 font-bold uppercase tracking-[0.3em] px-1">
-                           {filteredIndices.length} Results Found
+                           {filteredIndices.length} {t('resultsFound')}
                         </p>
                     </div>
 
@@ -162,7 +162,7 @@ export default function FAQSearchList() {
                                 className="text-center py-40 border-b border-dashed border-gray-100"
                             >
                                 <p className="text-xl text-gray-200 font-light italic">
-                                    No records matching your search criteria.
+                                    {t('noResults')}
                                 </p>
                             </motion.div>
                         )}

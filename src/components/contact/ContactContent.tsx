@@ -17,7 +17,9 @@ export default function ContactContent() {
         <div className="container mx-auto px-10">
           <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-6 block">{t('tag')}</span>
           <h1 className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tighter leading-[1.1]">
-            We're here <br />to help.
+            {t.rich('title', {
+              br: () => <br />
+            })}
           </h1>
         </div>
       </section>

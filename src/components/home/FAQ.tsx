@@ -45,7 +45,7 @@ export default function FAQ() {
               </p>
 
               <PremiumButton 
-                href={`/${locale}/faq`}
+                href="/faq"
                 variant="primary"
                 icon={<ArrowRight className="w-5 h-5" />}
               >

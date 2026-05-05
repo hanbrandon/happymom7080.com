@@ -1,5 +1,5 @@
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
+import {getMessages, getTranslations} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import type { Metadata } from "next";
@@ -19,10 +19,15 @@ const notoTabsKR = Noto_Sans_KR({
   weight: ["300", "400", "500", "700", "900"],
 });
 
-export const metadata: Metadata = {
-  title: "해피맘 (HappyMom) | 프리미엄 미국 산후조리 서비스",
-  description: "미국 전역 산모님들을 위한 프리미엄 산후조리, 맞춤형 신생아 케어 전문가 그룹 해피맘입니다.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 export default async function LocaleLayout({
   children,
