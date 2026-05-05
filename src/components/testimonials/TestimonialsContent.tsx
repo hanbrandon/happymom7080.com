@@ -10,8 +10,16 @@ import { Send, ArrowRight, X, SquarePen } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
+interface Testimonial {
+  name: string;
+  content: string;
+  avatar: string;
+  location: string;
+  service: string;
+}
+
 // Individual Testimonial Item with refined ScrollReveal feel
-function TestimonialItem({ item, index, onInView }: { item: any, index: number, onInView: (i: number) => void }) {
+function TestimonialItem({ item, index, onInView }: { item: Testimonial, index: number, onInView: (i: number) => void }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-45% 0px -45% 0px" });
 
@@ -67,7 +75,7 @@ export default function TestimonialsContent() {
     content: ''
   });
 
-  const testimonials = t.raw('items') || [];
+  const testimonials: Testimonial[] = t.raw('items') || [];
 
   useEffect(() => {
     if (isModalOpen) {
@@ -144,7 +152,7 @@ export default function TestimonialsContent() {
 
             {/* Middle Column: Vertical List */}
             <div className="lg:col-span-7 space-y-0 lg:pt-4">
-              {testimonials.map((item, index) => (
+              {testimonials.map((item: Testimonial, index: number) => (
                 <TestimonialItem 
                   key={index} 
                   item={item} 
