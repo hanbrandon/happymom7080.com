@@ -36,8 +36,8 @@ export default async function ContactPage({ params }: { params: { locale: string
     "mainEntity": {
       "@type": "LocalBusiness",
       "name": "HappyMom",
-      "telephone": "213-210-8274",
-      "email": "happymom7080@gmail.com",
+      "telephone": process.env.NEXT_PUBLIC_PHONE_RAW || "12139994642",
+      "email": process.env.NEXT_PUBLIC_EMAIL || "happymom7080@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Los Angeles",

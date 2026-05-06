@@ -81,16 +81,16 @@
     "plans": [
       {
         "features": [
-          "9 AM - 6 PM Professional Care",
           "Maternal Physical Recovery Management",
+          "Professional Newborn Care",
           "Maternal Health Check",
           "Nutrition and Meal Management"
         ]
       },
       {
         "features": [
-          "Mon-Fri 09:00 - 18:00",
           "Maternal Physical Recovery Management",
+          "Professional Newborn Care",
           "Maternal Health Check",
           "Nutrition and Meal Management"
         ]
@@ -116,6 +116,7 @@
     "serviceFee": "Service Fee",
     "deposit": "Deposit",
     "total": "Total",
+    "period": "/ 5 days",
     "learnMore": "Learn More"
   },
   "Footer": {

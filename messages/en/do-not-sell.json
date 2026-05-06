@@ -23,11 +23,11 @@
     "description": "In addition to the one-click button above, you can directly communicate your opt-out intent through the following methods:",
     "email": {
       "title": "Email Request",
-      "content": "Please send your name and contact information to happymom7080@gmail.com."
+      "content": "Please send your name and contact information to {email}."
     },
     "phone": {
       "title": "Customer Service",
-      "content": "You can make a request to a representative via phone at +1 (213) 700-1415."
+      "content": "You can make a request to a representative via phone at <a>{phone}</a>."
     }
   },
   "footer": "Identity verification may be required to process this request. We will guide you through the results within 15 business days of receiving the application. Last updated: May 3, 2024"

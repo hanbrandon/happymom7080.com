@@ -222,7 +222,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col gap-1">
                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{t('contact')}</p>
-                    <p className="text-lg font-bold text-gray-900">+1 (213) 700-1415</p>
+                    <p className="text-lg font-bold text-gray-900">{process.env.NEXT_PUBLIC_PHONE || '+1 (213) 999-4642'}</p>
                   </div>
                   <button 
                     className="flex items-center gap-2 px-4 py-3 bg-gray-100 rounded-full text-xs font-bold uppercase tracking-widest active:bg-gray-200 transition-colors"

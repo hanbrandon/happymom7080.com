@@ -41,7 +41,7 @@
     },
     {
       "question": "What are the sleep and rest times for the postpartum caregiver?",
-      "answer": "Particularly during live-in service if night feeding is frequent, the postpartum caregiver takes a break for about 3 hours between lunch and dinner."
+      "answer": "Particularly during live-in service if night feeding is frequent, the postpartum caregiver takes sufficient break time."
     },
     {
       "question": "How do I pay for the service?",
@@ -85,7 +85,7 @@
     },
     {
       "question": "Please tell me about the types of postpartum care services.",
-      "answer": "The standard work hours for service providers are defined as follows:\n\n1. Live-in service: Provided from 9 AM to 9 AM the next day, including 3 hours of break time per day. Provided 5 days a week, leaving at 6 PM on the 5th day.\n2. Commuting service: Provided from Monday to Friday, 9 AM to 6 PM, including 1 hour of break time per day.\n3. Long-distance service: The long-distance service period is defined as 7 consecutive days, without standard holidays.\n\nDuring work hours, the postpartum caregiver does not drive a car. If night feeding is frequent, about 3 hours of sleep during the day is required."
+      "answer": "The standard work forms for service providers are defined as follows:\n\n1. Live-in service: Resides at the home to provide professional care, including daily break times.\n2. Commuting service: Provided from Monday to Friday for daytime care, including break times.\n3. Long-distance service: The long-distance service period is defined as 7 consecutive days, without standard holidays.\n\nDuring work hours, the postpartum caregiver does not drive a car. If night feeding is frequent, sufficient sleep during the day is required."
     },
     {
       "question": "What is babysitting service?",
@@ -93,7 +93,7 @@
     },
     {
       "question": "What are the types of babysitting services?",
-      "answer": "The commuting type is provided Mon-Fri 9 AM-6 PM, and the live-in type provides care service from Monday to Friday while residing at the baby's home."
+      "answer": "The commuting type is provided Mon-Fri during daytime hours, and the live-in type provides care service from Monday to Friday while residing at the baby's home."
     }
   ]
 }

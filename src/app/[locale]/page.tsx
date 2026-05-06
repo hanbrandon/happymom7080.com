@@ -48,7 +48,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
     "name": "HappyMom",
     "image": "https://happymom7080.com/logo.png",
     "url": locale === 'ko' ? baseUrl : `${baseUrl}/en`,
-    "telephone": "213-210-8274",
+    "telephone": process.env.NEXT_PUBLIC_PHONE_RAW || "12139994642",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Los Angeles",

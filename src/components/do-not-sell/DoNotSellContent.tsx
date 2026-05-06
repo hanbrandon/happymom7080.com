@@ -134,13 +134,14 @@ export default function DoNotSellContent() {
                    <div className="pb-6 border-b border-gray-100">
                       <h4 className="font-bold text-gray-900 mb-2">{t('other.email.title')}</h4>
                       <p className="text-gray-500">{t.rich('other.email.content', {
-                        a: (chunks) => <a href="mailto:happymom7080@gmail.com" className="text-black font-bold underline">{chunks}</a>
+                        email: process.env.NEXT_PUBLIC_EMAIL || 'happymom7080@gmail.com'
                       })}</p>
                    </div>
                    <div className="pb-6 border-b border-gray-100">
                       <h4 className="font-bold text-gray-900 mb-2">{t('other.phone.title')}</h4>
                       <p className="text-gray-500">{t.rich('other.phone.content', {
-                        a: (chunks) => <a href="tel:+12137001415" className="text-black font-bold underline">{chunks}</a>
+                        phone: process.env.NEXT_PUBLIC_PHONE || '+1 (213) 999-4642',
+                        a: (chunks) => <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_RAW || '12139994642'}`} className="text-black font-bold underline">{chunks}</a>
                       })}</p>
                    </div>
                 </div>

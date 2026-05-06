@@ -9,7 +9,7 @@
   "step03Title": "Step 03. Contract Drafting and Submission",
   "step03Desc": "We will send you a contract drafted based on the consultation contents. After reviewing carefully, simply submit the completed contract by email (<a href='mailto:happymom7080@gmail.com' class='underline decoration-gray-300 hover:text-gray-900 transition-colors'>happymom7080@gmail.com</a>).",
   "step04Title": "Step 04. Deposit Payment",
-  "step04Desc": "Send the deposit to confirm the reservation. Payment can be conveniently made through the HappyMom bank account or Venmo. (Account information provided separately during consultation)",
+  "step04Desc": "Send the deposit to confirm the reservation. Payment can be conveniently made through Zelle or Venmo. (Account information provided separately during consultation)",
   "step05Title": "Step 05. Postpartum Caregiver Selection and Matching",
   "step05Desc": "Reflecting the mother's preferences and requests, we match selected experts that HappyMom is proud of. We arrange for you to greet them in advance through a phone call or meeting with the selected caregiver.",
   "step06Title": "Step 06. Service Begins",
@@ -20,5 +20,8 @@
   "insuranceTitle": "Insurance Support",
   "insuranceDesc": "We fully support the issuance of necessary documents and receipts for mothers using workplace welfare insurance benefits such as Carrot Fertility.",
   "scheduleTitle": "Schedule Change Information",
-  "scheduleDesc": "If there is a change in the expected delivery date, please contact HappyMom immediately upon hospital admission so we can adjust the caregiver assignment without any disruption to the schedule."
+  "scheduleDesc": "If there is a change in the expected delivery date, please contact HappyMom immediately upon hospital admission so we can adjust the caregiver assignment without any disruption to the schedule.",
+  "certTag": "Expertise & Trust",
+  "certTitle": "Certifications & Licenses",
+  "certSubtitle": "HappyMom is a certified institution with professional qualifications and rich experience in relevant fields."
 }

@@ -11,49 +11,55 @@ export default function Pricing() {
   const t = useTranslations('Pricing');
   const th = useTranslations('PricingHome');
 
+  const priceLiveIn = process.env.NEXT_PUBLIC_PRICE_LIVE_IN || '1,600';
+  const priceCommuting = process.env.NEXT_PUBLIC_PRICE_COMMUTING || '1,350';
+  const priceBabysit = process.env.NEXT_PUBLIC_PRICE_BABYSIT || '1,350';
+  const depositVal = process.env.NEXT_PUBLIC_DEPOSIT || '300';
+
+  const formatPrice = (p: string) => Number(p.replace(/,/g, '')).toLocaleString();
+  const getBalance = (p: string, d: string) => {
+    const priceNum = Number(p.replace(/,/g, ''));
+    const depositNum = Number(d.replace(/,/g, ''));
+    return `$${(priceNum - depositNum).toLocaleString()}`;
+  };
+
+  const getFeatures = (index: number) => {
+    try {
+      const features = th.raw(`plans.${index}.features`);
+      return Array.isArray(features) ? features : [];
+    } catch (e) {
+      return [];
+    }
+  };
+
   const plans = [
     {
       serviceKey: 'postpartumCare',
       typeKey: 'liveIn',
-      price: '1,600',
-      period: '/ week',
-      serviceFee: '$1,300',
-      deposit: '$300',
-      features: [
-        th('plans.0.features.0'),
-        th('plans.0.features.1'),
-        th('plans.0.features.2'),
-        th('plans.0.features.3'),
-      ]
+      price: formatPrice(priceLiveIn),
+      period: '5일',
+      serviceFee: getBalance(priceLiveIn, depositVal),
+      deposit: `$${formatPrice(depositVal)}`,
+      features: getFeatures(0)
     },
     {
       serviceKey: 'postpartumCare',
       typeKey: 'commuting',
-      price: '1,350',
-      period: '/ week',
-      serviceFee: '$1,050',
-      deposit: '$300',
+      price: formatPrice(priceCommuting),
+      period: '5일',
+      serviceFee: getBalance(priceCommuting, depositVal),
+      deposit: `$${formatPrice(depositVal)}`,
       featured: true,
-      features: [
-        th('plans.1.features.0'),
-        th('plans.1.features.1'),
-        th('plans.1.features.2'),
-        th('plans.1.features.3'),
-      ]
+      features: getFeatures(1)
     },
     {
       serviceKey: 'babyCare',
       typeKey: 'liveInCommuting',
-      price: '1,350',
-      period: '/ week',
-      serviceFee: '$1,050',
-      deposit: '$300',
-      features: [
-        th('plans.2.features.0'),
-        th('plans.2.features.1'),
-        th('plans.2.features.2'),
-        th('plans.2.features.3'),
-      ]
+      price: formatPrice(priceBabysit),
+      period: '5일',
+      serviceFee: getBalance(priceBabysit, depositVal),
+      deposit: `$${formatPrice(depositVal)}`,
+      features: getFeatures(2)
     }
   ];
 
@@ -124,7 +130,7 @@ export default function Pricing() {
                     ${plan.price}
                   </span>
                   <span className="text-xs font-black uppercase tracking-widest text-gray-400">
-                    {plan.period.replace('/', '').trim()}
+                    {t('period')}
                   </span>
                 </div>
               </div>

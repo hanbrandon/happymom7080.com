@@ -85,22 +85,26 @@ export default function Contact() {
               </p>
 
               <div className="space-y-10">
-                <a href="tel:+12137001415" className="flex items-start gap-6 group outline-none">
+                <a href={`tel:${process.env.NEXT_PUBLIC_PHONE_RAW || '12139994642'}`} className="flex items-start gap-6 group outline-none">
                   <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-black group-hover:text-white">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('callUs')}</h4>
-                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-black">+1 (213) 700-1415</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-black">
+                      {process.env.NEXT_PUBLIC_PHONE || '+1 (213) 999-4642'}
+                    </p>
                   </div>
                 </a>
-                <a href="mailto:happymom7080@gmail.com" className="flex items-start gap-6 group outline-none">
+                <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || 'happymom7080@gmail.com'}`} className="flex items-start gap-6 group outline-none">
                   <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-black group-hover:text-white">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('emailUs')}</h4>
-                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-black">happymom7080@gmail.com</p>
+                    <p className="text-xl font-bold text-gray-900 group-hover:underline underline-offset-8 decoration-2 decoration-black">
+                      {process.env.NEXT_PUBLIC_EMAIL || 'happymom7080@gmail.com'}
+                    </p>
                   </div>
                 </a>
               </div>

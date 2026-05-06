@@ -6,7 +6,16 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import SplitText from '@/components/ui/SplitText';
 import ServiceCTA from '@/components/layout/ServiceCTA';
+import Image from 'next/image';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
+import cert1 from '../../../public/certs/cert1.png';
+import cert2 from '../../../public/certs/cert2.png';
+import cert3 from '../../../public/certs/cert3.png';
+import cert4 from '../../../public/certs/cert4.png';
+import cert5 from '../../../public/certs/cert5.png';
+
+const certificates = [cert1, cert2, cert3, cert4, cert5];
 
 export default function GuideContent() {
   const t = useTranslations('Guide');
@@ -78,7 +87,47 @@ export default function GuideContent() {
         </div>
       </section>
 
-      {/* 3. Additional Information Section */}
+      {/* 3. Certifications Section */}
+      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-10">
+          <div className="max-w-4xl mb-16">
+            <ScrollReveal>
+              <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-4 block">
+                {t('certTag')}
+              </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter mb-6">
+                {t('certTitle')}
+              </h2>
+              <p className="text-xl text-gray-500 leading-relaxed">
+                {t('certSubtitle')}
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <StaggerContainer>
+            {/* Desktop Grid / Mobile Carousel */}
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 -mx-10 px-10 md:mx-0 md:px-0 scrollbar-hide">
+              {certificates.map((certSrc, index) => (
+                <StaggerItem key={index} className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center">
+                  <div className="group relative aspect-[4/3] bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:shadow-black/5 hover:-translate-y-2">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
+                    <Image
+                      src={certSrc}
+                      alt={`Certification ${index + 1}`}
+                      fill
+                      className="object-cover transition-all duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 33vw"
+                      placeholder="blur"
+                    />
+                  </div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* 4. Additional Information Section */}
       <section className="py-20 md:py-32 bg-gray-50 border-y border-gray-100">
         <div className="container mx-auto px-10">
           <div className="mb-24">

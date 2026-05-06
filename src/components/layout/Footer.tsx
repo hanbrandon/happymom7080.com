@@ -104,7 +104,7 @@ export default function Footer() {
                         <div className="space-y-10">
                             <a
                                 suppressHydrationWarning
-                                href="tel:+12137001415"
+                                href={`tel:${process.env.NEXT_PUBLIC_PHONE_RAW || '12139994642'}`}
                                 className="flex items-center gap-5 group outline-none"
                             >
                                 <div className="w-12 h-12 bg-white/5 rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:scale-110 group-hover:rotate-12">
@@ -115,13 +115,13 @@ export default function Footer() {
                                         {t('callUs')}
                                     </p>
                                     <p className="text-base font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
-                                        +1 (213) 700-1415
+                                        {process.env.NEXT_PUBLIC_PHONE || '+1 (213) 999-4642'}
                                     </p>
                                 </div>
                             </a>
                             <a
                                 suppressHydrationWarning
-                                href="mailto:happymom7080@gmail.com"
+                                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || 'happymom7080@gmail.com'}`}
                                 className="flex items-center gap-5 group outline-none"
                             >
                                 <div className="w-12 h-12 bg-white/5 rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:scale-110 group-hover:rotate-[-12deg]">
@@ -132,7 +132,7 @@ export default function Footer() {
                                         {t('emailUs')}
                                     </p>
                                     <p className="text-base font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
-                                        happymom7080@gmail.com
+                                        {process.env.NEXT_PUBLIC_EMAIL || 'happymom7080@gmail.com'}
                                     </p>
                                 </div>
                             </a>
