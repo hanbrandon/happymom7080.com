@@ -18,7 +18,7 @@
   "commutingPrice": "{price} / 5 days",
   "commutingDeposit": "Deposit {deposit} + Balance {balance}",
   "commutingHours": "",
-  "longDistanceNote": "Long-distance Resident Customer Note: Long-distance work proceeds continuously without days off, regardless of the day of the week or public holidays. A 6-week contract is not calculated as \"4 weeks + 2 weeks\" but is applied based on a total of 30 consecutive work days. Therefore, Saturdays, Sundays, and public holidays are included in work days.",
+  "longDistanceNote": "Long-distance Notice: Services are provided daily on a consecutive basis, including weekends and public holidays.",
   "babysitTitle": "Babysitting Service Fees",
   "babysitPrice": "{price} / 5 days",
   "babysitDeposit": "Deposit {deposit} + Balance {balance}",

@@ -13,7 +13,7 @@
     "commutingPrice": "{price} / 5일",
     "commutingDeposit": "예약금 {deposit} + 잔금 {balance}",
     "commutingHours": "",
-    "longDistanceNote": "장거리 거주 고객 안내: 장거리 근무는 요일이나 공휴일과 관계없이 쉬는 날 없이 연속으로 진행됩니다. 6주 계약은 “4주 + 2주”로 나누어 계산하는 방식이 아니며, 총 30일 연속 근무 기준으로 적용됩니다. 따라서 토요일, 일요일, 공휴일도 근무일에 포함됩니다.",
+    "longDistanceNote": "장거리 안내: 장거리 근무는 요일이나 공휴일에 관계없이 매일 연속으로 진행됩니다. (주말 및 공휴일 포함)",
     "babysitTitle": "아기돌봄 서비스 요금",
     "babysitPrice": "{price} / 5일",
     "babysitDeposit": "예약금 {deposit} + 잔금 {balance}",
