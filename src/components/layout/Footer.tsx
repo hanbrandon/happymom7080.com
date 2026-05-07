@@ -2,7 +2,7 @@
 
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -136,6 +136,19 @@ export default function Footer() {
                                     </p>
                                 </div>
                             </a>
+                            <div className="flex items-center gap-5 group">
+                                <div className="w-12 h-12 bg-white/5 rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:scale-110 group-hover:rotate-12">
+                                    <MessageCircle className="w-5 h-5 text-white group-hover:text-black transition-colors duration-500" />
+                                </div>
+                                <div className="space-y-0.5">
+                                    <p className="text-[9px] font-black text-gray-400 uppercase tracking-[0.2em] mb-0.5">
+                                        {t('kakaoUs')}
+                                    </p>
+                                    <p className="text-base font-bold text-white tracking-tight group-hover:text-gray-300 transition-colors">
+                                        {t('kakaoId')}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

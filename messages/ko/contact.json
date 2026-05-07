@@ -1,10 +1,12 @@
 {
   "browserTitle": "문의하기 | 해피맘",
   "tag": "문의하기",
-  "title": "언제든 <br />문의해 주세요.",
+  "title": "언제든 <br/>문의해 주세요.",
   "subtitle": "해피맘은 산모님의 새로운 시작을 진심으로 응원합니다. 궁금한 점은 언제든 편하게 연락 주세요.",
   "callUs": "전화 문의",
   "emailUs": "이메일 문의",
+  "kakaoUs": "카카오톡 문의",
+  "kakaoId": "Happy-mom",
   "firstName": "이름",
   "lastName": "성",
   "email": "이메일 주소",

@@ -1,10 +1,12 @@
 {
   "browserTitle": "Contact | HappyMom",
   "tag": "Contact",
-  "title": "Please contact us <br />anytime.",
+  "title": "Please contact us <br/>anytime.",
   "subtitle": "HappyMom sincerely supports the mother's new beginning. Please feel free to contact us anytime with any questions.",
   "callUs": "Call Us",
   "emailUs": "Email Us",
+  "kakaoUs": "KakaoTalk",
+  "kakaoId": "Happy-mom",
   "firstName": "First Name",
   "lastName": "Last Name",
   "email": "Email Address",

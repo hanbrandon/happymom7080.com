@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, Send, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Send, ArrowRight, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -107,6 +107,17 @@ export default function Contact() {
                     </p>
                   </div>
                 </a>
+                <div className="flex items-start gap-6 group">
+                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center transition-all group-hover:bg-black group-hover:text-white">
+                    <MessageCircle className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('kakaoUs')}</h4>
+                    <p className="text-xl font-bold text-gray-900">
+                      {t('kakaoId')}
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
