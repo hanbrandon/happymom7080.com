@@ -12,6 +12,10 @@
   "postpartum": "Postpartum Care Service",
   "babysitting": "Babysitting Service",
   "formSuccess": "Your precious review has been successfully delivered. We will post it soon after review!",
+  "formError": "An error occurred while submitting. Please try again in a moment.",
+  "formErrorGeneral": "An error occurred while submitting.",
+  "thankYou": "Thank you!",
+  "close": "Close",
   "items": [
     {
       "name": "Miro Ryu",

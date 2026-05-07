@@ -12,6 +12,10 @@
   "postpartum": "산후조리 서비스",
   "babysitting": "아기돌봄 서비스",
   "formSuccess": "소중한 후기가 성공적으로 전달되었습니다. 검토 후 곧 게시하겠습니다!",
+  "formError": "제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.",
+  "formErrorGeneral": "제출 중 오류가 발생했습니다.",
+  "thankYou": "감사합니다!",
+  "close": "닫기",
   "items": [
     {
       "name": "Miro Ryu",

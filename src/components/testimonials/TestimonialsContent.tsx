@@ -100,11 +100,11 @@ export default function TestimonialsContent() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert("제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+        alert(t('formError'));
       }
     } catch (error) {
       console.error(error);
-      alert("제출 중 오류가 발생했습니다.");
+      alert(t('formErrorGeneral'));
     } finally {
       setIsSubmitting(false);
     }
@@ -217,7 +217,7 @@ export default function TestimonialsContent() {
                     <div className="w-24 h-24 bg-gray-50 text-black rounded-full flex items-center justify-center mx-auto mb-10">
                       <Send className="w-10 h-10" />
                     </div>
-                    <h3 className="text-4xl font-bold text-gray-900 mb-6 tracking-tighter">감사합니다!</h3>
+                    <h3 className="text-4xl font-bold text-gray-900 mb-6 tracking-tighter">{t('thankYou')}</h3>
                     <p className="text-xl text-gray-400 font-light max-w-sm mx-auto leading-relaxed">
                       {t('formSuccess')}
                     </p>
@@ -225,7 +225,7 @@ export default function TestimonialsContent() {
                       onClick={closeAndReset}
                       className="mt-16 px-12 h-16 bg-black text-white rounded-full font-black text-xs uppercase tracking-widest hover:bg-gray-900 transition-all"
                     >
-                      닫기
+                      {t('close')}
                     </button>
                   </div>
                 ) : (

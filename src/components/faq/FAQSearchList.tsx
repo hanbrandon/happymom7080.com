@@ -39,7 +39,7 @@ export default function FAQSearchList() {
                                 type="text"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder={t('searchPlaceholder') || "검색어를 입력하세요..."}
+                                placeholder={t('searchPlaceholder')}
                                 className="w-full h-20 bg-transparent border-b border-black/10 focus:border-black rounded-none pl-16 pr-16 transition-all duration-700 text-gray-900 font-light text-2xl placeholder:text-gray-200 outline-none"
                             />
                             {searchQuery && (

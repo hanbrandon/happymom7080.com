@@ -33,7 +33,7 @@ export default function Contact() {
     setError(null);
 
     if (!validateEmail(formData.email)) {
-      setError("올바른 이메일 형식을 입력해 주세요.");
+      setError(t('errorEmail'));
       return;
     }
 
@@ -49,11 +49,11 @@ export default function Contact() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        setError("메시지 전송 중 오류가 발생했습니다. 다시 시도해 주세요.");
+        setError(t('errorSubmit'));
       }
     } catch (err) {
       console.error(err);
-      setError("네트워크 연결을 확인하고 다시 시도해 주세요.");
+      setError(t('errorNetwork'));
     } finally {
       setIsSubmitting(false);
     }
