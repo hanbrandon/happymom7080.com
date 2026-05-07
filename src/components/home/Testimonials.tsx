@@ -96,7 +96,9 @@ export default function Testimonials() {
                                     }}
                                     className="text-3xl md:text-5xl text-gray-800 leading-tight mb-12 font-medium tracking-tight"
                                 >
-                                    "{testimonials[activeIndex].content}"
+                                    <span className="block text-2xl md:text-4xl text-gray-800 leading-tight mb-12 font-medium tracking-tight whitespace-pre-line line-clamp-5">
+                                        "{testimonials[activeIndex].content}"
+                                    </span>
                                 </motion.p>
                             </AnimatePresence>
                         </motion.div>

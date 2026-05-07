@@ -39,9 +39,9 @@ function TestimonialItem({ item, index, onInView }: { item: Testimonial, index: 
       className="flex flex-col min-h-[45vh] justify-center py-20 border-b border-black/[0.03] last:border-none"
     >
       <div className="relative mb-12">
-         <p className="text-3xl md:text-5xl text-gray-900 leading-[1.1] font-medium tracking-tighter italic">
+          <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-light tracking-tight whitespace-pre-line">
             "{item.content}"
-         </p>
+          </p>
       </div>
       
       <div className="flex items-center gap-8">
