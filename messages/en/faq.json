@@ -1,99 +1,99 @@
 {
-  "resultsFound": "Results Found",
-  "noResults": "No records matching your search criteria.",
-  "tag": "FAQ",
-  "title": "We solve your <br />questions.",
-  "subtitle": "We've collected the most frequently asked questions before using the service. Please feel free to inquire about additional questions at any time.",
-  "viewMore": "View More Questions",
-  "searchPlaceholder": "Enter search terms (e.g., refund, live-in, contract...)",
-  "items": [
-    {
-      "question": "What is postpartum care service?",
-      "answer": "Postpartum care service is a specialized home-visit service for mothers to comfortably receive postpartum care at home during the 6-8 weeks following childbirth, supporting nutrition and health management for the mother and newborn care."
-    },
-    {
-      "question": "How do I apply for service?",
-      "answer": "Please call the contact number at the bottom of the HappyMom website or apply for a consultation through the inquiry page."
-    },
-    {
-      "question": "How can I get a detailed explanation of the service?",
-      "answer": "Through consultation with the director, you can hear detailed service contents and decide on the service you want."
-    },
-    {
-      "question": "How do I review and submit the contract?",
-      "answer": "After reviewing the contract, please submit the completed contract by email."
-    },
-    {
-      "question": "How do I pay the deposit?",
-      "answer": "You can send the deposit through the HappyMom bank account or Venmo."
-    },
-    {
-      "question": "How do you select a postpartum caregiver?",
-      "answer": "After selecting carefully chosen postpartum caregivers, we arrange a phone consultation or meeting with the mother."
-    },
-    {
-      "question": "What is the service reservation and cancellation policy?",
-      "answer": "Service reservations are decided after consultation with the director, and cancellation and refund are possible under certain conditions."
-    },
-    {
-      "question": "How is long-distance service provided?",
-      "answer": "The contract defines 1 week as 5 days, but in this case, since work is continuous without days off for a week, working for 15 days actually equals 3 weeks of labor."
-    },
-    {
-      "question": "What are the sleep and rest times for the postpartum caregiver?",
-      "answer": "Particularly during live-in service if night feeding is frequent, the postpartum caregiver takes sufficient break time."
-    },
-    {
-      "question": "How do I pay for the service?",
-      "answer": "Service fees can be paid directly to the caregiver on a weekly basis."
-    },
-    {
-      "question": "Are there additional costs when using services in other states?",
-      "answer": "When using services in another state, the customer must bear the cost of the round-trip airfare."
-    },
-    {
-      "question": "What is the cancellation and refund policy for postpartum care services?",
-      "answer": "If you cancel after the contract without a special reason, it is not refundable. However, in case of premature birth or miscarriage, a full refund is given. Please check the contract for details."
-    },
-    {
-      "question": "What if a reservation is canceled due to the caregiver's health problems?",
-      "answer": "If a reservation is canceled due to health or personal reasons of the caregiver, we will refund the deposit or assign another caregiver."
-    },
-    {
-      "question": "How do I extend the service?",
-      "answer": "If you wish to extend the service, please apply at least one week in advance and pay an additional deposit."
-    },
-    {
-      "question": "What are the reasons for service interruption?",
-      "answer": "Insults, authoritative interference by family members, medical act requirements, or excessive housework that makes it difficult to continue the service will lead to service interruption."
-    },
-    {
-      "question": "What is the basic family composition for postpartum care service?",
-      "answer": "The basic family composition is the mother, newborn, and husband. Additional family members will incur additional fees."
-    },
-    {
-      "question": "How is the contract period determined?",
-      "answer": "It starts on the specified date and continues until terminated by either party with prior notice."
-    },
-    {
-      "question": "What if the child has known allergies or health problems?",
-      "answer": "If there are allergies or health problems related to the child, you must notify the service provider."
-    },
-    {
-      "question": "What do the duties and responsibilities of the service provider include?",
-      "answer": "The duties and responsibilities of the service provider include meal preparation and provision, child care, night care, laundry and cleaning for the child's needs, and maternal care services."
-    },
-    {
-      "question": "Please tell me about the types of postpartum care services.",
-      "answer": "The standard work forms for service providers are defined as follows:\n\n1. Live-in service: Resides at the home to provide professional care, including daily break times.\n2. Commuting service: Provided from Monday to Friday for daytime care, including break times.\n3. Long-distance service: The long-distance service period is defined as 7 consecutive days, without standard holidays.\n\nDuring work hours, the postpartum caregiver does not drive a car. If night feeding is frequent, sufficient sleep during the day is required."
-    },
-    {
-      "question": "What is babysitting service?",
-      "answer": "After postpartum care service, for children over 3 months old, a 1:1 visit provides comprehensive care in areas of health, nutrition, hygiene, and education, such as feeding baby food, sterilizing bottles, changing diapers, and bathing."
-    },
-    {
-      "question": "What are the types of babysitting services?",
-      "answer": "The commuting type is provided Mon-Fri during daytime hours, and the live-in type provides care service from Monday to Friday while residing at the baby's home."
-    }
-  ]
+    "resultsFound": "Results Found",
+    "noResults": "No records matching your search criteria.",
+    "tag": "FAQ",
+    "title": "We solve your <br />questions.",
+    "subtitle": "We've collected the most frequently asked questions before using the service. Please feel free to inquire about additional questions at any time.",
+    "viewMore": "View More Questions",
+    "searchPlaceholder": "Enter search terms (e.g., refund, live-in, contract...)",
+    "items": [
+        {
+            "question": "What is postpartum care service?",
+            "answer": "Postpartum care service is a specialized home-visit service for mothers to comfortably receive postpartum care at home during the 6-8 weeks following childbirth, supporting nutrition and health management for the mother and newborn care."
+        },
+        {
+            "question": "How do I apply for service?",
+            "answer": "Please call the contact number at the bottom of the HappyMom website or apply for a consultation through the inquiry page."
+        },
+        {
+            "question": "How can I get a detailed explanation of the service?",
+            "answer": "Through consultation with the director, you can hear detailed service contents and decide on the service you want."
+        },
+        {
+            "question": "How do I review and submit the contract?",
+            "answer": "After reviewing the contract, please submit the completed contract by email."
+        },
+        {
+            "question": "How do I pay the deposit?",
+            "answer": "You can send the deposit through the HappyMom bank account or Venmo."
+        },
+        {
+            "question": "How do you select a postpartum caregiver?",
+            "answer": "After selecting carefully chosen postpartum caregivers, we arrange a phone consultation or meeting with the mother."
+        },
+        {
+            "question": "What is the service reservation and cancellation policy?",
+            "answer": "Service reservations are decided after consultation with the director, and cancellation and refund are possible under certain conditions."
+        },
+        {
+            "question": "How is long-distance service provided?",
+            "answer": "The contract defines 1 week as 1 week (5days), but in this case, since work is continuous without days off for a week, working for 11 week (5days) actually equals 3 weeks of labor."
+        },
+        {
+            "question": "What are the sleep and rest times for the postpartum caregiver?",
+            "answer": "Particularly during live-in service if night feeding is frequent, the postpartum caregiver takes sufficient break time."
+        },
+        {
+            "question": "How do I pay for the service?",
+            "answer": "Service fees can be paid directly to the caregiver on a weekly basis."
+        },
+        {
+            "question": "Are there additional costs when using services in other states?",
+            "answer": "When using services in another state, the customer must bear the cost of the round-trip airfare."
+        },
+        {
+            "question": "What is the cancellation and refund policy for postpartum care services?",
+            "answer": "If you cancel after the contract without a special reason, it is not refundable. However, in case of premature birth or miscarriage, a full refund is given. Please check the contract for details."
+        },
+        {
+            "question": "What if a reservation is canceled due to the caregiver's health problems?",
+            "answer": "If a reservation is canceled due to health or personal reasons of the caregiver, we will refund the deposit or assign another caregiver."
+        },
+        {
+            "question": "How do I extend the service?",
+            "answer": "If you wish to extend the service, please apply at least one week in advance and pay an additional deposit."
+        },
+        {
+            "question": "What are the reasons for service interruption?",
+            "answer": "Insults, authoritative interference by family members, medical act requirements, or excessive housework that makes it difficult to continue the service will lead to service interruption."
+        },
+        {
+            "question": "What is the basic family composition for postpartum care service?",
+            "answer": "The basic family composition is the mother, newborn, and husband. Additional family members will incur additional fees."
+        },
+        {
+            "question": "How is the contract period determined?",
+            "answer": "It starts on the specified date and continues until terminated by either party with prior notice."
+        },
+        {
+            "question": "What if the child has known allergies or health problems?",
+            "answer": "If there are allergies or health problems related to the child, you must notify the service provider."
+        },
+        {
+            "question": "What do the duties and responsibilities of the service provider include?",
+            "answer": "The duties and responsibilities of the service provider include meal preparation and provision, child care, night care, laundry and cleaning for the child's needs, and maternal care services."
+        },
+        {
+            "question": "Please tell me about the types of postpartum care services.",
+            "answer": "The standard work forms for service providers are defined as follows:\n\n1. Live-in service: Resides at the home to provide professional care, including daily break times.\n2. Commuting service: Provided from Monday to Friday for daytime care, including break times.\n3. Long-distance service: The long-distance service period is defined as 7 consecutive days, without standard holidays.\n\nDuring work hours, the postpartum caregiver does not drive a car. If night feeding is frequent, sufficient sleep during the day is required."
+        },
+        {
+            "question": "What is babysitting service?",
+            "answer": "After postpartum care service, for children over 3 months old, a 1:1 visit provides comprehensive care in areas of health, nutrition, hygiene, and education, such as feeding baby food, sterilizing bottles, changing diapers, and bathing."
+        },
+        {
+            "question": "What are the types of babysitting services?",
+            "answer": "The commuting type is provided Mon-Fri during daytime hours, and the live-in type provides care service from Monday to Friday while residing at the baby's home."
+        }
+    ]
 }

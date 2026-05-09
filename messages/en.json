@@ -1,153 +1,133 @@
 {
-  "Metadata": {
-    "title": "HappyMom | Premium Postpartum Care in the US",
-    "description": "Professional postpartum care and customized newborn support for mothers across the United States."
-  },
-  "Navbar": {
-    "about": "About",
-    "services": "Services",
-    "guide": "Guide",
-    "pricing": "Pricing",
-    "testimonials": "Testimonials",
-    "faq": "FAQ",
-    "contact": "Contact",
-    "login": "Login",
-    "signup": "Sign Up"
-  },
-  "Hero": {
-    "title1": "HappyMom has",
-    "title2": " something special.",
-    "subtitle": "Caregivers trusted by mothers, providing health for the baby and comfort for the mother with sincerity and love, knowing the preciousness of small things, and moving the hearts of mothers.",
-    "cta1": "Explore Services",
-    "cta2": "Contact Us"
-  },
-  "Mission": {
-    "tag": "Premium Postpartum Care Service",
-    "title": "Elegant \n Premium Postpartum Care Service",
-    "description": "Experience elegant, premium postpartum care services that keep pace with modern trends. HappyMom is a specialized home-visit postpartum care agency that cares for mothers and newborns with love and devotion. When you have many questions about your first birth or need help in a busy life, our postpartum caregivers with extensive experience and know-how will meticulously assist with the mother's recovery and newborn care. We will do our best to become a HappyMom that satisfies both the body and mind of the mother.",
-    "button": "Learn More"
-  },
-  "Story": {
-    "label": "HappyMom Story",
-    "title": "Sincere Postpartum Care Delivered with Long Experience and Know-how",
-    "description": "In a time when the excitement and fear of your first birth coexist, HappyMom becomes your most reliable partner. Understanding the difficulties of unfamiliar environments well, we go beyond simple help to be together with deep love and sincerity for the mother and newborn. Based on years of experienced expertise, we delicately care for even the mother's heart, gifting moments of warmth that will never be forgotten in a lifetime."
-  },
-  "Services": {
-    "title": "HappyMom Care Services",
-    "subtitle": "We provide professional customized care for the healthy start of the mother and baby.",
-    "newborn": "Specialized Newborn Care",
-    "newbornDesc": "Prioritizing the baby's proper growth and stability.",
-    "maternal": "Customized Maternal Care",
-    "maternalDesc": "Helping with the mother's physical recovery and emotional stability.",
-    "family": "Family & Environment Management",
-    "familyDesc": "Providing a pleasant indoor environment and family support services.",
-    "babysitting": "Babysitting Service",
-    "babysittingDesc": "Professionally trained caregivers safely look after the child.",
-    "learnMore": "Learn More"
-  },
-  "TestimonialsHome": {
-    "tag": "Testimonials",
-    "title": "Vivid Reviews <br />from Mothers",
-    "subtitle": "Check out the sincere stories of mothers who have experienced HappyMom.",
-    "more": "View More",
-    "write": "Write Review",
-    "items": [
-      {
-        "name": "Miro Ryu",
-        "role": "Postpartum Care",
-        "content": "I'm a mom who has been giving birth for two weeks. I highly recommend Amy, who really loves babies! I was able to sleep well because she took care of the baby all night.",
-        "avatar": "/testimonials/avatar.png"
-      },
-      {
-        "name": "Sara Lee",
-        "role": "Postpartum Care",
-        "content": "I recommend Joyce! She loved the baby so much and took care of everything from head shape correction to defecation records. Especially her cooking skills were great.",
-        "avatar": "/testimonials/avatar.png"
-      },
-      {
-        "name": "Mi Jung Kim",
-        "role": "Postpartum Care",
-        "content": "I gave birth to my second child at the end of March and was with Susan, and it was the best choice! She has a kind and friendly personality, and her cooking is perfect.",
-        "avatar": "/testimonials/avatar.png"
-      }
-    ]
-  },
-  "PricingHome": {
-    "tag": "Pricing",
-    "title": "So you can feel more <br />at ease with transparent costs.",
-    "subtitle": "Choose the care plan most suitable for your family. We promise honest and professional support without hidden costs.",
-    "fullPricing": "View Full Price List",
-    "popular": "Most Popular",
-    "plans": [
-      {
-        "features": [
-          "Maternal Physical Recovery Management",
-          "Professional Newborn Care",
-          "Maternal Health Check",
-          "Nutrition and Meal Management"
+    "Metadata": {
+        "title": "HappyMom | Premium Postpartum Care in the US",
+        "description": "Professional postpartum care and customized newborn support for mothers across the United States."
+    },
+    "Navbar": {
+        "about": "About",
+        "services": "Services",
+        "guide": "Guide",
+        "pricing": "Pricing",
+        "testimonials": "Testimonials",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "login": "Login",
+        "signup": "Sign Up"
+    },
+    "Hero": {
+        "title1": "HappyMom has",
+        "title2": " something special.",
+        "subtitle": "Caregivers trusted by mothers, providing health for the baby and comfort for the mother with sincerity and love, knowing the preciousness of small things, and moving the hearts of mothers.",
+        "cta1": "Explore Services",
+        "cta2": "Contact Us"
+    },
+    "Mission": {
+        "tag": "Premium Postpartum Care Service",
+        "title": "Elegant \n Premium Postpartum Care Service",
+        "description": "Experience elegant, premium postpartum care services that keep pace with modern trends. HappyMom is a specialized home-visit postpartum care agency that cares for mothers and newborns with love and devotion. When you have many questions about your first birth or need help in a busy life, our postpartum caregivers with extensive experience and know-how will meticulously assist with the mother's recovery and newborn care. We will do our best to become a HappyMom that satisfies both the body and mind of the mother.",
+        "button": "Learn More"
+    },
+    "Story": {
+        "label": "HappyMom Story",
+        "title": "Sincere Postpartum Care Delivered with Long Experience and Know-how",
+        "description": "In a time when the excitement and fear of your first birth coexist, HappyMom becomes your most reliable partner. Understanding the difficulties of unfamiliar environments well, we go beyond simple help to be together with deep love and sincerity for the mother and newborn. Based on years of experienced expertise, we delicately care for even the mother's heart, gifting moments of warmth that will never be forgotten in a lifetime."
+    },
+    "Services": {
+        "title": "HappyMom Care Services",
+        "subtitle": "We provide professional customized care for the healthy start of the mother and baby.",
+        "newborn": "Specialized Newborn Care",
+        "newbornDesc": "Prioritizing the baby's proper growth and stability.",
+        "maternal": "Customized Maternal Care",
+        "maternalDesc": "Helping with the mother's physical recovery and emotional stability.",
+        "family": "Family & Environment Management",
+        "familyDesc": "Providing a pleasant indoor environment and family support services.",
+        "babysitting": "Babysitting Service",
+        "babysittingDesc": "Professionally trained caregivers safely look after the child.",
+        "learnMore": "Learn More"
+    },
+    "TestimonialsHome": {
+        "tag": "Testimonials",
+        "title": "Vivid Reviews <br />from Mothers",
+        "subtitle": "Check out the sincere stories of mothers who have experienced HappyMom.",
+        "more": "View More",
+        "write": "Write Review"
+    },
+    "PricingHome": {
+        "tag": "Pricing",
+        "title": "So you can feel more <br />at ease with transparent costs.",
+        "subtitle": "Choose the care plan most suitable for your family. We promise honest and professional support without hidden costs.",
+        "fullPricing": "View Full Price List",
+        "popular": "Most Popular",
+        "plans": [
+            {
+                "features": [
+                    "Maternal Physical Recovery Management",
+                    "Professional Newborn Care",
+                    "Maternal Health Check",
+                    "Nutrition and Meal Management"
+                ]
+            },
+            {
+                "features": [
+                    "Maternal Physical Recovery Management",
+                    "Professional Newborn Care",
+                    "Maternal Health Check",
+                    "Nutrition and Meal Management"
+                ]
+            },
+            {
+                "features": [
+                    "Professional Babysitting",
+                    "Infant Development Support",
+                    "Log and Health Records",
+                    "Safety-First Care"
+                ]
+            }
         ]
-      },
-      {
-        "features": [
-          "Maternal Physical Recovery Management",
-          "Professional Newborn Care",
-          "Maternal Health Check",
-          "Nutrition and Meal Management"
-        ]
-      },
-      {
-        "features": [
-          "Professional Babysitting",
-          "Infant Development Support",
-          "Log and Health Records",
-          "Safety-First Care"
-        ]
-      }
-    ]
-  },
-  "Pricing": {
-    "title": "Pricing",
-    "postpartumCare": "Postpartum Care Service",
-    "babyCare": "Babysitting Service",
-    "liveIn": "Live-in",
-    "commuting": "Commuting",
-    "babyCareType": "Live-in / Commuting",
-    "liveInCommuting": "Live-in / Commuting",
-    "serviceFee": "Service Fee",
-    "deposit": "Deposit",
-    "total": "Total",
-    "period": "/ 5 days",
-    "learnMore": "Learn More"
-  },
-  "Footer": {
-    "about": "About",
-    "menu": "Menu",
-    "services": "Services",
-    "more": "More",
-    "mission": "Our Mission",
-    "pricing": "Pricing",
-    "testimonials": "Testimonials",
-    "faq": "FAQ",
-    "contact": "Contact",
-    "terms": "Terms of Use",
-    "privacy": "Privacy Policy",
-    "rights": "© 2026 HappyMom. All rights reserved.",
-    "siteBy": "Site by",
-    "intro": "HappyMom is a specialized institution providing premium postpartum care and customized support services for mothers and newborns.",
-    "guide": "Guide",
-    "policies": "Policies",
-    "refund": "Refund Policy",
-    "contract": "Contract",
-    "callUs": "Call Us",
-    "emailUs": "Email Us",
-    "kakaoUs": "KakaoTalk",
-    "kakaoId": "Happy-mom",
-    "doNotSell": "Do Not Sell My Personal Information",
-    "disclaimer1": "HappyMom is not a medical institution and does not provide medical services. Our services are not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified health provider for medical concerns.",
-    "disclaimer2": "HappyMom is an Equal Opportunity care provider and does not discriminate on any basis. We may provide information regarding third-party services (such as insurance claims) for your convenience, but we do not assume responsibility for their final outcomes."
-  },
-  "CTA": {
-    "title": "Ready to start your journey | with professional care?",
-    "button": "Contact Us"
-  }
+    },
+    "Pricing": {
+        "title": "Pricing",
+        "postpartumCare": "Postpartum Care Service",
+        "babyCare": "Babysitting Service",
+        "liveIn": "Live-in",
+        "commuting": "Commuting",
+        "babyCareType": "Live-in / Commuting",
+        "liveInCommuting": "Live-in / Commuting",
+        "serviceFee": "Service Fee",
+        "deposit": "Deposit",
+        "total": "Total",
+        "period": "/ 1 week (5days)",
+        "learnMore": "Learn More"
+    },
+    "Footer": {
+        "about": "About",
+        "menu": "Menu",
+        "services": "Services",
+        "more": "More",
+        "mission": "Our Mission",
+        "pricing": "Pricing",
+        "testimonials": "Testimonials",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "terms": "Terms of Use",
+        "privacy": "Privacy Policy",
+        "rights": "© 2026 HappyMom. All rights reserved.",
+        "siteBy": "Site by",
+        "intro": "HappyMom is a specialized institution providing premium postpartum care and customized support services for mothers and newborns.",
+        "guide": "Guide",
+        "policies": "Policies",
+        "refund": "Refund Policy",
+        "contract": "Contract",
+        "callUs": "Call Us",
+        "emailUs": "Email Us",
+        "kakaoUs": "KakaoTalk",
+        "kakaoId": "Happy-mom",
+        "doNotSell": "Do Not Sell My Personal Information",
+        "disclaimer1": "HappyMom is not a medical institution and does not provide medical services. Our services are not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified health provider for medical concerns.",
+        "disclaimer2": "HappyMom is an Equal Opportunity care provider and does not discriminate on any basis. We may provide information regarding third-party services (such as insurance claims) for your convenience, but we do not assume responsibility for their final outcomes."
+    },
+    "CTA": {
+        "title": "Ready to start your journey | with professional care?",
+        "button": "Contact Us"
+    }
 }

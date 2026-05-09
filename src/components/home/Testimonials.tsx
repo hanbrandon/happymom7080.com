@@ -9,11 +9,13 @@ import { useTranslations } from 'next-intl';
 
 export default function Testimonials() {
     const t = useTranslations('TestimonialsHome');
+    const tData = useTranslations('TestimonialsPage');
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const testimonials = t.raw('items') || [];
+    const testimonials = tData.raw('items')?.slice(0, 3) || [];
 
     useEffect(() => {
+        if (testimonials.length === 0) return;
         const timer = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % testimonials.length);
         }, 8000);
@@ -21,12 +23,14 @@ export default function Testimonials() {
     }, [testimonials.length]);
 
     const handlePrev = () => {
+        if (testimonials.length === 0) return;
         setActiveIndex(
             (prev) => (prev - 1 + testimonials.length) % testimonials.length,
         );
     };
 
     const handleNext = () => {
+        if (testimonials.length === 0) return;
         setActiveIndex((prev) => (prev + 1) % testimonials.length);
     };
 
@@ -85,29 +89,8 @@ export default function Testimonials() {
                             }}
                         >
                             <AnimatePresence mode="wait">
-                                <motion.p
-                                    key={activeIndex}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                    transition={{
-                                        duration: 0.6,
-                                        ease: 'easeInOut',
-                                    }}
-                                    className="text-3xl md:text-5xl text-gray-800 leading-tight mb-12 font-medium tracking-tight"
-                                >
-                                    <span className="block text-2xl md:text-4xl text-gray-800 leading-tight mb-12 font-medium tracking-tight whitespace-pre-line line-clamp-5">
-                                        "{testimonials[activeIndex].content}"
-                                    </span>
-                                </motion.p>
-                            </AnimatePresence>
-                        </motion.div>
-
-                        {/* Bottom Row: Profile & Navigation/Mobile Buttons */}
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-4">
-                            <div className="flex-1">
-                                <AnimatePresence mode="wait">
-                                    <motion.div
+                                {testimonials.length > 0 && (
+                                    <motion.p
                                         key={activeIndex}
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
@@ -116,32 +99,57 @@ export default function Testimonials() {
                                             duration: 0.6,
                                             ease: 'easeInOut',
                                         }}
-                                        className="flex items-center gap-6"
+                                        className="text-3xl md:text-5xl text-gray-800 leading-tight mb-12 font-medium tracking-tight"
                                     >
-                                        <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                                            <Image
-                                                src={
-                                                    testimonials[activeIndex]
-                                                        .avatar
-                                                }
-                                                alt={
-                                                    testimonials[activeIndex]
-                                                        .name
-                                                }
-                                                width={80}
-                                                height={80}
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-gray-900 mb-1">
-                                                {testimonials[activeIndex].name}
-                                            </h3>
-                                            <p className="text-lg text-gray-600 font-medium">
-                                                {testimonials[activeIndex].role}
-                                            </p>
-                                        </div>
-                                    </motion.div>
+                                        <span className="block text-2xl md:text-4xl text-gray-800 leading-tight mb-12 font-medium tracking-tight whitespace-pre-line line-clamp-5">
+                                            "{testimonials[activeIndex].content}"
+                                        </span>
+                                    </motion.p>
+                                )}
+                            </AnimatePresence>
+                        </motion.div>
+
+                        {/* Bottom Row: Profile & Navigation/Mobile Buttons */}
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-4">
+                            <div className="flex-1">
+                                <AnimatePresence mode="wait">
+                                    {testimonials.length > 0 && (
+                                        <motion.div
+                                            key={activeIndex}
+                                            initial={{ opacity: 0, x: 20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={{ opacity: 0, x: -20 }}
+                                            transition={{
+                                                duration: 0.6,
+                                                ease: 'easeInOut',
+                                            }}
+                                            className="flex items-center gap-6"
+                                        >
+                                            <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                                                <Image
+                                                    src={
+                                                        testimonials[activeIndex]
+                                                            .avatar
+                                                    }
+                                                    alt={
+                                                        testimonials[activeIndex]
+                                                            .name
+                                                    }
+                                                    width={80}
+                                                    height={80}
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                                                    {testimonials[activeIndex].name}
+                                                </h3>
+                                                <p className="text-lg text-gray-600 font-medium">
+                                                    {testimonials[activeIndex].service}
+                                                </p>
+                                            </div>
+                                        </motion.div>
+                                    )}
                                 </AnimatePresence>
                             </div>
 

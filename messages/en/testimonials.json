@@ -1,84 +1,84 @@
 {
-  "tag": "Testimonials",
-  "title": "Stories of Mothers <br />who were with HappyMom",
-  "subtitle": "The sincere voices of mothers who have experienced it firsthand are HappyMom's greatest asset.",
-  "formTitle": "Tell us your story",
-  "formDesc": "Your precious reviews will be posted on the homepage after review by the administrator. The content you write will be delivered to the HappyMom operator by email and managed carefully.",
-  "formName": "Name",
-  "formLocation": "Location",
-  "formService": "Service Used",
-  "formContent": "Content",
-  "formSubmit": "Submit Review",
-  "postpartum": "Postpartum Care Service",
-  "babysitting": "Babysitting Service",
-  "formSuccess": "Your precious review has been successfully delivered. We will post it soon after review!",
-  "formError": "An error occurred while submitting. Please try again in a moment.",
-  "formErrorGeneral": "An error occurred while submitting.",
-  "thankYou": "Thank you!",
-  "close": "Close",
-  "items": [
-    {
-      "name": "Miro Ryu",
-      "location": "Out of State (Live-in)",
-      "service": "Postpartum Care",
-      "content": "I'm a mom who has been giving birth for two weeks. I highly recommend Amy, who really loves babies! I was able to sleep well because she took care of the baby all night, and her breast massage and cooking skills were also top-notch. I felt the warmth like my biological mother as she even organized the kitchen neatly. She can move to other areas as well as LA, so I highly recommend her to those who are worried.",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Sara Lee",
-      "location": "Local (4 Weeks + 1 Week Extension)",
-      "service": "Postpartum Care",
-      "content": "I recommend Joyce! She loved the baby so much and took care of everything from head shape correction to defecation records. Especially her cooking skills were great, so the body recovery was pleasant thanks to the homemade kimchi and various snacks. I was so satisfied that I even extended for a week. She says she's available for March and April, so be sure to contact her!",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Mi Jung Kim",
-      "location": "Local",
-      "service": "Postpartum Care",
-      "content": "I gave birth to my second child at the end of March and was with Susan, and it was the best choice! She has a kind and friendly personality, and her cooking and baby care are perfect. Even my shy husband wished she could stay at our house for life. I recommend her to those who want to recover in a comfortable mind like being with their biological mother.",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Hanna Koo",
-      "location": "Local",
-      "service": "Postpartum Care",
-      "content": "I was worried because I was a twin and high-risk mother, but I recovered with peace of mind thanks to Esther. She is so skilled in care that the baby falls into a deep sleep as soon as she goes into her arms. Especially, I was able to succeed in breastfeeding, which I failed with my first child, thanks to her breast massage. Her cooking skills were also excellent, so my first child, who is a picky eater, really ate her food well.",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Yunju Lee",
-      "location": "Commuting",
-      "service": "Postpartum Care",
-      "content": "I was so happy for 3 weeks with Hannah that I cried on the last day. Every meal was as impressive as her pride in cooking, and she carefully read my mind as I worried about breastfeeding. My first child also liked her so much that he asked every morning when she was coming. If finances allowed, I wanted to be with her for two more months.",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Sujin Kim",
-      "location": "Live-in (15 Days)",
-      "service": "Postpartum Care",
-      "content": "Amy is a real veteran. She taught me the know-how of newborn care in detail, which was a great help to me as a new mom. I also passed through the breast pain without much trouble thanks to her massage, and every day was a feast thanks to various dishes using ingredients from the refrigerator. She goes to other states, so I recommend her to all moms in the US.",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Seung-hoo's Mom & Dad",
-      "location": "Local",
-      "service": "Postpartum Care",
-      "content": "Kelley, thank you for truly loving Seung-hoo for 4 weeks. For us as a couple who had no relatives in the US and were lost, you were a reliable support. Thanks to you, my body has recovered a lot and the fear of parenting has disappeared. I hope your sincerity in caring with a consistent mind reaches other mothers as well.",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Hyung-won",
-      "location": "Local",
-      "service": "Postpartum Care",
-      "content": "Thank you so much for taking care of our family with all your heart for 3 weeks. Thank you so much for helping us with a smile on your face even though there were many inconveniences because nothing was prepared. Stay healthy always. I hope to see you again for good things.",
-      "avatar": "/testimonials/avatar.png"
-    },
-    {
-      "name": "Ha-min's Dad & Mom",
-      "location": "Local",
-      "service": "Postpartum Care",
-      "content": "It was even more special to spend Christmas and New Year with Angela. Thank you so much for treating me warmly like a biological aunt when I was out of my mind due to a sudden hospitalization. I will not forget the heart that took care of Ha-min with all your heart without complaint even though it was a small and uncomfortable house. I really want to invite you again for my second child!",
-      "avatar": "/testimonials/avatar.png"
-    }
-  ]
+    "tag": "Testimonials",
+    "title": "Stories of Mothers <br />who were with HappyMom",
+    "subtitle": "The sincere voices of mothers who have experienced it firsthand are HappyMom's greatest asset.",
+    "formTitle": "Tell us your story",
+    "formDesc": "Your precious reviews will be posted on the homepage after review by the administrator. The content you write will be delivered to the HappyMom operator by email and managed carefully.",
+    "formName": "Name",
+    "formLocation": "Location",
+    "formService": "Service Used",
+    "formContent": "Content",
+    "formSubmit": "Submit Review",
+    "postpartum": "Postpartum Care Service",
+    "babysitting": "Babysitting Service",
+    "formSuccess": "Your precious review has been successfully delivered. We will post it soon after review!",
+    "formError": "An error occurred while submitting. Please try again in a moment.",
+    "formErrorGeneral": "An error occurred while submitting.",
+    "thankYou": "Thank you!",
+    "close": "Close",
+    "items": [
+        {
+            "name": "Miro Ryu",
+            "location": "Out of State (Live-in)",
+            "service": "Postpartum Care",
+            "content": "I'm a mom who has been giving birth for two weeks. I highly recommend Amy, who really loves babies! I was able to sleep well because she took care of the baby all night, and her breast massage and cooking skills were also top-notch. I felt the warmth like my biological mother as she even organized the kitchen neatly. She can move to other areas as well as LA, so I highly recommend her to those who are worried.",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Sara Lee",
+            "location": "Local (4 Weeks + 1 Week Extension)",
+            "service": "Postpartum Care",
+            "content": "I recommend Angela! She loved the baby so much and took care of everything from head shape correction to defecation records. Especially her cooking skills were great, so the body recovery was pleasant thanks to the homemade kimchi and various snacks. I was so satisfied that I even extended for a week. She says she's available for March and April, so be sure to contact her!",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Mi Jung Kim",
+            "location": "Local",
+            "service": "Postpartum Care",
+            "content": "I gave birth to my second child at the end of March and was with Jenny, and it was the best choice! She has a kind and friendly personality, and her cooking and baby care are perfect. Even my shy husband wished she could stay at our house for life. I recommend her to those who want to recover in a comfortable mind like being with their biological mother.",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Hanna Koo",
+            "location": "Local",
+            "service": "Postpartum Care",
+            "content": "I was worried because I was a twin and high-risk mother, but I recovered with peace of mind thanks to Esther. She is so skilled in care that the baby falls into a deep sleep as soon as she goes into her arms. Especially, I was able to succeed in breastfeeding, which I failed with my first child, thanks to her breast massage. Her cooking skills were also excellent, so my first child, who is a picky eater, really ate her food well.",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Yunju Lee",
+            "location": "Commuting",
+            "service": "Postpartum Care",
+            "content": "I was so happy for 3 weeks with Hannah that I cried on the last day. Every meal was as impressive as her pride in cooking, and she carefully read my mind as I worried about breastfeeding. My first child also liked her so much that he asked every morning when she was coming. If finances allowed, I wanted to be with her for two more months.",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Sujin Kim",
+            "location": "Live-in (11 week (5days))",
+            "service": "Postpartum Care",
+            "content": "Amy is a real veteran. She taught me the know-how of newborn care in detail, which was a great help to me as a new mom. I also passed through the breast pain without much trouble thanks to her massage, and every day was a feast thanks to various dishes using ingredients from the refrigerator. She goes to other states, so I recommend her to all moms in the US.",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Seung-hoo's Mom & Dad",
+            "location": "Local",
+            "service": "Postpartum Care",
+            "content": "Kelley, thank you for truly loving Seung-hoo for 4 weeks. For us as a couple who had no relatives in the US and were lost, you were a reliable support. Thanks to you, my body has recovered a lot and the fear of parenting has disappeared. I hope your sincerity in caring with a consistent mind reaches other mothers as well.",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Hyung-won",
+            "location": "Local",
+            "service": "Postpartum Care",
+            "content": "Thank you so much for taking care of our family with all your heart for 3 weeks. Thank you so much for helping us with a smile on your face even though there were many inconveniences because nothing was prepared. Stay healthy always. I hope to see you again for good things.",
+            "avatar": "/testimonials/avatar.png"
+        },
+        {
+            "name": "Ha-min's Dad & Mom",
+            "location": "Local",
+            "service": "Postpartum Care",
+            "content": "It was even more special to spend Christmas and New Year with Angela. Thank you so much for treating me warmly like a biological aunt when I was out of my mind due to a sudden hospitalization. I will not forget the heart that took care of Ha-min with all your heart without complaint even though it was a small and uncomfortable house. I really want to invite you again for my second child!",
+            "avatar": "/testimonials/avatar.png"
+        }
+    ]
 }
