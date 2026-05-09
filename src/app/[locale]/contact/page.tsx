@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     openGraph: {
       title: 'Contact | HappyMom',
       description: t('subtitle'),
+      images: ['/og-image.png'],
       locale: openGraphLocale(locale),
       type: 'website',
     },

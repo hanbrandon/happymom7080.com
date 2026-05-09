@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       description: locale === 'ko'
         ? '정성과 사랑으로 함께하는 해피맘 산후조리'
         : 'Supporting mothers through their journey into motherhood with expert care.',
+      images: ['/og-image.png'],
       locale: openGraphLocale(locale),
       type: 'website',
     },
