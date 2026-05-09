@@ -1,28 +1,24 @@
 import TestimonialsContent from '@/components/testimonials/TestimonialsContent';
 import { getTranslations } from 'next-intl/server';
+import { languageAlternates, localizedPath, openGraphLocale } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'TestimonialsPage' });
-
-  const baseUrl = 'https://happymom7080.com';
   const path = '/testimonials';
 
   return {
     title: `${t('tag')} | HappyMom`,
     description: t('subtitle'),
     alternates: {
-      canonical: locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
-      languages: {
-        'ko-KR': `${baseUrl}${path}`,
-        'en-US': `${baseUrl}/en${path}`,
-      },
+      canonical: localizedPath(locale, path),
+      languages: languageAlternates(path),
     },
     openGraph: {
       title: `${t('tag')} | HappyMom`,
       description: t('subtitle'),
       images: ['/og-image.png'],
-      locale: locale,
+      locale: openGraphLocale(locale),
       type: 'website',
     },
   };
@@ -30,18 +26,16 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default async function TestimonialsPage({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'TestimonialsPage' });
-  const baseUrl = 'https://happymom7080.com';
   const path = '/testimonials';
 
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FeedbackEditor",
-    "name": locale === 'ko' ? "해피맘 이용 후기" : "HappyMom Testimonials",
-    "description": locale === 'ko' 
-      ? "해피맘의 프리미엄 산후조리를 경험하신 산모님들의 생생한 목소리를 확인하세요." 
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: locale === 'ko' ? '해피맘 이용 후기' : 'HappyMom Testimonials',
+    description: locale === 'ko'
+      ? '해피맘의 프리미엄 산후조리 서비스를 경험한 산모들의 실제 후기를 확인하세요.'
       : "Real stories and feedback from mothers who experienced HappyMom's premium postpartum care.",
-    "url": locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`
+    url: localizedPath(locale, path),
   };
 
   return (

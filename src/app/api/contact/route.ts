@@ -16,15 +16,15 @@ export async function POST(request: Request) {
     }
 
     const htmlContent = `
-      <div style="font-family: sans-serif; padding: 20px; color: #333;">
-        <h2 style="color: #111; border-bottom: 2px solid #eee; padding-bottom: 10px;">새로운 고객 문의 도착</h2>
-        <p><strong>이름:</strong> ${firstName} ${lastName || ""}</p>
-        <p><strong>이메일:</strong> ${email}</p>
-        <p style="margin-top: 20px; font-weight: bold;">[문의 내용]</p>
-        <div style="background: #f9f9f9; padding: 15px; border-radius: 8px;">
+      <div style="font-family: sans-serif; padding: 20px; color: #333333; background-color: #ffffff;">
+        <h2 style="color: #111111; border-bottom: 2px solid #eeeeee; padding-bottom: 10px;">새로운 고객 문의 도착</h2>
+        <p><strong style="color: #000000;">이름:</strong> ${firstName} ${lastName || ""}</p>
+        <p><strong style="color: #000000;">이메일:</strong> ${email}</p>
+        <p style="margin-top: 20px; font-weight: bold; color: #000000;">[문의 내용]</p>
+        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; color: #333333; border: 1px solid #eeeeee;">
           ${message.replace(/\n/g, '<br>')}
         </div>
-        <p style="margin-top: 30px; font-size: 0.9em; color: #777;">
+        <p style="margin-top: 30px; font-size: 0.9em; color: #777777;">
           * 이 메일은 HappyMom 웹사이트 문의하기 폼을 통해 자동 발송되었습니다.
         </p>
       </div>

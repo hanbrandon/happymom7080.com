@@ -1,27 +1,23 @@
 import { getTranslations } from 'next-intl/server';
 import ContactContent from '@/components/contact/ContactContent';
+import { happyMomBusinessSchema, languageAlternates, localizedPath, openGraphLocale } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Contact' });
-
-  const baseUrl = 'https://happymom7080.com';
   const path = '/contact';
 
   return {
     title: t('browserTitle'),
     description: t('subtitle'),
     alternates: {
-      canonical: locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
-      languages: {
-        'ko-KR': `${baseUrl}${path}`,
-        'en-US': `${baseUrl}/en${path}`,
-      },
+      canonical: localizedPath(locale, path),
+      languages: languageAlternates(path),
     },
     openGraph: {
-      title: `Contact | HappyMom`,
+      title: 'Contact | HappyMom',
       description: t('subtitle'),
-      locale: locale,
+      locale: openGraphLocale(locale),
       type: 'website',
     },
   };
@@ -29,23 +25,15 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default async function ContactPage({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  
+
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "mainEntity": {
-      "@type": "LocalBusiness",
-      "name": "HappyMom",
-      "telephone": process.env.NEXT_PUBLIC_PHONE_RAW || "12139994642",
-      "email": process.env.NEXT_PUBLIC_EMAIL || "happymom7080@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Los Angeles",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      }
-    },
-    "description": locale === 'ko' ? "해피맘 서비스에 대해 궁금한 점을 문의해 주세요." : "Contact us for any questions regarding HappyMom services."
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    mainEntity: happyMomBusinessSchema(locale),
+    url: localizedPath(locale, '/contact'),
+    description: locale === 'ko'
+      ? '해피맘 서비스에 대한 문의와 상담을 도와드립니다.'
+      : 'Contact us for any questions regarding HappyMom services.',
   };
 
   return (

@@ -1,27 +1,24 @@
 import { getTranslations } from 'next-intl/server';
 import FAQContent from '@/components/faq/FAQContent';
+import { languageAlternates, localizedPath, openGraphLocale } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'FAQ' });
 
-  const baseUrl = 'https://happymom7080.com';
   const path = '/faq';
 
   return {
     title: `FAQ | HappyMom`,
     description: t('subtitle'),
     alternates: {
-      canonical: locale === 'ko' ? `${baseUrl}${path}` : `${baseUrl}/en${path}`,
-      languages: {
-        'ko-KR': `${baseUrl}${path}`,
-        'en-US': `${baseUrl}/en${path}`,
-      },
+      canonical: localizedPath(locale, path),
+      languages: languageAlternates(path),
     },
     openGraph: {
       title: `FAQ | HappyMom`,
       description: t('subtitle'),
-      locale: locale,
+      locale: openGraphLocale(locale),
       type: 'website',
     },
   };

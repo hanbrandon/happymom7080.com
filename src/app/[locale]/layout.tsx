@@ -2,10 +2,10 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
-import type { Metadata } from "next";
 import { Outfit, Noto_Sans_KR } from "next/font/google";
 import "../globals.css";
 import PageTransition from '@/components/ui/PageTransition';
+import { languageAlternates, localizedPath, openGraphLocale } from '@/lib/seo';
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -28,11 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t('description'),
     metadataBase: new URL('https://happymom7080.com'),
     alternates: {
-      canonical: '/',
-      languages: {
-        'ko-KR': '/ko',
-        'en-US': '/en',
-      },
+      canonical: localizedPath(locale),
+      languages: languageAlternates(),
     },
     openGraph: {
       title: t('title'),
@@ -47,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           alt: 'HappyMom Care',
         },
       ],
-      locale: locale,
+      locale: openGraphLocale(locale),
       type: 'website',
     },
     twitter: {
@@ -74,7 +71,7 @@ export default async function LocaleLayout({
   const {locale} = await params;
   
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
  

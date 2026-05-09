@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import PrivacyContent from '@/components/privacy/PrivacyContent';
+import { languageAlternates, localizedPath } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -8,6 +9,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `${t('tag')} | HappyMom`,
     description: t('subtitle'),
+    alternates: {
+      canonical: localizedPath(locale, '/privacy'),
+      languages: languageAlternates('/privacy'),
+    },
+    robots: {
+      index: false,
+      follow: true,
+    },
   };
 }
 

@@ -1,23 +1,28 @@
 import { MetadataRoute } from 'next';
+import { BASE_URL, languageAlternates } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://happymom7080.com';
   const paths = ['', '/about', '/services', '/pricing', '/testimonials', '/faq', '/guide', '/contact'];
+  const lastModified = new Date();
 
-  // 한국어(기본 언어)는 접두사 없이 생성
   const koSitemaps = paths.map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
+    url: `${BASE_URL}${path}`,
+    lastModified,
     changeFrequency: 'weekly' as const,
     priority: path === '' ? 1 : 0.8,
+    alternates: {
+      languages: languageAlternates(path),
+    },
   }));
 
-  // 영어는 /en 접두사 유지
   const enSitemaps = paths.map((path) => ({
-    url: `${baseUrl}/en${path}`,
-    lastModified: new Date(),
+    url: `${BASE_URL}/en${path}`,
+    lastModified,
     changeFrequency: 'weekly' as const,
     priority: path === '' ? 0.9 : 0.7,
+    alternates: {
+      languages: languageAlternates(path),
+    },
   }));
 
   return [...koSitemaps, ...enSitemaps];

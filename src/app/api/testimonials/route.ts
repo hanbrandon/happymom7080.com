@@ -16,16 +16,16 @@ export async function POST(request: Request) {
     }
 
     const htmlContent = `
-      <div style="font-family: sans-serif; padding: 20px; color: #333;">
-        <h2 style="color: #111; border-bottom: 2px solid #eee; padding-bottom: 10px;">새로운 서비스 후기 도착</h2>
-        <p><strong>이름:</strong> ${name}</p>
-        <p><strong>지역:</strong> ${location || "미입력"}</p>
-        <p><strong>이용한 서비스:</strong> ${service || "미선택"}</p>
-        <p style="margin-top: 20px; font-weight: bold;">[후기 내용]</p>
-        <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; font-style: italic;">
+      <div style="font-family: sans-serif; padding: 20px; color: #333333; background-color: #ffffff;">
+        <h2 style="color: #111111; border-bottom: 2px solid #eeeeee; padding-bottom: 10px;">새로운 서비스 후기 도착</h2>
+        <p><strong style="color: #000000;">이름:</strong> ${name}</p>
+        <p><strong style="color: #000000;">지역:</strong> ${location || "미입력"}</p>
+        <p><strong style="color: #000000;">이용한 서비스:</strong> ${service || "미선택"}</p>
+        <p style="margin-top: 20px; font-weight: bold; color: #000000;">[후기 내용]</p>
+        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; color: #333333; border: 1px solid #eeeeee; font-style: italic;">
           "${content}"
         </div>
-        <p style="margin-top: 30px; font-size: 0.9em; color: #777;">
+        <p style="margin-top: 30px; font-size: 0.9em; color: #777777;">
           * 이 메일은 HappyMom 웹사이트 후기 제출 폼을 통해 자동 발송되었습니다.
         </p>
       </div>
