@@ -2,6 +2,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import Script from 'next/script';
 import { Outfit, Noto_Sans_KR } from "next/font/google";
 import "../globals.css";
 import PageTransition from '@/components/ui/PageTransition';
@@ -81,6 +82,19 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${outfit.variable} ${notoTabsKR.variable}`} suppressHydrationWarning>
       <body className="antialiased selection:bg-black selection:text-white">
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-FEKS3PE59C"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-FEKS3PE59C');
+          `}
+        </Script>
         <NextIntlClientProvider messages={messages}>
           <PageTransition>
             {children}
