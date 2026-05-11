@@ -129,5 +129,17 @@
     "CTA": {
         "title": "Ready to start your journey | with professional care?",
         "button": "Contact Us"
+    },
+    "NotFound": {
+        "title": "Page Not Found",
+        "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+        "goHome": "Back to Home",
+        "goBack": "Previous Page"
+    },
+    "Error": {
+        "title": "Something went wrong",
+        "description": "An unexpected error occurred while processing your request. Our team has been notified.",
+        "tryAgain": "Try Again",
+        "goHome": "Back to Home"
     }
 }
