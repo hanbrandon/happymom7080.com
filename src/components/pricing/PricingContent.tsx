@@ -332,6 +332,30 @@ export default function PricingContent() {
                         </div>
                     </ScrollReveal>
 
+                    {/* Twins Section */}
+                    <div className="mb-32">
+                        <ScrollReveal>
+                            <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                                <h4 className="text-lg font-bold text-gray-900 mb-6">
+                                    {t('twinsSection.title')}
+                                </h4>
+                                <div className="space-y-4">
+                                    <p className="text-xs text-gray-600 font-medium leading-relaxed">
+                                        {t('twinsSection.description')}
+                                    </p>
+                                    <div className="pt-4 space-y-2 border-t border-gray-200/50">
+                                        <p className="text-xs font-bold text-gray-900">
+                                            {t('twinsSection.point1')}
+                                        </p>
+                                        <p className="text-xs font-bold text-gray-900">
+                                            {t('twinsSection.point2')}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    </div>
+
                     {/* Babysitting */}
                     <div className="mb-32">
                         <ScrollReveal>

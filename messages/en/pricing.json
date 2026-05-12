@@ -19,6 +19,12 @@
     "commutingDeposit": "Deposit {deposit} + Balance {balance}",
     "commutingHours": "",
     "longDistanceNote": "Long-distance Resident Customer Notice: Long-distance work is carried out consecutively without days off, regardless of the day of the week or public holidays. 1 week is calculated as 5 days; therefore, 30 consecutive days equals 6 weeks (30 ÷ 5). Saturdays, Sundays, and public holidays are all included as work days with no days off.",
+    "twinsSection": {
+        "title": "Twins Postpartum Care",
+        "description": "Twins require a much higher intensity of care than general postpartum care, so you must be more meticulous when choosing an agency. When there are two babies, tasks like feeding, burping, diapering, bathing, and laundry don't just 'double'—it feels like two merry-go-rounds spinning simultaneously.",
+        "point1": "1) Caregiver's experience with twins: Experience is crucial with twins. Caring for one newborn is completely different from caring for twins.",
+        "point2": "2) Additional fees for twins are determined after consultation with the director."
+    },
     "babysitTitle": "Babysitting Service Fees",
     "babysitPrice": "{price} / 1 week (5days)",
     "babysitDeposit": "Deposit {deposit} + Balance {balance}",
