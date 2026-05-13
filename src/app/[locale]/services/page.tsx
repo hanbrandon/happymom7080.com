@@ -1,23 +1,22 @@
 import { getTranslations } from 'next-intl/server';
 import ServicesContent from '@/components/services/ServicesContent';
-import { languageAlternates, localizedPath, openGraphLocale, stripHtml } from '@/lib/seo';
+import { languageAlternates, localizedPath, openGraphLocale, pageMeta, stripHtml } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'ServicesDetail' });
-
   const path = '/services';
+  const meta = pageMeta(locale, 'services');
 
   return {
-    title: `${t('postpartumTitle')} | HappyMom Services`,
-    description: t('postpartumDesc'),
+    title: meta.title,
+    description: meta.description,
     alternates: {
       canonical: localizedPath(locale, path),
       languages: languageAlternates(path),
     },
     openGraph: {
-      title: `${t('postpartumTitle')} | HappyMom`,
-      description: t('postpartumDesc'),
+      title: meta.title,
+      description: meta.description,
       images: ['/og-image.png'],
       locale: openGraphLocale(locale),
       type: 'website',
@@ -46,7 +45,7 @@ export default async function ServicesPage({ params }: { params: { locale: strin
       '@id': 'https://happymom7080.com/#localbusiness',
       name: 'HappyMom',
       url: localizedPath(locale),
-      telephone: process.env.NEXT_PUBLIC_PHONE_RAW || '+12139994642',
+      telephone: process.env.NEXT_PUBLIC_PHONE_RAW || '+1-213-999-4642',
       email: process.env.NEXT_PUBLIC_EMAIL || 'happymom7080@gmail.com',
       address: {
         '@type': 'PostalAddress',
@@ -59,6 +58,8 @@ export default async function ServicesPage({ params }: { params: { locale: strin
       { '@type': 'State', name: 'California' },
       { '@type': 'City', name: 'Los Angeles' },
       { '@type': 'City', name: 'Orange County' },
+      { '@type': 'City', name: 'Irvine' },
+      { '@type': 'City', name: 'Koreatown' },
       { '@type': 'Country', name: 'United States' },
     ],
     audience: {

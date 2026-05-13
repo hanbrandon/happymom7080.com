@@ -1,22 +1,21 @@
-import { getTranslations } from 'next-intl/server';
 import AboutContent from '@/components/about/AboutContent';
-import { happyMomBusinessSchema, languageAlternates, localizedPath, openGraphLocale } from '@/lib/seo';
+import { happyMomBusinessSchema, languageAlternates, localizedPath, openGraphLocale, pageMeta } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'About' });
   const path = '/about';
+  const meta = pageMeta(locale, 'about');
 
   return {
-    title: `${t('focusTitle')} | HappyMom About`,
-    description: t('subtitle'),
+    title: meta.title,
+    description: meta.description,
     alternates: {
       canonical: localizedPath(locale, path),
       languages: languageAlternates(path),
     },
     openGraph: {
-      title: `${t('focusTitle')} | HappyMom`,
-      description: t('subtitle'),
+      title: meta.title,
+      description: meta.description,
       images: ['/og-image.png'],
       locale: openGraphLocale(locale),
       type: 'website',

@@ -157,11 +157,13 @@ export default function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                       {/* First Name */}
                       <div className="space-y-3">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'firstName' ? 'text-black' : 'text-gray-400'}`}>
+                        <label htmlFor="contact-first-name" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'firstName' ? 'text-black' : 'text-gray-400'}`}>
                           {t('firstName')}
                         </label>
                         <div className="relative">
                           <input 
+                            id="contact-first-name"
+                            name="firstName"
                             suppressHydrationWarning
                             required
                             type="text" 
@@ -183,11 +185,13 @@ export default function Contact() {
 
                       {/* Last Name */}
                       <div className="space-y-3">
-                        <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'lastName' ? 'text-black' : 'text-gray-400'}`}>
+                        <label htmlFor="contact-last-name" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'lastName' ? 'text-black' : 'text-gray-400'}`}>
                           {t('lastName')}
                         </label>
                         <div className="relative">
                           <input 
+                            id="contact-last-name"
+                            name="lastName"
                             suppressHydrationWarning
                             type="text" 
                             value={formData.lastName}
@@ -209,11 +213,13 @@ export default function Contact() {
 
                     {/* Email */}
                     <div className="space-y-3">
-                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-black' : 'text-gray-400'}`}>
+                      <label htmlFor="contact-email" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-black' : 'text-gray-400'}`}>
                         {t('email')}
                       </label>
                       <div className="relative">
                         <input 
+                          id="contact-email"
+                          name="email"
                           suppressHydrationWarning
                           required
                           type="email" 
@@ -235,11 +241,13 @@ export default function Contact() {
 
                     {/* Message */}
                     <div className="space-y-3">
-                      <label className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'message' ? 'text-black' : 'text-gray-400'}`}>
+                      <label htmlFor="contact-message" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'message' ? 'text-black' : 'text-gray-400'}`}>
                         {t('message')}
                       </label>
                       <div className="relative">
                         <textarea 
+                          id="contact-message"
+                          name="message"
                           suppressHydrationWarning
                           required
                           rows={4}

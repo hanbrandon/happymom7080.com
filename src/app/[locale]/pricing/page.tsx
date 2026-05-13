@@ -1,22 +1,21 @@
 import PricingContent from '@/components/pricing/PricingContent';
-import { getTranslations } from 'next-intl/server';
-import { languageAlternates, localizedPath, openGraphLocale } from '@/lib/seo';
+import { languageAlternates, localizedPath, openGraphLocale, pageMeta } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'PricingDetail' });
   const path = '/pricing';
+  const meta = pageMeta(locale, 'pricing');
 
   return {
-    title: `${t('heroTag')} | HappyMom`,
-    description: t('heroSubtitle'),
+    title: meta.title,
+    description: meta.description,
     alternates: {
       canonical: localizedPath(locale, path),
       languages: languageAlternates(path),
     },
     openGraph: {
-      title: `${t('heroTag')} | HappyMom`,
-      description: t('heroSubtitle'),
+      title: meta.title,
+      description: meta.description,
       images: ['/og-image.png'],
       locale: openGraphLocale(locale),
       type: 'website',
@@ -26,13 +25,12 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default async function PricingPage({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'PricingDetail' });
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'OfferCatalog',
     name: locale === 'ko' ? '해피맘 산후조리 서비스 요금 안내' : 'HappyMom Postpartum Care Pricing',
-    description: t('heroSubtitle'),
+    description: pageMeta(locale, 'pricing').description,
     url: localizedPath(locale, '/pricing'),
     itemListElement: [
       {

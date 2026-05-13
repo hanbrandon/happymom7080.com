@@ -1,22 +1,22 @@
 import { getTranslations } from 'next-intl/server';
 import GuideContent from '@/components/guide/GuideContent';
-import { languageAlternates, localizedPath, openGraphLocale, stripHtml } from '@/lib/seo';
+import { languageAlternates, localizedPath, openGraphLocale, pageMeta, stripHtml } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'Guide' });
   const path = '/guide';
+  const meta = pageMeta(locale, 'guide');
 
   return {
-    title: `${t('heroTitle').replace('|', ' ')} | HappyMom Guide`,
-    description: t('heroSubtitle'),
+    title: meta.title,
+    description: meta.description,
     alternates: {
       canonical: localizedPath(locale, path),
       languages: languageAlternates(path),
     },
     openGraph: {
-      title: `${t('heroTitle').replace('|', ' ')} | HappyMom`,
-      description: t('heroSubtitle'),
+      title: meta.title,
+      description: meta.description,
       images: ['/og-image.png'],
       locale: openGraphLocale(locale),
       type: 'website',
@@ -32,7 +32,7 @@ export default async function GuidePage({ params }: { params: { locale: string }
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: locale === 'ko' ? '해피맘 산후조리 서비스 신청 방법' : 'How to apply for HappyMom Postpartum Care',
-    description: t('heroSubtitle'),
+    description: pageMeta(locale, 'guide').description,
     url: localizedPath(locale, '/guide'),
     step: [
       {
