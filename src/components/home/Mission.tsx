@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
@@ -9,6 +9,10 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export default function Mission() {
     const t = useTranslations('Mission');
+    const locale = useLocale();
+    const brand = locale === 'ko' 
+        ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
+        : (process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom');
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -39,7 +43,7 @@ export default function Mission() {
 
                     <ScrollReveal delay={0.3}>
                         <p className="text-xl text-gray-600 leading-relaxed mb-12">
-                            {t('description')}
+                            {t('description', { brand })}
                         </p>
                     </ScrollReveal>
 

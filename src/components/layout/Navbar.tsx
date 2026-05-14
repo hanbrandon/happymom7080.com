@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="relative h-10 w-40">
             <Image
               src="/logo_black.png"
-              alt="HappyMom Logo"
+              alt={`${process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom'} Logo`}
               fill
               className={`object-contain transition-all duration-300 ${!isDarkTheme ? 'brightness-0 invert' : ''}`}
               priority
@@ -177,7 +177,7 @@ export default function Navbar() {
                 <div className="relative h-8 w-32">
                   <Image
                     src="/logo_black.png"
-                    alt="HappyMom Logo"
+                    alt={`${process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom'} Logo`}
                     fill
                     className="object-contain"
                   />

@@ -5,10 +5,14 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, SquarePen } from 'lucide-react';
 import PremiumButton from '@/components/ui/PremiumButton';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Testimonials() {
     const t = useTranslations('TestimonialsHome');
+    const locale = useLocale();
+    const brand = locale === 'ko' 
+        ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
+        : (process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom');
     const tData = useTranslations('TestimonialsPage');
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -54,7 +58,7 @@ export default function Testimonials() {
                                 dangerouslySetInnerHTML={{ __html: t('title') }}
                             />
                             <p className="text-xl text-gray-500 leading-relaxed max-w-sm md:mb-12">
-                                {t('subtitle')}
+                                {t('subtitle', { brand })}
                             </p>
 
                             <div className="hidden lg:flex flex-wrap gap-4 items-center">

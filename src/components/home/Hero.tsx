@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
@@ -8,6 +8,10 @@ import PremiumButton from '@/components/ui/PremiumButton';
 
 export default function Hero() {
   const t = useTranslations('Hero');
+  const locale = useLocale();
+  const brand = locale === 'ko' 
+    ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
+    : (process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom');
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
       target: containerRef,
@@ -33,7 +37,7 @@ export default function Hero() {
         >
             <Image
               src="/hero-bg.jpg"
-              alt="HappyMom Care"
+              alt={`${brand} Care`}
               fill
               className="object-cover"
               priority
@@ -54,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
           >
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight leading-[1.05] mb-8">
-              {t('title1')} <br />
+              {t('title1', { brand })} <br />
               <span className="text-black">{t('title2')}</span>
             </h1>
           </motion.div>

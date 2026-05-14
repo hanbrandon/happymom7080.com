@@ -193,7 +193,8 @@ export default function PricingContent() {
                                                 {t('officialContract')}
                                             </h4>
                                             <Link
-                                                href="/guide#contract-step"
+                                                href="/agreement.pdf"
+                                                target="_blank"
                                                 className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors"
                                             >
                                                 {t('viewContract')}

@@ -1,10 +1,14 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export default function Story() {
   const t = useTranslations('Story');
+  const locale = useLocale();
+  const brand = locale === 'ko' 
+    ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
+    : (process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom');
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -14,7 +18,7 @@ export default function Story() {
           <div className="lg:col-span-3 hidden lg:block">
             <ScrollReveal>
               <span className="text-sm font-bold text-gray-900 uppercase tracking-widest">
-                {t('label')}
+                {t('label', { brand })}
               </span>
             </ScrollReveal>
           </div>
@@ -29,7 +33,7 @@ export default function Story() {
 
             <ScrollReveal delay={0.4}>
               <p className="text-xl md:text-2xl text-gray-500 leading-relaxed">
-                {t('description')}
+                {t('description', { brand })}
               </p>
             </ScrollReveal>
           </div>

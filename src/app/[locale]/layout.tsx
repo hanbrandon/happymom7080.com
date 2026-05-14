@@ -23,26 +23,29 @@ const notoTabsKR = Noto_Sans_KR({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const brand = locale === 'ko' 
+    ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
+    : (process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom');
 
   return {
-    title: t('title'),
-    description: t('description'),
+    title: t('title', { brand }),
+    description: t('description', { brand }),
     metadataBase: new URL('https://happymom7080.com'),
     alternates: {
       canonical: localizedPath(locale),
       languages: languageAlternates(),
     },
     openGraph: {
-      title: t('title'),
-      description: t('description'),
+      title: t('title', { brand }),
+      description: t('description', { brand }),
       url: 'https://happymom7080.com',
-      siteName: 'HappyMom',
+      siteName: process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom',
       images: [
         {
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: 'HappyMom Care',
+          alt: `${process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom'} Care`,
         },
       ],
       locale: openGraphLocale(locale),
@@ -50,8 +53,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     twitter: {
       card: 'summary_large_image',
-      title: t('title'),
-      description: t('description'),
+      title: t('title', { brand }),
+      description: t('description', { brand }),
       images: ['/og-image.png'],
     },
     icons: {

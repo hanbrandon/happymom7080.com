@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
@@ -12,6 +12,10 @@ import {
 
 export default function Services() {
     const t = useTranslations('Services');
+    const locale = useLocale();
+    const brand = locale === 'ko' 
+        ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
+        : (process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom');
 
     const services = [
         {
@@ -41,7 +45,7 @@ export default function Services() {
                     <div className="max-w-xl">
                         <ScrollReveal>
                             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 md:mb-6 tracking-tighter">
-                                {t('title')}
+                                {t('title', { brand })}
                             </h2>
                         </ScrollReveal>
                     </div>

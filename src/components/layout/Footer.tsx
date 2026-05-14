@@ -1,12 +1,16 @@
 'use client';
 
 import { Link } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Mail, Phone, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const locale = useLocale();
+    const brand = locale === 'ko' 
+        ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
+        : (process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom');
 
     return (
         <footer className="bg-black py-12">
@@ -14,10 +18,10 @@ export default function Footer() {
                 {/* Global Disclaimer */}
                 <div className="mb-10 space-y-2">
                     <p className="text-[11px] text-gray-400 leading-relaxed break-keep">
-                        {t('disclaimer1')}
+                        {t('disclaimer1', { brand })}
                     </p>
                     <p className="text-[11px] text-gray-400 leading-relaxed break-keep">
-                        {t('disclaimer2')}
+                        {t('disclaimer2', { brand })}
                     </p>
                 </div>
 
@@ -35,14 +39,14 @@ export default function Footer() {
                             <div className="relative h-8 w-32">
                                 <Image
                                     src="/logo_black.png"
-                                    alt="HappyMom Logo"
+                                    alt={`${process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom'} Logo`}
                                     fill
                                     className="object-contain brightness-0 invert"
                                 />
                             </div>
                         </Link>
                         <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
-                            {t('intro')}
+                            {t('intro', { brand })}
                         </p>
                     </div>
 
@@ -83,10 +87,12 @@ export default function Footer() {
                                 { href: '/privacy', label: t('privacy') },
                                 { href: '/do-not-sell', label: t('doNotSell') },
                                 { href: '/policy', label: t('refund') },
+                                { href: '/agreement.pdf', label: t('agreement'), isExternal: true },
                             ].map((item) => (
                                 <li key={item.href}>
                                     <Link
                                         href={item.href}
+                                        target={item.isExternal ? "_blank" : undefined}
                                         className="text-gray-400 text-sm font-medium hover:text-white transition-all hover:translate-x-1 inline-block"
                                     >
                                         {item.label}
@@ -156,7 +162,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-8">
                     <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
-                        {t('rights')}
+                        {t('rights', { brand })}
                     </p>
                     <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
                         {t('siteBy')}{' '}
