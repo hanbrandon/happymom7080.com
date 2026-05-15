@@ -8,6 +8,10 @@
     "searchPlaceholder": "검색어를 입력하세요 (예: 환불, 입주, 계약...)",
     "items": [
         {
+            "question": "Carrot Fertility 또는 Dependent Care Flexible Spending Account (DCFSA)를 이용하고 계신가요?",
+            "answer": "저희는 Carrot Fertility 보험 혜택이나 Dependent Care Flexible Spending Account (DCFSA)를 사용하실 수 있는 공식 인증된 산후조리 서비스 제공 기관입니다."
+        },
+        {
             "question": "산후조리 서비스란 무엇인가요?",
             "answer": "산후조리 서비스란 출산 후 산욕기, 즉 분만 종료 후 6~8주 동안 산모님께서 가정에서 편안하게 산후관리를 받을 수 있도록 산모의 영양 및 건강관리, 신생아 돌보기 등을 지원하는 전문적인 교육을 수료한 가정방문 서비스입니다."
         },

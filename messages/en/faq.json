@@ -8,6 +8,10 @@
     "searchPlaceholder": "Enter search terms (e.g., refund, live-in, contract...)",
     "items": [
         {
+            "question": "Are you enrolled in Carrot Fertility or Dependent Care Flexible Spending Account (DCFSA)?",
+            "answer": "We are an officially certified postpartum caregiver agency where you can use Carrot Fertility insurance benefits, or Dependent Care Flexible Spending Account (DCFSA)."
+        },
+        {
             "question": "What is postpartum care service?",
             "answer": "Postpartum care service is a specialized home-visit service for mothers to comfortably receive postpartum care at home during the 6-8 weeks following childbirth, supporting nutrition and health management for the mother and newborn care."
         },
