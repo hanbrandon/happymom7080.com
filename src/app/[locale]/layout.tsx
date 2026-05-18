@@ -83,7 +83,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
  
   return (
-    <html lang={locale} className={`${outfit.variable} ${notoTabsKR.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${outfit.variable} ${notoTabsKR.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="antialiased selection:bg-black selection:text-white">
         <Script
           async

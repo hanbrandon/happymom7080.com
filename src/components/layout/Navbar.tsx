@@ -95,6 +95,7 @@ export default function Navbar() {
               src="/logo_black.png"
               alt={`${process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom'} Logo`}
               fill
+              sizes="(max-width: 768px) 100vw, 160px"
               className={`object-contain transition-all duration-300 ${!isDarkTheme ? 'brightness-0 invert' : ''}`}
               priority
             />
@@ -179,6 +180,7 @@ export default function Navbar() {
                     src="/logo_black.png"
                     alt={`${process.env.NEXT_PUBLIC_SITE_NAME_EN || 'HappyMom'} Logo`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 128px"
                     className="object-contain"
                   />
                 </div>

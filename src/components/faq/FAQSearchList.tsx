@@ -92,10 +92,10 @@ export default function FAQSearchList() {
                                             className="w-full py-12 flex items-center justify-between text-left relative cursor-pointer"
                                         >
                                             <div className="flex items-center space-x-8 z-10 transition-transform duration-500 group-hover:translate-x-2">
-                                                <span className={`text-xs font-bold transition-colors duration-500 tracking-tighter ${isOpen ? 'text-black' : 'text-gray-200 group-hover:text-black'}`}>
+                                                <span className={`text-xs font-bold transition-colors duration-500 tracking-tighter ${isOpen ? 'text-black' : 'text-gray-400 group-hover:text-black'}`}>
                                                     {(i + 1).toString().padStart(2, '0')}
                                                 </span>
-                                                <h3 className={`text-xl md:text-2xl font-medium tracking-tight transition-colors duration-500 ${isOpen ? 'text-black' : 'text-gray-400 group-hover:text-black'}`}>
+                                                <h3 className={`text-xl md:text-2xl font-medium tracking-tight transition-colors duration-500 ${isOpen ? 'text-black' : 'text-black/90 group-hover:text-black'}`}>
                                                     {t(`items.${index}.question`)}
                                                 </h3>
                                             </div>

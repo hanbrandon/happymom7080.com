@@ -29,14 +29,16 @@ export default getRequestConfig(async ({requestLocale}) => {
     { name: 'do-not-sell', ns: 'DoNotSell' }
   ];
 
-  for (const mod of modules) {
-    try {
-      const data = (await import(`../../messages/${locale}/${mod.name}.json`)).default;
-      modularMessages[mod.ns] = data;
-    } catch (e) {
-      // Module might not exist for this locale
-    }
-  }
+  await Promise.all(
+    modules.map(async (mod) => {
+      try {
+        const data = (await import(`../../messages/${locale}/${mod.name}.json`)).default;
+        modularMessages[mod.ns] = data;
+      } catch (e) {
+        // Module might not exist for this locale
+      }
+    })
+  );
 
   return {
     locale,
