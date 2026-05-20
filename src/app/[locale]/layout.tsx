@@ -87,7 +87,7 @@ export default async function LocaleLayout({
       <body className="antialiased selection:bg-black selection:text-white">
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-FEKS3PE59C"
+          src="https://www.googletagmanager.com/gtag/js?id=G-J4VYB8F08Q"
         />
         <Script id="google-analytics">
           {`
@@ -95,7 +95,7 @@ export default async function LocaleLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-FEKS3PE59C');
+            gtag('config', 'G-J4VYB8F08Q');
           `}
         </Script>
         <NextIntlClientProvider messages={messages}>
