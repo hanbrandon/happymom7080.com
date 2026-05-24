@@ -17,6 +17,7 @@ export default function Contact() {
     firstName: '',
     lastName: '',
     email: '',
+    phone: '',
     message: ''
   });
 
@@ -211,31 +212,61 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    {/* Email */}
-                    <div className="space-y-3">
-                      <label htmlFor="contact-email" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-black' : 'text-gray-400'}`}>
-                        {t('email')}
-                      </label>
-                      <div className="relative">
-                        <input 
-                          id="contact-email"
-                          name="email"
-                          suppressHydrationWarning
-                          required
-                          type="email" 
-                          value={formData.email}
-                          onFocus={() => setFocusedField('email')}
-                          onBlur={() => setFocusedField(null)}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
-                          placeholder={t('placeholderEmail')}
-                        />
-                        <motion.div 
-                          className="absolute bottom-0 left-0 h-0.5 bg-black" 
-                          initial={{ width: 0 }}
-                          animate={{ width: focusedField === 'email' ? '100%' : 0 }}
-                          transition={{ duration: 0.4, ease: "easeInOut" }}
-                        />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                      {/* Email */}
+                      <div className="space-y-3">
+                        <label htmlFor="contact-email" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'email' ? 'text-black' : 'text-gray-400'}`}>
+                          {t('email')}
+                        </label>
+                        <div className="relative">
+                          <input 
+                            id="contact-email"
+                            name="email"
+                            suppressHydrationWarning
+                            required
+                            type="email" 
+                            value={formData.email}
+                            onFocus={() => setFocusedField('email')}
+                            onBlur={() => setFocusedField(null)}
+                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                            placeholder={t('placeholderEmail')}
+                          />
+                          <motion.div 
+                            className="absolute bottom-0 left-0 h-0.5 bg-black" 
+                            initial={{ width: 0 }}
+                            animate={{ width: focusedField === 'email' ? '100%' : 0 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Phone */}
+                      <div className="space-y-3">
+                        <label htmlFor="contact-phone" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'phone' ? 'text-black' : 'text-gray-400'}`}>
+                          {t('phone')}
+                        </label>
+                        <div className="relative">
+                          <input 
+                            id="contact-phone"
+                            name="phone"
+                            suppressHydrationWarning
+                            required
+                            type="tel" 
+                            value={formData.phone}
+                            onFocus={() => setFocusedField('phone')}
+                            onBlur={() => setFocusedField(null)}
+                            onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                            className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                            placeholder={t('placeholderPhone')}
+                          />
+                          <motion.div 
+                            className="absolute bottom-0 left-0 h-0.5 bg-black" 
+                            initial={{ width: 0 }}
+                            animate={{ width: focusedField === 'phone' ? '100%' : 0 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                          />
+                        </div>
                       </div>
                     </div>
 
