@@ -164,17 +164,7 @@ export default function Footer() {
                     <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
                         {t('rights', { brand })}
                     </p>
-                    <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
-                        {t('siteBy')}{' '}
-                        <a
-                            href="https://gawoori.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-white font-bold hover:opacity-70 transition-opacity underline underline-offset-4 decoration-1"
-                        >
-                            GAWOORI.COM
-                        </a>
-                    </p>
+
                 </div>
             </div>
         </footer>
