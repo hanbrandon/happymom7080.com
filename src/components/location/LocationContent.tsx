@@ -127,7 +127,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Fairfax',
         descKo: '페어팩스 지역 산모님들을 위해 친정 엄마의 정성을 담은 맞춤형 산후 회복 서비스를 지원해 드립니다.',
         descEn: 'We provide customized postpartum recovery services with the care of a mother for Fairfax moms.',
-        image: '/service-areas/fairfax.jpg',
+        image: '/service-areas/fairfax.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
@@ -136,7 +136,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Centreville',
         descKo: '센터빌 전 지역 산모 맞춤 영양 식단 조리부터 신생아 안전 수면 및 배앓이 예방 케어까지 성심을 다합니다.',
         descEn: 'Meticulous support from customized nutritional meals to safe newborn sleep routines in Centreville.',
-        image: '/service-areas/centreville.jpg',
+        image: '/service-areas/centreville.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
@@ -145,7 +145,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'McLean',
         descKo: '매클레인 지역의 쾌적한 주거 환경에 맞춰 1:1 집중 산모 유방 마사지와 아기 위생 돌봄을 지원합니다.',
         descEn: 'Professional 1:1 breast care massage and newborn bath training in the quiet environment of McLean.',
-        image: '/service-areas/mclean.jpg',
+        image: '/service-areas/mclean.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       }
@@ -191,7 +191,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Frisco',
         descKo: '프리스코 지역 산모와 신생아를 위해 철저한 위생 관리를 거친 베테랑 조리사를 우선 매칭해 드립니다.',
         descEn: 'We ensure matching with certified veteran caregivers for safety-first newborn care in Frisco.',
-        image: '/service-areas/frisco.jpg',
+        image: '/service-areas/frisco.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
@@ -200,7 +200,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Carrollton',
         descKo: '캐롤턴 내 한인 인프라에 안성맞춤인 영양 가득한 한식 산후 조리식을 정성스레 조리해 드립니다.',
         descEn: 'Delightful nutritional Korean postpartum meals tailored to the local Korean community in Carrollton.',
-        image: '/service-areas/carrollton.jpg',
+        image: '/service-areas/carrollton.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       }
@@ -457,7 +457,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Fort Lee',
         descKo: '포트리 내 아파트 단지에 꼭 맞는 빠른 가사 정리와 신생아 수면 안도 환경을 섬세하게 만들어 드립니다.',
         descEn: 'Meticulous housekeeping and noise-preventing baby care routines customized for Fort Lee apartments.',
-        image: '/service-1.png',
+        image: '/service-areas/fort-lee.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
@@ -466,7 +466,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Palisades Park',
         descKo: '팰리세이즈 파크 산모님들이 마음 편히 의지할 수 있도록 유방 통증 관리와 완모 수유 솔루션을 가이드합니다.',
         descEn: 'Breastfeeding and pain relief care by certified veteran specialists in Palisades Park.',
-        image: '/service-2.png',
+        image: '/service-areas/palisades-park.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
@@ -475,7 +475,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Closter',
         descKo: '클로스터 지역 주택 환경에 적합한 품격 있는 프리미엄 조리 식사와 위생적인 위생 관리 수칙을 수행합니다.',
         descEn: 'High-quality home-cooked nutritional meals and recovery care tailored to Closter homes.',
-        image: '/service-3.png',
+        image: '/service-areas/closter.png',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       }
@@ -521,7 +521,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'San Diego',
         descKo: '샌디에고의 쾌적한 주거 공간에서 전문 조리 한식 준비와 수유 부기 해소 가슴 마사지를 정성스레 케어합니다.',
         descEn: 'Nutritional meal preparation and breast massage for body recovery in the warm environment of San Diego.',
-        image: '/service-2.png',
+        image: '/service-areas/san-diego.png',
         badgeKo: '입주 | 아기돌봄 가능 (출퇴근 서비스 예약 전 문의 요망)',
         badgeEn: 'Live-in | Babysitting (Please inquire about commuting before booking)'
       },
@@ -530,7 +530,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'Hawaii',
         descKo: '하와이 등 외곽 타주 전역에서도 안심하고 회복에 몰두하실 수 있도록 검증된 프로 조리사를 입주형으로 파견합니다.',
         descEn: 'We dispatch certified veteran specialists for premium live-in care even in Hawaii.',
-        image: '/service-3.png',
+        image: '/service-areas/hawaii.png',
         badgeKo: '입주형 서비스 가능 (출퇴근 불가)',
         badgeEn: 'Live-in Service Available (Commuting unavailable)'
       }
