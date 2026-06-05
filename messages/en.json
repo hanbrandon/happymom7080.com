@@ -6,6 +6,7 @@
     "Navbar": {
         "about": "About",
         "services": "Services",
+        "servicesArea": "Service Areas",
         "guide": "Guide",
         "pricing": "Pricing",
         "testimonials": "Testimonials",
@@ -142,5 +143,19 @@
         "description": "An unexpected error occurred while processing your request. Our team has been notified.",
         "tryAgain": "Try Again",
         "goHome": "Back to Home"
+    },
+    "EmployeeBenefits": {
+        "badge": "Benefits Program",
+        "title": "Get Support for Postpartum Care Costs <br />with Employee Benefits",
+        "desc": "We actively help you link Carrot Fertility and Maven benefits provided by your company <br />for moms in New Jersey (NJ), New York, and other areas.",
+        "p1Title": "Official Certified Provider",
+        "p1Desc": "HappyMom is an officially registered partner with Carrot Fertility, allowing you to easily coordinate reservations without any complicated validation processes.",
+        "p2Title": "Simple Document Issuance",
+        "p2Desc": "HappyMom will meticulously prepare and issue detailed invoices and supporting documents essential for company insurance reimbursement.",
+        "p3Title": "Save Out-of-Pocket Costs",
+        "p3Desc": "Depending on your company's benefit plan, you can receive support for all or a significant portion of postpartum care costs, greatly reducing financial burdens.",
+        "p4Title": "Maven Benefit Support",
+        "p4Desc": "We also support linkage with Maven benefits, which are increasingly adopted. Please contact us, and we will guide you through the benefit scope and matching process.",
+        "cta": "Inquire About Employee Benefits"
     }
 }
