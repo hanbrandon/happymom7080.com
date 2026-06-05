@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const tNavbar = useTranslations('Navbar');
     const locale = useLocale();
     const brand = locale === 'ko' 
         ? (process.env.NEXT_PUBLIC_SITE_NAME_KO || '해피맘') 
@@ -28,10 +29,10 @@ export default function Footer() {
                 {/* Top Divider */}
                 <div className="border-t border-white/10 mb-16" />
 
-                {/* 4 Column Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+                {/* 5 Column Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
                     {/* Column 1: Logo & Intro */}
-                    <div className="lg:col-span-4">
+                    <div className="lg:col-span-3">
                         <Link 
                             href="/" 
                             className="flex items-center gap-3 group cursor-pointer mb-8"
@@ -76,8 +77,37 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 3: Policies */}
-                    <div className="lg:col-span-3">
+                    {/* Column 3: Service Areas */}
+                    <div className="lg:col-span-2">
+                        <h3 className="font-bold text-gray-500 mb-8 text-[10px] uppercase tracking-[0.3em]">
+                            {tNavbar('servicesArea')}
+                        </h3>
+                        <ul className="space-y-4">
+                            {[
+                                { href: '/service-area/new-york', label: locale === 'ko' ? '뉴욕' : 'New York' },
+                                { href: '/service-area/virginia', label: locale === 'ko' ? '버지니아' : 'Virginia' },
+                                { href: '/service-area/dallas', label: locale === 'ko' ? '달라스' : 'Dallas' },
+                                { href: '/service-area/san-francisco', label: locale === 'ko' ? '샌프란' : 'San Francisco' },
+                                { href: '/service-area/la', label: locale === 'ko' ? '엘에이' : 'LA' },
+                                { href: '/service-area/irvine', label: locale === 'ko' ? '얼바인' : 'Irvine' },
+                                { href: '/service-area/atlanta', label: locale === 'ko' ? '아틀란타' : 'Atlanta' },
+                                { href: '/service-area/new-jersey', label: locale === 'ko' ? '뉴저지' : 'New Jersey' },
+                                { href: '/service-area/other', label: locale === 'ko' ? '기타 지역' : 'Other Areas' },
+                            ].map((item) => (
+                                <li key={item.href}>
+                                    <Link
+                                        href={item.href as any}
+                                        className="text-gray-400 text-sm font-medium hover:text-white transition-all hover:translate-x-1 inline-block"
+                                    >
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Policies */}
+                    <div className="lg:col-span-2">
                         <h3 className="font-bold text-gray-500 mb-8 text-[10px] uppercase tracking-[0.3em]">
                             {t('policies')}
                         </h3>
@@ -102,7 +132,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 4: Contact Info */}
+                    {/* Column 5: Contact Info */}
                     <div className="lg:col-span-3">
                         <h3 className="font-bold text-gray-500 mb-8 text-[10px] uppercase tracking-[0.3em]">
                             {t('contact')}
