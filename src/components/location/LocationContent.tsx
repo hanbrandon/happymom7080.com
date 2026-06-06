@@ -100,8 +100,8 @@ const CITY_DATA: Record<string, CityDetails> = {
     nameKo: '버지니아',
     nameEn: 'Virginia',
     heroTitle: 'Virginia',
-    heroSubKo: '페어팩스, 센터빌, 매클레인 등 버지니아 전 지역 산모님들을 위해 준비된 프리미엄 1:1 케어 솔루션입니다.',
-    heroSubEn: 'Premium 1:1 care solutions prepared for mothers in all areas of Virginia, including Fairfax, Centreville, and McLean.',
+    heroSubKo: '페어팩스, 센터빌, 알링턴 등 버지니아 전 지역 산모님들을 위해 준비된 프리미엄 1:1 케어 솔루션입니다.',
+    heroSubEn: 'Premium 1:1 care solutions prepared for mothers in all areas of Virginia, including Fairfax, Centreville, and Arlington.',
     desc1Ko: '한인 인프라가 든든하게 갖춰진 버지니아 북부 지역에서, 해피맘은 산모님의 지친 몸과 마음을 친정 엄마의 품처럼 아늑히 보살펴 드립니다.',
     desc1En: 'In Northern Virginia, where Korean infrastructure is solidly established, HappyMom warmly cares for the tired body and mind of mothers like the embrace of a biological mother.',
     desc2Ko: '철저히 검증된 한인 조리사님이 가정으로 방문하여, 아기의 안전한 보살핌은 물론이며 산모를 위한 영양 가득한 맞춤 한식 조리식과 전문 마사지를 제공합니다.',
@@ -119,7 +119,7 @@ const CITY_DATA: Record<string, CityDetails> = {
       'Constant dispatch of fully vaccinated, reassuring caregivers'
     ],
     testimonialsFilter: ['버지니아', 'Virginia', '최유리'],
-    landmarksKo: ['페어팩스', '센터빌', '매클레인', '알렉산드리아', '헤ndon'],
+    landmarksKo: ['페어팩스', '센터빌', '알링턴', '알렉산드리아', '헤ndon'],
     badgeKo: '버지니아 지사 운영',
     neighborhoods: [
       {
@@ -141,11 +141,11 @@ const CITY_DATA: Record<string, CityDetails> = {
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
       {
-        nameKo: '매클레인 (McLean)',
-        nameEn: 'McLean',
-        descKo: '매클레인 지역의 쾌적한 주거 환경에 맞춰 1:1 집중 산모 유방 마사지와 아기 위생 돌봄을 지원합니다.',
-        descEn: 'Professional 1:1 breast care massage and newborn bath training in the quiet environment of McLean.',
-        image: '/service-areas/mclean.png',
+        nameKo: '알링턴 (Arlington)',
+        nameEn: 'Arlington',
+        descKo: '알링턴 지역의 쾌적한 주거 환경에 맞춰 1:1 집중 산모 유방 마사지와 아기 위생 돌봄을 지원합니다.',
+        descEn: 'Professional 1:1 breast care massage and newborn bath training in the quiet environment of Arlington.',
+        image: '/service-areas/arlington.jpg',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       }
@@ -237,7 +237,7 @@ const CITY_DATA: Record<string, CityDetails> = {
         nameEn: 'San Jose',
         descKo: '산호세 전역 산모님이 온전히 휴식을 취하도록 24시간 입주형 케어와 조용한 살림 관리를 병행합니다.',
         descEn: 'Systematic 24-hour live-in care and quiet housekeeping in the busy Silicon Valley/San Jose area.',
-        image: '/service-areas/san-jose.jpg',
+        image: '/service-areas/golden-gate-bridge.webp',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
@@ -549,7 +549,7 @@ export default function LocationContent({ city }: { city: string }) {
 
   // 후기 데이터 필터링
   const filteredTestimonials = testimonials.filter(item => {
-    return details.testimonialsFilter.some(filterKey => 
+    return details.testimonialsFilter.some(filterKey =>
       item.location.toLowerCase().includes(filterKey.toLowerCase()) ||
       item.name.toLowerCase().includes(filterKey.toLowerCase()) ||
       item.content.toLowerCase().includes(filterKey.toLowerCase())
@@ -557,8 +557,8 @@ export default function LocationContent({ city }: { city: string }) {
   }).slice(0, 5); // 캐러셀이므로 여유있게 최대 5개까지 매칭
 
   // 만약 필터링된 후기가 없으면 베스트 후기 3개로 fallback
-  const displayTestimonials = filteredTestimonials.length > 0 
-    ? filteredTestimonials 
+  const displayTestimonials = filteredTestimonials.length > 0
+    ? filteredTestimonials
     : testimonials.slice(0, 3);
 
   useEffect(() => {
@@ -630,7 +630,7 @@ export default function LocationContent({ city }: { city: string }) {
       <section id="features" className="py-24 border-t border-gray-100 bg-white/60 backdrop-blur-md">
         <div className="max-w-[1400px] mx-auto px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Left Column: Description & Local Regions */}
             <div className="lg:col-span-6 space-y-8">
               <ScrollReveal>
@@ -671,8 +671,8 @@ export default function LocationContent({ city }: { city: string }) {
                   </p>
                   <div className="flex flex-wrap gap-2.5">
                     {details.landmarksKo.map((landmark) => (
-                      <span 
-                        key={landmark} 
+                      <span
+                        key={landmark}
                         className="px-4 py-2 bg-neutral-100 rounded-xl text-sm font-semibold text-gray-600 hover:bg-neutral-200 transition-colors cursor-default"
                       >
                         {landmark}
@@ -709,15 +709,15 @@ export default function LocationContent({ city }: { city: string }) {
                 </div>
               </StaggerContainer>
             </div>
-            
+
           </div>
         </div>
       </section>
 
       {/* 2.5. Local Neighborhoods Section */}
-      <LocalNeighborhoods 
-        neighborhoods={details.neighborhoods} 
-        cityName={locale === 'ko' ? details.nameKo : details.nameEn} 
+      <LocalNeighborhoods
+        neighborhoods={details.neighborhoods}
+        cityName={locale === 'ko' ? details.nameKo : details.nameEn}
       />
 
       {/* 3. Employee Benefits Section */}
@@ -727,7 +727,7 @@ export default function LocationContent({ city }: { city: string }) {
       <section className="py-20 md:py-32 bg-white border-t border-gray-100 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
-            
+
             {/* Left Column: Heading */}
             <div className="lg:col-span-5 pt-4">
               <motion.div
@@ -753,8 +753,8 @@ export default function LocationContent({ city }: { city: string }) {
                   )}
                 </h2>
                 <p className="text-lg text-gray-500 leading-relaxed max-w-sm">
-                  {locale === 'ko' 
-                    ? '직접 경험하신 산모님들의 솔직한 목소리입니다.' 
+                  {locale === 'ko'
+                    ? '직접 경험하신 산모님들의 솔직한 목소리입니다.'
                     : 'Honest stories shared by mothers who directly experienced HappyMom.'}
                 </p>
               </motion.div>
@@ -856,7 +856,7 @@ export default function LocationContent({ city }: { city: string }) {
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </section>
