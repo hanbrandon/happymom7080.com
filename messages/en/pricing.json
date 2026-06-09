@@ -72,5 +72,8 @@
     "refundTitle": "Service Refund Policy",
     "noRefund": "※ Cancellations due to personal reasons such as simple change of mind after concluding the contract, using a cheaper company, moving, availability of help from acquaintances or family, etc., are not refundable.",
     "fullRefund": "※ In case of premature birth or miscarriage, the full payment amount will be refunded after verification of evidence.",
-    "depositRefund": "※ If it is difficult to proceed with the reservation due to health problems or personal circumstances of the postpartum caregiver, we will guide the customer through possible options among deposit refund or alternative postpartum caregiver assignment."
+    "depositRefund": "※ If it is difficult to proceed with the reservation due to health problems or personal circumstances of the postpartum caregiver, we will guide the customer through possible options among deposit refund or alternative postpartum caregiver assignment.",
+    "insuranceInfoTitle": "Licensed Business Insurance",
+    "insuranceInfoDesc": "HappyMom is fully insured to ensure a safe environment for mothers, newborns, and our caregivers. We carry Workers' Compensation, General Liability, and Professional Liability/Errors & Omissions insurance, guaranteeing a high standard of trust and protection.",
+    "viewInsuranceDetail": "View Insurance Details →"
 }

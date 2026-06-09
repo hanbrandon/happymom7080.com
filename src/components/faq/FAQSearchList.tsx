@@ -10,7 +10,7 @@ export default function FAQSearchList() {
     const [searchQuery, setSearchQuery] = useState('');
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    const faqIndices = Array.from({ length: 23 }, (_, i) => i);
+    const faqIndices = Array.from({ length: 24 }, (_, i) => i);
 
     const filteredIndices = faqIndices.filter((index) => {
         const question = t(`items.${index}.question`).toLowerCase();

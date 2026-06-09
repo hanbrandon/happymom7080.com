@@ -148,6 +148,24 @@ export default function PricingContent() {
                             {/* Right Column: Essential Info Cards */}
                             <StaggerContainer>
                                 <div className="space-y-8">
+                                    {/* 0. Business Insurance Section */}
+                                    <StaggerItem>
+                                        <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                                            <h4 className="text-lg font-bold text-gray-900 mb-4">
+                                                {t('insuranceInfoTitle')}
+                                            </h4>
+                                            <p className="text-xs text-gray-600 font-medium leading-relaxed mb-6">
+                                                {t('insuranceInfoDesc')}
+                                            </p>
+                                            <Link
+                                                href="/guide#business-insurance"
+                                                className="text-xs text-gray-900 font-bold underline underline-offset-4 hover:text-gray-600 transition-colors"
+                                            >
+                                                {t('viewInsuranceDetail')}
+                                            </Link>
+                                        </div>
+                                    </StaggerItem>
+
                                     {/* 1. Insurance Section */}
                                     <StaggerItem>
                                         <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">

@@ -72,5 +72,8 @@
     "depositRefund": "※ 산후조리사의 건강상 문제 또는 개인 사정으로 인해 예약 진행이 어려운 경우, 고객님께는 예약금 환불 또는 대체 산후조리사 배정 중 가능한 방안을 안내해 드립니다.",
     "getQuote": "견적 문의하기",
     "ctaTitle": "가격 플랜에 대해 | 더 궁금한 점이 있으신가요?",
-    "viewInsurance": "보험 혜택 자세히 보기 →"
+    "viewInsurance": "보험 혜택 자세히 보기 →",
+    "insuranceInfoTitle": "정식 비즈니스 보험 가입",
+    "insuranceInfoDesc": "해피맘은 산모님들과 신생아, 그리고 관리사분들의 안전한 서비스 환경을 위해 정식 비즈니스 보험에 전면 가입되어 있습니다. Workers' Compensation(산재보험), General Liability(일반 배상 책임 보험), Professional Liability/Errors & Omissions(전문인 배상 책임 보험)을 통해 안심하고 이용하실 수 있는 신뢰를 보장합니다.",
+    "viewInsuranceDetail": "보험 가입 세부 정보 보기 →"
 }

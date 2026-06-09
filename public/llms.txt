@@ -1,48 +1,31 @@
-# HappyMom
+# HappyMom (해피맘)
 
-HappyMom is a Korean-English in-home postpartum care service for mothers and newborns in Los Angeles, Orange County, California, and across the United States.
+> Premium in-home postpartum care and newborn support service across the United States, specializing in bilingual (Korean/English) care, tailored maternal recovery, and corporate benefit integration (Carrot & Maven).
 
 Website: https://happymom7080.com
-Korean website: https://happymom7080.com
-English website: https://happymom7080.com/en
-Phone: +1 (213) 999-4642
-Email: happymom7080@gmail.com
-KakaoTalk: Happy-mom
+English Version: https://happymom7080.com/en
 
-## Services
+## Core Benefits & Features
 
-- Live-in postpartum care
-- Commuting postpartum care
-- Newborn care
-- Maternal recovery support
-- Feeding support
-- Meal preparation and light home support
-- Babysitting
+- **Corporate Benefit Integration (Carrot & Maven)**: HappyMom is a registered provider for Carrot Fertility and supports Maven benefits. We issue detailed invoices and documentation required for corporate insurance reimbursement.
+- **Bilingual Service**: Fully customized postpartum care provided in both Korean and English.
+- **Service Formats**: Commuting (출퇴근형) and Live-in (입주형) care.
+- **Newborn & Maternal Care**: Dedicated newborn care, maternal recovery support, breastfeeding guidance, and nutritional meal prep.
+- **Non-Medical Care**: HappyMom provides non-medical supportive care. For medical diagnoses or emergencies, contact a professional medical practitioner.
 
-## Pricing
+## Contact Information
 
-Pricing is published on the pricing page and may vary by service type, care period, family needs, twins, travel distance, and schedule.
+- **Phone**: +1 (213) 999-4642
+- **Email**: happymom7080@gmail.com
+- **KakaoTalk ID**: Happy-mom
+- **Inquiry Form**: https://happymom7080.com/contact (EN: https://happymom7080.com/en/contact)
 
-Key pricing page: https://happymom7080.com/pricing
-English pricing page: https://happymom7080.com/en/pricing
+## Key Navigation Pages
 
-## Service Areas
-
-HappyMom serves Los Angeles, Orange County, Irvine, Koreatown, California, and other United States regions by consultation and caregiver availability.
-
-## Important Disclaimer
-
-HappyMom is not a medical institution and does not provide medical diagnosis, treatment, prescription, or emergency medical services. Mothers and families should contact a qualified medical professional or emergency service for medical concerns.
-
-## Key Pages
-
-- About: https://happymom7080.com/about
-- Services: https://happymom7080.com/services
-- Pricing: https://happymom7080.com/pricing
-- Testimonials: https://happymom7080.com/testimonials
-- FAQ: https://happymom7080.com/faq
-- Guide: https://happymom7080.com/guide
-- Contact: https://happymom7080.com/contact
-- English home: https://happymom7080.com/en
-- English services: https://happymom7080.com/en/services
-- English contact: https://happymom7080.com/en/contact
+- [About HappyMom / 회사 소개](https://happymom7080.com/about)
+- [Postpartum & Baby Care Services / 서비스 안내](https://happymom7080.com/services) (EN: [Services](https://happymom7080.com/en/services))
+- [Pricing Plans / 이용 요금](https://happymom7080.com/pricing)
+- [Real Testimonials / 고객 후기](https://happymom7080.com/testimonials)
+- [Frequently Asked Questions (FAQ) / 자주 묻는 질문](https://happymom7080.com/faq)
+- [Service Guide / 이용 안내](https://happymom7080.com/guide)
+- [Agreement Details / 계약서 및 약관](https://happymom7080.com/agreement.pdf)

@@ -98,6 +98,10 @@
         {
             "question": "What are the types of babysitting services?",
             "answer": "The commuting type is provided Mon-Fri during daytime hours, and the live-in type provides care service from Monday to Friday while residing at the baby's home."
+        },
+        {
+            "question": "Is HappyMom covered by business insurance?",
+            "answer": "Yes, HappyMom is fully covered by official business insurance to ensure the safety and peace of mind of both families and our caregivers. We carry Workers' Compensation, General Liability, and Professional Liability/Errors & Omissions insurance. This comprehensively protects against any accidental damage, injuries, or professional liabilities that could arise during the service."
         }
     ]
 }

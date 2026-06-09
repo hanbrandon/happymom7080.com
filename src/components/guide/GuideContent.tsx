@@ -139,16 +139,17 @@ export default function GuideContent() {
           </div>
 
           <StaggerContainer>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {[
                   { title: t('outOfStateTitle'), desc: t('outOfStateDesc') },
                   { title: t('insuranceTitle'), desc: t('insuranceDesc'), id: 'insurance' },
+                  { title: t('businessInsuranceTitle'), desc: t('businessInsuranceDesc'), id: 'business-insurance' },
                   { title: t('scheduleTitle'), desc: t('scheduleDesc') }
               ].map((info, idx) => (
                   <StaggerItem key={idx}>
                       <div id={info.id} className="space-y-6">
                          <h4 className="text-2xl font-bold text-gray-900 tracking-tight">{info.title}</h4>
-                         <p className="text-lg text-gray-500 leading-relaxed">{info.desc}</p>
+                         <p className="text-lg text-gray-500 leading-relaxed whitespace-pre-line">{info.desc}</p>
                       </div>
                   </StaggerItem>
               ))}
