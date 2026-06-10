@@ -3,13 +3,15 @@ export async function sendEmail({
   subject, 
   htmlContent, 
   senderName = "HappyMom",
-  senderEmail = "no-reply@happymom.com"
+  senderEmail = "no-reply@happymom.com",
+  replyTo
 }: { 
   to: string[], 
   subject: string, 
   htmlContent: string,
   senderName?: string,
-  senderEmail?: string
+  senderEmail?: string,
+  replyTo?: { name?: string, email: string }
 }) {
   const apiKey = process.env.BREVO_API_KEY;
   
@@ -29,7 +31,8 @@ export async function sendEmail({
       sender: { name: senderName, email: senderEmail },
       to: to.map(email => ({ email })),
       subject: subject,
-      htmlContent: htmlContent
+      htmlContent: htmlContent,
+      replyTo: replyTo
     })
   });
 

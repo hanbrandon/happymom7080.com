@@ -34,7 +34,11 @@ export async function POST(request: Request) {
     const result = await sendEmail({
       to: receivers,
       subject: `[HappyMom] 새로운 고객 문의: ${firstName} ${lastName || ""}`,
-      htmlContent: htmlContent
+      htmlContent: htmlContent,
+      replyTo: {
+        name: `${firstName} ${lastName || ""}`.trim(),
+        email: email
+      }
     });
 
     if (!result.success) {
