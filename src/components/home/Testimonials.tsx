@@ -16,7 +16,7 @@ export default function Testimonials() {
     const tData = useTranslations('TestimonialsPage');
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const testimonials = tData.raw('items')?.slice(0, 3) || [];
+    const testimonials = [...(tData.raw('items') || [])].reverse().slice(0, 3);
 
     useEffect(() => {
         if (testimonials.length === 0) return;

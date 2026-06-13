@@ -545,7 +545,7 @@ export default function LocationContent({ city }: { city: string }) {
   const details = CITY_DATA[city] || CITY_DATA.la;
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const testimonials: Testimonial[] = tTestimonials.raw('items') || [];
+  const testimonials: Testimonial[] = [...(tTestimonials.raw('items') || [])].reverse();
 
   // 후기 데이터 필터링
   const filteredTestimonials = testimonials.filter(item => {

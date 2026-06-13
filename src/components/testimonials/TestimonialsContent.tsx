@@ -75,7 +75,7 @@ export default function TestimonialsContent() {
     content: ''
   });
 
-  const testimonials: Testimonial[] = t.raw('items') || [];
+  const testimonials: Testimonial[] = [...(t.raw('items') || [])].reverse();
 
   useEffect(() => {
     if (isModalOpen) {
