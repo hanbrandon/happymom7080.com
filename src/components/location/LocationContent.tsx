@@ -229,7 +229,7 @@ const CITY_DATA: Record<string, CityDetails> = {
       'Special therapy that helps remove postpartum swelling'
     ],
     testimonialsFilter: ['샌프란시스코', '산호세', '산프란', 'SF', '실리콘밸리', 'San Francisco', 'San Jose', 'Walnut Creek', '월넛크릭맘'],
-    landmarksKo: ['산호세', '쿠퍼티노', '팔로알토', '버클리', '마운틴뷰'],
+    landmarksKo: ['산호세', '팔로알토', '버클리', '마운틴뷰'],
     badgeKo: '베이 전 지역 지원',
     neighborhoods: [
       {
@@ -242,11 +242,11 @@ const CITY_DATA: Record<string, CityDetails> = {
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
       {
-        nameKo: '쿠퍼티노 (Cupertino)',
-        nameEn: 'Cupertino',
-        descKo: '쿠퍼티노 내 스마트한 환경에 어울리는 철저한 감염 예방 관리 및 올바른 신생아 교육을 세심히 돕습니다.',
-        descEn: 'Meticulous support for strict infection control and sleep routine training tailored to Cupertino.',
-        image: '/service-areas/cupertino.jpg',
+        nameKo: '산호세 (San Jose)',
+        nameEn: 'San Jose',
+        descKo: '산호세 내 스마트한 환경에 어울리는 철저한 감염 예방 관리 및 올바른 신생아 교육을 세심히 돕습니다.',
+        descEn: 'Meticulous support for strict infection control and sleep routine training tailored to San Jose.',
+        image: '/service-areas/san-jose.jpg',
         badgeKo: '출퇴근 | 입주 | 아기돌봄 가능',
         badgeEn: 'Commuting | Live-in | Babysitting'
       },
