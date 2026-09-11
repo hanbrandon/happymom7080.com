@@ -21,7 +21,7 @@
   "placeholderPhone": "전화번호를 입력하세요",
   "placeholderServiceType": "원하시는 서비스를 선택해 주세요",
   "placeholderLocation": "예: Los Angeles, CA / Irvine, CA",
-  "placeholderWeeks": "희망하시는 기간을 선택해 주세요",
+  "placeholderWeeks": "희망하시는 기간을 선택해 주세요 (최소 2주)",
   "placeholderMessage": "무엇을 도와드릴까요?",
   "serviceTypeOptions": {
     "liveIn": "입주형 산후조리",
@@ -30,7 +30,6 @@
     "other": "기타 / 상담 후 결정"
   },
   "weeksOptions": {
-    "1": "1주",
     "2": "2주",
     "3": "3주",
     "4": "4주",

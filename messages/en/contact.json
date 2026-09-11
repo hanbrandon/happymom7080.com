@@ -21,7 +21,7 @@
   "placeholderPhone": "Enter your phone number",
   "placeholderServiceType": "Select a service type",
   "placeholderLocation": "e.g., Los Angeles, CA / Irvine, CA",
-  "placeholderWeeks": "Select duration",
+  "placeholderWeeks": "Select duration (Min. 2 Weeks)",
   "placeholderMessage": "How can we help you?",
   "serviceTypeOptions": {
     "liveIn": "Live-in Postpartum Care",
@@ -30,7 +30,6 @@
     "other": "Other / Consultation"
   },
   "weeksOptions": {
-    "1": "1 Week",
     "2": "2 Weeks",
     "3": "3 Weeks",
     "4": "4 Weeks",

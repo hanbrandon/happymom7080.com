@@ -326,7 +326,6 @@ export default function Contact() {
                             className={`w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all font-medium text-xl outline-none cursor-pointer appearance-none ${formData.weeks ? 'text-gray-900' : 'text-gray-300'}`}
                           >
                             <option value="" disabled hidden>{t('placeholderWeeks')}</option>
-                            <option value={t('weeksOptions.1')} className="text-gray-900">{t('weeksOptions.1')}</option>
                             <option value={t('weeksOptions.2')} className="text-gray-900">{t('weeksOptions.2')}</option>
                             <option value={t('weeksOptions.3')} className="text-gray-900">{t('weeksOptions.3')}</option>
                             <option value={t('weeksOptions.4')} className="text-gray-900">{t('weeksOptions.4')}</option>
