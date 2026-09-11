@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, Send, ArrowRight, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Send, ArrowRight, MessageCircle, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -18,6 +18,9 @@ export default function Contact() {
     lastName: '',
     email: '',
     phone: '',
+    serviceType: '',
+    location: '',
+    weeks: '',
     message: ''
   });
 
@@ -267,6 +270,106 @@ export default function Contact() {
                             transition={{ duration: 0.4, ease: "easeInOut" }}
                           />
                         </div>
+                      </div>
+                    </div>
+
+                    {/* Service Type & Weeks */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                      {/* Service Type */}
+                      <div className="space-y-3">
+                        <label htmlFor="contact-service-type" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'serviceType' ? 'text-black' : 'text-gray-400'}`}>
+                          {t('serviceType')}
+                        </label>
+                        <div className="relative">
+                          <select 
+                            id="contact-service-type"
+                            name="serviceType"
+                            suppressHydrationWarning
+                            value={formData.serviceType}
+                            onFocus={() => setFocusedField('serviceType')}
+                            onBlur={() => setFocusedField(null)}
+                            onChange={(e) => setFormData({...formData, serviceType: e.target.value})}
+                            className={`w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all font-medium text-xl outline-none cursor-pointer appearance-none ${formData.serviceType ? 'text-gray-900' : 'text-gray-300'}`}
+                          >
+                            <option value="" disabled hidden>{t('placeholderServiceType')}</option>
+                            <option value={t('serviceTypeOptions.liveIn')} className="text-gray-900">{t('serviceTypeOptions.liveIn')}</option>
+                            <option value={t('serviceTypeOptions.commuting')} className="text-gray-900">{t('serviceTypeOptions.commuting')}</option>
+                            <option value={t('serviceTypeOptions.babysitting')} className="text-gray-900">{t('serviceTypeOptions.babysitting')}</option>
+                            <option value={t('serviceTypeOptions.other')} className="text-gray-900">{t('serviceTypeOptions.other')}</option>
+                          </select>
+                          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-gray-400">
+                            <ChevronDown className="w-5 h-5" />
+                          </div>
+                          <motion.div 
+                            className="absolute bottom-0 left-0 h-0.5 bg-black" 
+                            initial={{ width: 0 }}
+                            animate={{ width: focusedField === 'serviceType' ? '100%' : 0 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Weeks / Duration */}
+                      <div className="space-y-3">
+                        <label htmlFor="contact-weeks" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'weeks' ? 'text-black' : 'text-gray-400'}`}>
+                          {t('weeks')}
+                        </label>
+                        <div className="relative">
+                          <select 
+                            id="contact-weeks"
+                            name="weeks"
+                            suppressHydrationWarning
+                            value={formData.weeks}
+                            onFocus={() => setFocusedField('weeks')}
+                            onBlur={() => setFocusedField(null)}
+                            onChange={(e) => setFormData({...formData, weeks: e.target.value})}
+                            className={`w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all font-medium text-xl outline-none cursor-pointer appearance-none ${formData.weeks ? 'text-gray-900' : 'text-gray-300'}`}
+                          >
+                            <option value="" disabled hidden>{t('placeholderWeeks')}</option>
+                            <option value={t('weeksOptions.1')} className="text-gray-900">{t('weeksOptions.1')}</option>
+                            <option value={t('weeksOptions.2')} className="text-gray-900">{t('weeksOptions.2')}</option>
+                            <option value={t('weeksOptions.3')} className="text-gray-900">{t('weeksOptions.3')}</option>
+                            <option value={t('weeksOptions.4')} className="text-gray-900">{t('weeksOptions.4')}</option>
+                            <option value={t('weeksOptions.over4')} className="text-gray-900">{t('weeksOptions.over4')}</option>
+                            <option value={t('weeksOptions.undecided')} className="text-gray-900">{t('weeksOptions.undecided')}</option>
+                          </select>
+                          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-gray-400">
+                            <ChevronDown className="w-5 h-5" />
+                          </div>
+                          <motion.div 
+                            className="absolute bottom-0 left-0 h-0.5 bg-black" 
+                            initial={{ width: 0 }}
+                            animate={{ width: focusedField === 'weeks' ? '100%' : 0 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Location */}
+                    <div className="space-y-3">
+                      <label htmlFor="contact-location" className={`text-xs font-bold uppercase tracking-widest transition-colors ${focusedField === 'location' ? 'text-black' : 'text-gray-400'}`}>
+                        {t('location')}
+                      </label>
+                      <div className="relative">
+                        <input 
+                          id="contact-location"
+                          name="location"
+                          suppressHydrationWarning
+                          type="text" 
+                          value={formData.location}
+                          onFocus={() => setFocusedField('location')}
+                          onBlur={() => setFocusedField(null)}
+                          onChange={(e) => setFormData({...formData, location: e.target.value})}
+                          className="w-full h-auto bg-transparent border-b border-black/10 rounded-none px-0 pt-2 pb-3 focus:ring-0 transition-all text-gray-900 font-medium text-xl placeholder:text-gray-300 outline-none"
+                          placeholder={t('placeholderLocation')}
+                        />
+                        <motion.div 
+                          className="absolute bottom-0 left-0 h-0.5 bg-black" 
+                          initial={{ width: 0 }}
+                          animate={{ width: focusedField === 'location' ? '100%' : 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                        />
                       </div>
                     </div>
 

@@ -3,7 +3,7 @@ import { sendEmail } from '@/lib/brevo';
 
 export async function POST(request: Request) {
   try {
-    const { firstName, lastName, email, phone, message } = await request.json();
+    const { firstName, lastName, email, phone, serviceType, location, weeks, message } = await request.json();
 
     if (!firstName || !email || !phone || !message) {
       return NextResponse.json({ success: false, error: "Missing required fields" }, { status: 400 });
@@ -21,6 +21,9 @@ export async function POST(request: Request) {
         <p><strong style="color: #000000;">이름:</strong> ${firstName} ${lastName || ""}</p>
         <p><strong style="color: #000000;">이메일:</strong> ${email}</p>
         <p><strong style="color: #000000;">전화번호:</strong> ${phone}</p>
+        <p><strong style="color: #000000;">원하는 서비스:</strong> ${serviceType || "미선택"}</p>
+        <p><strong style="color: #000000;">지역:</strong> ${location || "미입력"}</p>
+        <p><strong style="color: #000000;">희망 기간:</strong> ${weeks || "미선택"}</p>
         <p style="margin-top: 20px; font-weight: bold; color: #000000;">[문의 내용]</p>
         <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; color: #333333; border: 1px solid #eeeeee;">
           ${message.replace(/\n/g, '<br>')}
